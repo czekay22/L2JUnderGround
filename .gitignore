@@ -1,0 +1,32 @@
+# Eclipse
+.classpath
+.project
+.settings
+.metadata
+bin/
+/.recommenders/
+
+# Idea
+*.iml
+/.idea/
+
+# Gradle
+/.gradle/
+*/build/
+gradle.properties
+
+
+.DS_Store
+.directory
+*.log
+
+*/.gnupg/
+
+/l2junity-debug
+
+/l2junity-gameserver/log/
+/l2junity-gameserver/dist/game/log/
+/l2junity-gameserver/dist/game/data/geodata/*.l2j
+/l2junity-gameserver/dist/game/config/hexid.txt
+/l2junity-gameserver_debug/
+/build/

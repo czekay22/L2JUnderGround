@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+defaultTasks('distZip')
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+dependencies {
+	compile project(':l2junity-gameserver')
+}
+
+jar {
+	manifest {
+		attributes('Built-By': System.getProperty('user.name'),
+			'Implementation-URL': 'http://www.l2junity.org/')
+	}
+}
+

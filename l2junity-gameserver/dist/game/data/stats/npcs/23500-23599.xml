@@ -1,0 +1,1930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/npcs.xsd">
+	<npc id="23500" level="99" type="L2Monster" name="Flame Crow" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<acquire expRate="662.00857055403" sp="10381" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<speed>
+				<walk ground="80" />
+				<run ground="70" />
+			</speed>
+			<attack physical="47220.368807127" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5462" level="1" /> <!-- Fire Attack -->
+			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+			<skill id="4379" level="4" /> <!-- Spear Resistance -->
+			<skill id="23568" level="1" /> <!-- Monster Dueling -->
+			<skill id="16547" level="8" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skill_list>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="726" max="1692" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0055">
+					<item id="35328" min="1" max="1" chance="100" /> <!-- Amaranthine Cutter Fragment -->
+				</group>
+				<group chance="0.9009">
+					<item id="36543" min="1" max="1" chance="83.250083250083" /> <!-- Adamantite Wire -->
+					<item id="17527" min="1" max="1" chance="8.3250083250083" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36544" min="1" max="1" chance="8.3250083250083" /> <!-- Orichalcum Wire -->
+					<item id="35469" min="1" max="1" chance="0.0999000999001" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36543" min="1" max="1" chance="1.334" /> <!-- Adamantite Wire -->
+				<item id="36519" min="1" max="1" chance="0.75" /> <!-- Quality Leather -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
+		<collision>
+			<radius normal="20" />
+			<height normal="39.5" />
+		</collision>
+	</npc>
+	<npc id="23501" level="99" type="L2Monster" name="Flame Rael" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMANOID</race>
+		<sex>FEMALE</sex>
+		<acquire expRate="615.29262320171" sp="9648" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<speed>
+				<walk ground="31" />
+				<run ground="170" />
+			</speed>
+			<attack physical="47220.557386874" magical="8304.9567060447" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="250" wind="200" earth="250" holy="250" dark="250" />
+				<attack type="EARTH" value="330" />
+			</attribute>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4411" level="13" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4379" level="4" /> <!-- Spear Resistance -->
+			<skill id="23568" level="1" /> <!-- Monster Dueling -->
+			<skill id="16547" level="8" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="726" max="1692" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0055">
+					<item id="35332" min="1" max="1" chance="100" /> <!-- Amaranthine Stormer Fragment -->
+				</group>
+				<group chance="0.903">
+					<item id="36543" min="1" max="1" chance="83.056478405316" /> <!-- Adamantite Wire -->
+					<item id="17527" min="1" max="1" chance="8.3056478405316" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36544" min="1" max="1" chance="8.3056478405316" /> <!-- Orichalcum Wire -->
+					<item id="35471" min="1" max="1" chance="0.33222591362126" /> <!-- Recipe: Eternal Leather Gloves (60%) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36538" min="1" max="1" chance="1.92" /> <!-- Durable Leather Braid -->
+				<item id="36544" min="1" max="1" chance="0.3" /> <!-- Orichalcum Wire -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
+		<collision>
+			<radius normal="23" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23502" level="99" type="L2Monster" name="Flame Salamander" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>ELEMENTAL</race>
+		<sex>FEMALE</sex>
+		<acquire expRate="662.00857055403" sp="10381" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<speed>
+				<walk ground="39" />
+				<run ground="70" />
+			</speed>
+			<attack physical="47220.368807127" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="250" wind="200" earth="250" holy="250" dark="250" />
+				<attack type="EARTH" value="330" />
+			</attribute>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+			<skill id="4379" level="4" /> <!-- Spear Resistance -->
+			<skill id="23568" level="1" /> <!-- Monster Dueling -->
+			<skill id="16547" level="8" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="726" max="1692" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0055">
+					<item id="35335" min="1" max="1" chance="100" /> <!-- Amaranthine Buster Fragment -->
+				</group>
+				<group chance="0.903">
+					<item id="36543" min="1" max="1" chance="83.056478405316" /> <!-- Adamantite Wire -->
+					<item id="17527" min="1" max="1" chance="8.3056478405316" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36544" min="1" max="1" chance="8.3056478405316" /> <!-- Orichalcum Wire -->
+					<item id="35472" min="1" max="1" chance="0.33222591362126" /> <!-- Recipe: Eternal Leather Boots (60%) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36518" min="1" max="1" chance="7.512" /> <!-- Durable Leather -->
+				<item id="36539" min="1" max="1" chance="0.3" /> <!-- Quality Leather Braid -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
+		<collision>
+			<radius normal="20" />
+			<height normal="25" />
+		</collision>
+	</npc>
+	<npc id="23503" level="99" type="L2Monster" name="Flame Drake" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>DEMONIC</race>
+		<sex>FEMALE</sex>
+		<acquire expRate="662.00857055403" sp="10381" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<speed>
+				<walk ground="70" />
+				<run ground="70" />
+			</speed>
+			<attack physical="47220.557386874" magical="8304.9017930433" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="200" wind="250" earth="250" holy="250" dark="250" />
+				<attack type="FIRE" value="330" />
+			</attribute>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5462" level="1" /> <!-- Fire Attack -->
+			<skill id="4411" level="16" /> <!-- Very Strong M. Atk. -->
+			<skill id="4379" level="4" /> <!-- Spear Resistance -->
+			<skill id="23568" level="1" /> <!-- Monster Dueling -->
+			<skill id="16547" level="8" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="9" /> <!-- Demons -->
+		</skill_list>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="726" max="1692" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0055">
+					<item id="35336" min="1" max="1" chance="100" /> <!-- Amaranthine Caster Fragment -->
+				</group>
+				<group chance="0.903">
+					<item id="36543" min="1" max="1" chance="83.056478405316" /> <!-- Adamantite Wire -->
+					<item id="17527" min="1" max="1" chance="8.3056478405316" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36544" min="1" max="1" chance="8.3056478405316" /> <!-- Orichalcum Wire -->
+					<item id="35477" min="1" max="1" chance="0.33222591362126" /> <!-- Recipe: Eternal Shoes (60%) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36543" min="1" max="1" chance="1.331" /> <!-- Adamantite Wire -->
+				<item id="36519" min="1" max="1" chance="0.75" /> <!-- Quality Leather -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
+		<collision>
+			<radius normal="17" />
+			<height normal="37" />
+		</collision>
+	</npc>
+	<npc id="23504" level="99" type="L2Monster" name="Flame Votis" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>BEAST</race>
+		<sex>FEMALE</sex>
+		<acquire expRate="662.00857055403" sp="10381" />
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="15841" hpRegen="10.5" mp="2355" mpRegen="3.6" />
+			<speed>
+				<walk ground="35" />
+				<run ground="70" />
+			</speed>
+			<attack physical="47220.368807127" magical="8305.0410766139" critical="4" attackSpeed="253" range="40" />
+			<defence physical="526.06382978723" magical="305.10497858296" />
+			<attribute>
+				<defence fire="250" water="250" wind="200" earth="250" holy="250" dark="250" />
+				<attack type="EARTH" value="330" />
+			</attribute>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="16" /> <!-- Very Strong P. Atk. -->
+			<skill id="4379" level="4" /> <!-- Spear Resistance -->
+			<skill id="23568" level="1" /> <!-- Monster Dueling -->
+			<skill id="16547" level="8" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<drop_lists>
+			<death>
+				<group chance="70">
+					<item id="57" min="726" max="1692" chance="100" /> <!-- Adena -->
+				</group>
+				<group chance="0.0055">
+					<item id="35328" min="1" max="1" chance="100" /> <!-- Amaranthine Cutter Fragment -->
+				</group>
+				<group chance="0.9009">
+					<item id="36543" min="1" max="1" chance="83.250083250083" /> <!-- Adamantite Wire -->
+					<item id="17527" min="1" max="1" chance="8.3250083250083" /> <!-- Scroll: Enchant Armor (R-grade) -->
+					<item id="36544" min="1" max="1" chance="8.3250083250083" /> <!-- Orichalcum Wire -->
+					<item id="35469" min="1" max="1" chance="0.0999000999001" /> <!-- Recipe: Eternal Leather Armor (60%) -->
+				</group>
+			</death>
+			<corpse>
+				<item id="36538" min="1" max="1" chance="1.835" /> <!-- Durable Leather Braid -->
+				<item id="36544" min="1" max="1" chance="0.3" /> <!-- Orichalcum Wire -->
+			</corpse>
+			<lucky_corpse>
+				<item id="39629" min="1" max="1" chance="100" /> <!-- Fortune Pocket - Stage 1 -->
+			</lucky_corpse>
+		</drop_lists>
+		<collision>
+			<radius normal="20" />
+			<height normal="36" />
+		</collision>
+	</npc>
+	<npc id="23505" level="85" type="L2Monster" name="Fortress Raider" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="23506" level="85" type="L2Monster" name="Fortress Guardian Captain" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23507" level="85" type="L2Monster" name="Atelia Passionate Soldier" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="23508" level="85" type="L2Monster" name="Atelia Elite Captain" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23509" level="85" type="L2Monster" name="Fortress Dark Wizard" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="11" />
+			<height normal="25.5" />
+		</collision>
+	</npc>
+	<npc id="23510" level="85" type="L2Monster" name="Atelia Flame Master" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="11" />
+			<height normal="25.5" />
+		</collision>
+	</npc>
+	<npc id="23511" level="85" type="L2Monster" name="Fortress Archon" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="14" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="23512" level="85" type="L2Monster" name="Atelia High Priest" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="14" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="23530" level="85" type="L2Monster" name="Fortress Guardian Captain" title="Kelbim's Call">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23532" level="85" type="L2Monster" name="Atelia Elite Captain" title="Kelbim's Call">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23535" level="85" type="L2Monster" name="Atelia Archon" title="Kelbim's Call">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="14" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="23536" level="85" type="L2Monster" name="Atelia High Priest" title="Kelbim's Call">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="14" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="23537" level="85" type="L2Monster" name="Atelia Elite Captain" title="Atelia Infuser">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23538" level="85" type="L2Monster" name="Atelia High Priest" title="Atelia Infuser">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="512263" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="16" /> <!-- Very Strong P. Def. -->
+			<skill id="4413" level="16" /> <!-- Very Strong M. Def. -->
+			<skill id="4440" level="5" /> <!-- Greater Paralysis Resistance -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="14" />
+			<height normal="29" />
+		</collision>
+	</npc>
+	<npc id="23539" level="85" type="L2Monster" name="Atelia Trial Guardian Captain" title="Trial Guardian">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1328145" hpRegen="7.5" mp="50920" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="24" />
+			<height normal="47" />
+		</collision>
+	</npc>
+	<npc id="23541" level="85" type="L2Monster" name="Kerberos Liger" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23542" level="85" type="L2Monster" name="Kerberos Fort" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23543" level="85" type="L2Monster" name="Kerberos Nero" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23544" level="85" type="L2Monster" name="Fury Sylph Barrena" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23545" level="85" type="L2Monster" name="Fury Kiku" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4416" level="4" /> <!-- Animals -->
+		</skill_list>
+		<collision>
+			<radius normal="6" />
+			<height normal="10.5" />
+		</collision>
+	</npc>
+	<npc id="23546" level="85" type="L2Monster" name="Fury Sylph Temptress" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23547" level="85" type="L2Monster" name="Fury Sylph Purka" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23548" level="85" type="L2Monster" name="Fury Kerberos Liger" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5466" level="1" /> <!-- Holy Attacks -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23549" level="85" type="L2Monster" name="Fury Kerberos Nero" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23550" level="85" type="L2Monster" name="Kerberos Liger" title="Spirit of the Night">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23551" level="85" type="L2Monster" name="Kerberos Fort" title="Spirit of the Night">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23552" level="85" type="L2Monster" name="Kerberos Nero" title="Spirit of the Night">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="14" /> <!-- Strong P. Atk. -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23553" level="85" type="L2Monster" name="Fury Sylph Barrena" title="Spirit of the Night">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23554" level="85" type="L2Monster" name="Fury Kiku" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4416" level="4" /> <!-- Animals -->
+		</skill_list>
+		<collision>
+			<radius normal="6" />
+			<height normal="10.5" />
+		</collision>
+	</npc>
+	<npc id="23555" level="85" type="L2Monster" name="Fury Sylph Temptress" title="Spirit of the Night">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23556" level="85" type="L2Monster" name="Fury Sylph Purka" title="Spirit of the Night">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4411" level="14" /> <!-- Strong M. Atk. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="40" />
+		</collision>
+	</npc>
+	<npc id="23557" level="85" type="L2Monster" name="Fury Kerberos Liger" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23558" level="85" type="L2Monster" name="Fury Kerberos Nero" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="28" />
+		</collision>
+	</npc>
+	<npc id="23559" level="85" type="L2Monster" name="El Floato" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4410" level="7" /> <!-- Weak P. Atk. -->
+			<skill id="4411" level="7" /> <!-- Weak M. Atk. -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="14" />
+		</collision>
+	</npc>
+	<npc id="23560" level="85" type="L2Monster" name="El Floato" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="7" /> <!-- Weak P. Atk. -->
+			<skill id="4411" level="7" /> <!-- Weak M. Atk. -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="14" />
+		</collision>
+	</npc>
+	<npc id="23561" level="85" type="L2Monster" name="Harpe" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1360307" hpRegen="7.5" mp="48616" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="43" />
+			<height normal="43" />
+		</collision>
+	</npc>
+	<npc id="23562" level="85" type="L2Monster" name="Harpe" title="Separated Evil Thoughts">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="403282" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4416" level="3" /> <!-- Beast -->
+		</skill_list>
+		<collision>
+			<radius normal="20" />
+			<height normal="20" />
+		</collision>
+	</npc>
+	<npc id="23563" level="85" type="L2Monster" name="Croamis" title="Gatekeeper">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="4080922" hpRegen="7.5" mp="48616" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="46" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<npc id="23564" level="85" type="L2Monster" name="Croa" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1507175" hpRegen="7.5" mp="47856" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="46" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<npc id="23565" level="85" type="L2Monster" name="Amis" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1507175" hpRegen="7.5" mp="47856" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5464" level="1" /> <!-- Wind Attack -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="46" />
+			<height normal="50" />
+		</collision>
+	</npc>
+	<npc id="23566" level="85" type="L2Monster" name="Nymph Rose" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23567" level="85" type="L2Monster" name="Nymph Rose" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23568" level="85" type="L2Monster" name="Nymph Lily" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23569" level="85" type="L2Monster" name="Nymph Lily" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23570" level="85" type="L2Monster" name="Nymph Tulip" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23571" level="85" type="L2Monster" name="Nymph Tulip" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23572" level="85" type="L2Monster" name="Nymph Cosmos" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23573" level="85" type="L2Monster" name="Nymph Cosmos" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="27" />
+		</collision>
+	</npc>
+	<npc id="23574" level="85" type="L2Monster" name="Nymph Rose" title="Fancy">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="68300" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23575" level="85" type="L2Monster" name="Nymph Lily" title="Fancy">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="68300" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23576" level="85" type="L2Monster" name="Nymph Tulip" title="Fancy">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="68300" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23577" level="85" type="L2Monster" name="Nymph Cosmos" title="Fancy">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="68300" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4410" level="12" /> <!-- Slightly Strong P. Atk. -->
+			<skill id="4411" level="12" /> <!-- Slightly Strong M. Atk. -->
+			<skill id="4412" level="12" /> <!-- Slightly Strong P. Def. -->
+			<skill id="4413" level="12" /> <!-- Slightly Strong M. Def. -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23578" level="85" type="L2Monster" name="Nymph Guardian" title="Guardian of the Flower">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="63066" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="160" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="28" />
+			<height normal="44" />
+		</collision>
+	</npc>
+	<npc id="23579" level="85" type="L2Monster" name="Buoyant Seed" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="14" />
+		</collision>
+	</npc>
+	<npc id="23580" level="85" type="L2Monster" name="Fluttering Seed" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="39" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="7" /> <!-- Spirits -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="14" />
+		</collision>
+	</npc>
+	<npc id="23581" level="85" type="L2Monster" name="Apherus" title="Instilled with life">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="53771" hpRegen="7.5" mp="23928" mpRegen="2.7" />
+			<speed>
+				<walk ground="40" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="24" />
+			<height normal="53" />
+		</collision>
+	</npc>
+	<npc id="23582" level="85" type="L2Monster" name="Nymph Rose" title="Elegant">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="58233" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23583" level="85" type="L2Monster" name="Nymph Lily" title="Elegant">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="58233" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23584" level="85" type="L2Monster" name="Nymph Tulip" title="Elegant">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="58233" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23585" level="85" type="L2Monster" name="Nymph Cosmos" title="Elegant">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="58233" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="140" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5465" level="1" /> <!-- Earth Attack -->
+			<skill id="4416" level="5" /> <!-- Plants -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="33" />
+		</collision>
+	</npc>
+	<npc id="23586" level="85" type="L2Monster" name="Geork" title="Embryo Master Artisan">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1142455" hpRegen="7.5" mp="50148" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="18" />
+			<height normal="29.5" />
+		</collision>
+	</npc>
+	<npc id="23587" level="85" type="L2Monster" name="Burnstein" title="Embryo Commander">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="1713682" hpRegen="7.5" mp="50148" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="14" />
+			<height normal="28.25" />
+		</collision>
+	</npc>
+	<npc id="23588" level="85" type="L2Monster" name="Hummel" title="Embryo Quartermaster">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="638514" hpRegen="7.5" mp="49380" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="24" />
+			<height normal="47" />
+		</collision>
+	</npc>
+	<npc id="23589" level="85" type="L2Monster" name="Fortress Spy" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="436754" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="23590" level="85" type="L2Monster" name="Adolph" title="Brainwashed Aden Vanguard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="512263" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="36.48" />
+				<run ground="190" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="18" /> <!-- Extremely Strong P. Def. -->
+			<skill id="4413" level="18" /> <!-- Extremely Strong M. Def. -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skill_list>
+		<collision>
+			<radius normal="12" />
+			<height normal="24.5" />
+		</collision>
+	</npc>
+	<npc id="23591" level="85" type="L2Monster" name="Barton" title="Brainwashed Aden Vanguard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="512263" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="40" />
+				<run ground="190" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="17" /> <!-- Orcs -->
+		</skill_list>
+		<collision>
+			<radius normal="14.5" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="23592" level="85" type="L2Monster" name="Hayuk" title="Brainwashed Aden Vanguard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="512263" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="30" />
+				<run ground="190" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="15" /> <!-- Elves -->
+		</skill_list>
+		<collision>
+			<radius normal="10" />
+			<height normal="23.5" />
+		</collision>
+	</npc>
+	<npc id="23593" level="85" type="L2Monster" name="Elise" title="Brainwashed Aden Vanguard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="512263" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="36" />
+				<run ground="190" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skill_list>
+		<collision>
+			<radius normal="8" />
+			<height normal="23.5" />
+		</collision>
+	</npc>
+	<npc id="23594" level="85" type="L2Monster" name="Eliyah" title="Brainwashed Aden Vanguard">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="512263" hpRegen="7.5" mp="25074" mpRegen="2.7" />
+			<speed>
+				<walk ground="28" />
+				<run ground="190" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="16547" level="10" /> <!-- Danger Zone Attack Resistance -->
+			<skill id="4416" level="14" /> <!-- Humans -->
+		</skill_list>
+		<collision>
+			<radius normal="9" />
+			<height normal="23.5" />
+		</collision>
+	</npc>
+	<npc id="23595" level="85" type="L2Monster" name="Fortress Raider" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="58233" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="23596" level="85" type="L2Monster" name="Fortress Guardian Captain" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23597" level="85" type="L2Monster" name="Atelia Passionate Soldier" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="58233" hpRegen="7.5" mp="24308" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="15" />
+			<height normal="30" />
+		</collision>
+	</npc>
+	<npc id="23598" level="85" type="L2Monster" name="Atelia Elite Captain" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="473004" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="60" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="16" />
+			<height normal="35.5" />
+		</collision>
+	</npc>
+	<npc id="23599" level="85" type="L2Monster" name="Fortress Dark Wizard" title="">
+		<!-- AUTO GENERATED NPC TODO: FIX IT -->
+		<race>HUMAN</race>
+		<sex>FEMALE</sex>
+		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+			<vitals hp="63066" hpRegen="7.5" mp="24690" mpRegen="2.7" />
+			<speed>
+				<walk ground="50" />
+				<run ground="180" />
+			</speed>
+		</stats>
+		<status attackable="false" />
+		<skill_list>
+			<skill id="5467" level="1" /> <!-- Dark Attack -->
+			<skill id="4412" level="14" /> <!-- Strong P. Def. -->
+			<skill id="4413" level="14" /> <!-- Strong M. Def. -->
+			<skill id="4416" level="6" /> <!-- Humanoids -->
+		</skill_list>
+		<collision>
+			<radius normal="11" />
+			<height normal="25.5" />
+		</collision>
+	</npc>
+</list>

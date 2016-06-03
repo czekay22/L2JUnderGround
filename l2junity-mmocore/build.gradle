@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+defaultTasks('build')
+
+sourceCompatibility = '1.8'
+
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+jar {
+	manifest {
+		attributes('Built-By': System.getProperty('user.name'),
+				'Implementation-URL': 'http://www.l2junity.org/',
+			)
+	}
+}

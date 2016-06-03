@@ -1,0 +1,55 @@
+subprojects {
+	apply plugin: 'eclipse'
+	// apply plugin: 'distribution'
+		
+	repositories {
+		mavenCentral()
+	}
+	
+	eclipse {
+		project {
+			natures('org.springsource.ide.eclipse.gradle.core.nature')
+		}
+	}
+
+	tasks.eclipse.doLast {
+		copy {
+			from('../eclipse-settings')
+			into('.settings')
+		}
+	}
+
+	tasks.cleanEclipse.doLast {
+		delete('.settings')
+	}
+	
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+	}
+	
+	/*distZip {
+		eachFile { copySpec ->
+			includeEmptyDirs = false
+			def raw = copySpec.getPath()
+			if (raw.startsWith(project.name)) {
+				copySpec.setPath(raw.minus(project.name));
+			}
+		}
+	}*/
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.6'
+}
+
+def contentSpec = copySpec {
+	subprojects.each { subproject ->
+		from subproject.buildDir
+		include 'distributions/**'
+	}
+}
+
+task distributionCopy(type: Copy) {
+	into project.buildDir  
+	with contentSpec
+}

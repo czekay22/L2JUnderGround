@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="gameServers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gameServer" maxOccurs="255">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="serverTypes" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="serverType" maxOccurs="unbounded">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="RELAX" />
+                                                    <xs:enumeration value="TEST" />
+                                                    <xs:enumeration value="BROAD" />
+                                                    <xs:enumeration value="CREATE_RESTRICT" />
+                                                    <xs:enumeration value="EVENT" />
+                                                    <xs:enumeration value="FREE" />
+                                                    <xs:enumeration value="WORLD_RAID" />
+                                                    <xs:enumeration value="NEW" />
+                                                    <xs:enumeration value="CLASSIC" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                                <xs:unique name="unique-serverType">
+                                    <xs:selector xpath="serverType" />
+                                    <xs:field xpath="." />
+                                </xs:unique>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="name">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:token">
+                                    <xs:minLength value="1" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="showing" type="xs:boolean" />
+                        <xs:attribute name="ageLimit">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:token">
+                                    <xs:enumeration value="FIFTEEN" />
+                                    <xs:enumeration value="EIGHTEEN" />
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="unique-gameServer-id">
+            <xs:selector xpath="gameServer" />
+            <xs:field xpath="@id" />
+        </xs:unique>
+    </xs:element>
+</xs:schema>

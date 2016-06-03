@@ -1,0 +1,121 @@
+apply plugin: 'java'
+apply plugin: 'distribution'
+apply plugin: 'idea'
+
+defaultTasks('distZip')
+
+sourceCompatibility = '1.8'
+
+sourceSets {
+	scripts {
+		java {
+			srcDir('dist/game/data/scripts')
+		}
+	}
+}
+
+dependencies {
+	compile project(':l2junity-commons')
+	compile project(':l2junity-geodriver')
+	compile project(':l2junity-network')
+	compile project(':l2junity-mmocore')
+	
+	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12')
+	compile(group: 'com.mchange', name: 'c3p0', version: '0.9.5.1')
+	compile(group: 'com.sun.mail', name: 'javax.mail', version: '1.5.4')
+	compile(group: 'org.bitlet', name: 'weupnp', version: '0.1.3')
+	compile(group: 'it.sauronsoftware.cron4j', name: 'cron4j', version: '2.2.5')
+	compile(group: 'net.objecthunter', name: 'exp4j', version: '0.4.5')
+	compile(group: 'com.warrenstrange', name: 'googleauth', version: '0.5.0')
+
+	runtime(group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.3')
+	runtime(group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.3')
+	runtime(group: 'org.eclipse.jdt.core.compiler', name: 'ecj', version: '4.4.2')
+	runtime(group: 'mysql', name: 'mysql-connector-java', version: '5.1.36')
+}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+def generalManifest = manifest {
+	attributes('Built-By': System.getProperty('user.name'),
+			'Implementation-URL': 'http://www.l2junity.org/',
+			'Class-Path': configurations.runtime.collect({ '../libs/' + it.getName() }).join(' '))
+}
+
+jar {
+	archiveName = 'l2jserver.jar'
+	exclude('**/dbinstaller/**')
+	exclude('**/loginserver/**')
+	exclude('**/accountmanager/**')
+	exclude('**/gsregistering/**')
+	manifest {
+		from(generalManifest)
+		attributes('Main-Class': 'org.l2junity.gameserver.GameServer')
+	}
+}
+
+task loginJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'l2jlogin.jar'
+	exclude('**/dbinstaller/**')
+	manifest {
+		from(generalManifest)
+		attributes('Main-Class': 'org.l2junity.loginserver.L2LoginServer')
+	}
+}
+
+task dbInstLsJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'dbinst_ls.jar'
+	include '**/dbinstaller/**'
+	include '**/images/**'
+	include '**/util/**'
+	include '**/SQLFilter**'
+	exclude '**/LauncherGS*'
+	manifest {
+		from(generalManifest)
+		attributes('Main-Class': 'org.l2junity.tools.dbinstaller.LauncherLS')
+	}
+}
+
+task dbInstGsJar(type: Jar, dependsOn: classes) {
+	from(sourceSets.main.output)
+	archiveName = 'dbinst_gs.jar'
+	include('**/dbinstaller/**')
+	include('**/images/**')
+	include('**/util/**')
+	include('**/SQLFilter**')
+	exclude('**/LauncherLS*')
+	manifest {
+		from(generalManifest)
+		attributes 'Main-Class': 'org.l2junity.tools.dbinstaller.LauncherGS'
+	}
+}
+
+artifacts {
+	archives loginJar, dbInstLsJar, dbInstGsJar
+}
+
+distributions {
+	main {
+		contents {
+			from('dist')
+			into('libs') {
+				from(configurations.runtime)
+			}
+			into('game') {
+				from(jar)
+			}
+			into('login') {
+				from(loginJar)
+			}
+			into('tools') {
+				from(dbInstLsJar)
+				from(dbInstGsJar)
+			}
+		}
+	}
+}
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instance id="3048" name="Giran Marketplace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xsd/instance.xsd">
+	<time duration="5" empty="5" eject="2" />
+	<rates exp="5" sp="5" partyExp="3" partySp="3" />
+	<doorlist>
+		<door id="24220001" name="cyratal_cave_a_e">
+			<nodes nodeZ="-11918">
+				<node x="143564" y="142327" />
+				<node x="143787" y="142331" />
+				<node x="143789" y="142372" />
+				<node x="143566" y="142368" />
+			</nodes>
+			<location x="143676" y="142344" z="-11918" />
+			<stats basePDef="100000" baseMDef="10000" baseHpMax="3258432" />
+			<status showHp="false" />
+			<openStatus default="open" />
+		</door>
+		<door id="24230013" name="island_of_oracle_7">
+			<nodes nodeZ="-6163">
+				<node x="148565" y="178457" />
+				<node x="149255" y="178455" />
+				<node x="149255" y="178473" />
+				<node x="148566" y="178470" />
+			</nodes>
+			<location x="148911" y="178464" z="-6163" />
+			<stats basePDef="100000" baseMDef="10000" baseHpMax="3258432" />
+			<status targetable="false" showHp="false" isStealth="true" />
+			<openStatus default="close" />
+		</door>
+	</doorlist>
+	<spawnlist>
+		<group>
+			<npc id="20556" x="82352" y="148608" z="-3468" heading="0" respawnTime="80sec" />
+			<npc id="20557" x="82355" y="148788" z="-3468" heading="0" respawnTime="20sec" />
+			<npc id="20558" x="82357" y="148428" z="-3468" heading="0" />
+		</group>
+	</spawnlist>
+</instance>

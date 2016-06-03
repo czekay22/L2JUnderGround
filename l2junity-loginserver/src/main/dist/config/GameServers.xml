@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gameServers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xsd/GameServers.xsd">
+    <gameServer id="0" name="Bartz" showing="true" />
+	<gameServer id="1" name="Sieghardt" />
+	<gameServer id="2" name="Kain" />
+	<gameServer id="3" name="Lionna" />
+	<gameServer id="4" name="Erica" />
+	<gameServer id="5" name="Gustin" />
+	<gameServer id="6" name="Devianne" />
+	<gameServer id="7" name="Hindemith" />
+	<gameServer id="8" name="Teon (EURO)" />
+	<gameServer id="9" name="Franz (EURO)" />
+	<gameServer id="10" name="Luna (EURO)" />
+	<gameServer id="11" name="Sayha" />
+	<gameServer id="12" name="Aria" />
+	<gameServer id="13" name="Phoenix" />
+	<gameServer id="14" name="Chronos (GMT-2)" />
+	<gameServer id="15" name="Naia (GMT+1)" />
+	<gameServer id="16" name="Shilen (GMT+0)" />
+	<gameServer id="17" name="Magmeld (GMT-2)" />
+	<gameServer id="18" name="Bartz (GMT-5)" />
+	<gameServer id="19" name="Event gameServer" />
+	<gameServer id="20" name="Frikios" />
+	<gameServer id="21" name="Ophylia" />
+	<gameServer id="22" name="Shakdun" />
+	<gameServer id="23" name="Tarziph" />
+	<gameServer id="24" name="Aria" />
+	<gameServer id="25" name="Esenn" />
+	<gameServer id="26" name="Elcardia" />
+	<gameServer id="27" name="Yiana" />
+	<gameServer id="28" name="Seresin" />
+	<gameServer id="29" name="Tarkai" />
+	<gameServer id="30" name="Khadia" />
+	<gameServer id="31" name="Roien" />
+	<gameServer id="32" name="Kallint (Non-PvP)" />
+	<gameServer id="33" name="Baium" />
+	<gameServer id="34" name="Kamael" />
+	<gameServer id="35" name="Beleth" />
+	<gameServer id="36" name="Anakim" />
+	<gameServer id="37" name="Lilith" />
+	<gameServer id="38" name="Thifiel" />
+	<gameServer id="39" name="Lithra" />
+	<gameServer id="40" name="Lockirin" />
+	<gameServer id="41" name="Kakai" />
+	<gameServer id="42" name="Cadmus" />
+	<gameServer id="43" name="Athebaldt" />
+	<gameServer id="44" name="Blackbird" />
+	<gameServer id="45" name="Ramsheart" />
+	<gameServer id="46" name="Esthus" />
+	<gameServer id="47" name="Vasper" />
+	<gameServer id="48" name="Lancer" />
+	<gameServer id="49" name="Ashton" />
+	<gameServer id="50" name="Waytrel" />
+	<gameServer id="51" name="Waltner" />
+	<gameServer id="52" name="Tahnford" />
+	<gameServer id="53" name="Hunter" />
+	<gameServer id="54" name="Dewell" />
+	<gameServer id="55" name="Rodemaye" />
+	<gameServer id="56" name="Ken Rauhel" />
+	<gameServer id="57" name="Ken Abigail" />
+	<gameServer id="58" name="Ken Orwen" />
+	<gameServer id="59" name="Van Holter" />
+	<gameServer id="60" name="Desperion" />
+	<gameServer id="61" name="Einhovant" />
+	<gameServer id="62" name="Shunaiman" />
+	<gameServer id="63" name="Faris" />
+	<gameServer id="64" name="Tor" />
+	<gameServer id="65" name="Carneiar" />
+	<gameServer id="66" name="Dwyllios" />
+	<gameServer id="67" name="Baium" />
+	<gameServer id="68" name="Hallate" />
+	<gameServer id="69" name="Zaken" />
+	<gameServer id="70" name="Core" />
+</gameServers>

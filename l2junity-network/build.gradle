@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+defaultTasks('build')
+
+sourceCompatibility = '1.8'
+
+dependencies {
+	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12')
+	compile(group: 'io.netty', name: 'netty-all', version: '5.0.0.Alpha2')
+}
+
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+jar {
+	manifest {
+		attributes('Built-By': System.getProperty('user.name'),
+				'Implementation-URL': 'http://www.l2junity.org/',
+			)
+	}
+}
