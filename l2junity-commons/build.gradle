@@ -1,16 +1,8 @@
 apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'signing'
 
 defaultTasks('build')
 
 sourceCompatibility = '1.8'
-
-repositories {
-    maven {
-          url "http://maven.admincp.eu/content/repositories/releases"
-    }
-}
 
 dependencies {
 	compile(group: 'org.slf4j', name: 'slf4j-api', version: '1.7.12')
@@ -18,88 +10,6 @@ dependencies {
 
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
-}
-
-task javadocJar(type: Jar) {
- 	classifier = 'javadoc'
- 	from javadoc
- }
- 
-task sourcesJar(type: Jar) {
-	classifier = 'sources'
-	from sourceSets.main.allSource
-}
-
-tasks.withType(Javadoc) {
-	options.addStringOption('Xdoclint:none', '-quiet')
-}
-
-artifacts {
-	archives javadocJar, sourcesJar
-}
-
-signing {
-	sign configurations.archives
-}
-
-uploadArchives {
-	repositories {
-		mavenDeployer {
-			beforeDeployment {
-				MavenDeployment deployment -> signing.signPom(deployment) 
-			}
-
-			repository(url: "http://maven.admincp.eu/content/repositories/releases/") {
-				authentication(userName: ossrhUsername, password: ossrhPassword)
-			}
-
-			snapshotRepository(url: "http://maven.admincp.eu/content/repositories/snapshots/") {
-				authentication(userName: ossrhUsername, password: ossrhPassword)
-			}
-
-			pom.project {
-				name 'commons'
-				packaging 'jar'
-				description 'Commons Tools'
-				url 'http://l2junity.org'
-
-				scm {
-					connection 'scm:git:git@github.com:UnAfraid/L2JUnity.git'
-					developerConnection 'scm:git:git@github.com:UnAfraid/L2JUnity.git'
-					url 'git@github.com:UnAfraid/L2JUnity.git'
-				}
-
-				licenses {
-					license {
-						name 'GPLv3'
-						url 'http://opensource.org/licenses/GPL-3.0'
-						distribution 'repo'
-					}
-				}
-
-				developers {
-					developer {
-						id 'UnAfraid'
-						name 'Rumen Nikiforov'
-						email 'unafraid89@gmail.com'
-						organization 'l2junity'
-						organizationUrl 'http://l2junity.org'
-					}
-					developer {
-						id 'NosBit'
-						name 'Nos Bit'
-						email 'NosBit@users.noreply.github.com'
-						organization 'l2junity'
-						organizationUrl 'http://l2junity.org'
-					}
-				}
-			}
-			
-			pom.version = "1.0.1"
-         	pom.artifactId = "commons"
-         	pom.groupId = "org.l2junity"
-		}
-	}
 }
 
 jar {
