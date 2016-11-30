@@ -19,21 +19,23 @@
 package org.l2junity.gameserver.data.xml.impl;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.IGameXmlReader;
-import org.l2junity.gameserver.model.EnchantSkillGroup;
-import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
+import org.l2junity.gameserver.enums.SkillEnchantType;
 import org.l2junity.gameserver.model.StatsSet;
-import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.EnchantSkillHolder;
+import org.l2junity.gameserver.model.holders.ItemHolder;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 /**
  * This class holds the Enchant Groups information.
@@ -43,13 +45,10 @@ public class EnchantSkillGroupsData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(EnchantSkillGroupsData.class);
 	
-	public static final int NORMAL_ENCHANT_BOOK = 6622;
-	public static final int SAFE_ENCHANT_BOOK = 9627;
-	public static final int CHANGE_ENCHANT_BOOK = 9626;
-	public static final int UNTRAIN_ENCHANT_BOOK = 9625;
+	private final Map<Integer, EnchantSkillHolder> _enchantSkillHolders = new LinkedHashMap<>();
+	private final Map<SkillHolder, Set<Integer>> _enchantSkillTrees = new HashMap<>();
 	
-	private final Map<Integer, EnchantSkillGroup> _enchantSkillGroups = new HashMap<>();
-	private final Map<Integer, EnchantSkillLearn> _enchantSkillTrees = new HashMap<>();
+	public static int MAX_ENCHANT_LEVEL;
 	
 	/**
 	 * Instantiates a new enchant groups table.
@@ -62,188 +61,78 @@ public class EnchantSkillGroupsData implements IGameXmlReader
 	@Override
 	public void load()
 	{
-		_enchantSkillGroups.clear();
-		_enchantSkillTrees.clear();
+		_enchantSkillHolders.clear();
 		parseDatapackFile("data/enchantSkillGroups.xml");
-		int routes = 0;
-		for (EnchantSkillGroup group : _enchantSkillGroups.values())
-		{
-			routes += group.getEnchantGroupDetails().size();
-		}
-		LOGGER.info("Loaded " + _enchantSkillGroups.size() + " groups and " + routes + " routes.");
+		MAX_ENCHANT_LEVEL = _enchantSkillHolders.size();
+		LOGGER.info("Loaded {} enchant routes, max enchant set to {}", _enchantSkillHolders.size(), MAX_ENCHANT_LEVEL);
 	}
 	
 	@Override
 	public void parseDocument(Document doc, File f)
 	{
-		NamedNodeMap attrs;
-		StatsSet set;
-		Node att;
-		int id = 0;
-		EnchantSkillGroup group;
-		for (Node n = doc.getFirstChild(); n != null; n = n.getNextSibling())
+		forEach(doc, "list", listNode -> forEach(listNode, "enchant", enchantNode ->
 		{
-			if ("list".equalsIgnoreCase(n.getNodeName()))
-			{
-				for (Node d = n.getFirstChild(); d != null; d = d.getNextSibling())
-				{
-					if ("group".equalsIgnoreCase(d.getNodeName()))
-					{
-						attrs = d.getAttributes();
-						id = parseInteger(attrs, "id");
-						
-						group = _enchantSkillGroups.get(id);
-						if (group == null)
-						{
-							group = new EnchantSkillGroup(id);
-							_enchantSkillGroups.put(id, group);
-						}
-						
-						for (Node b = d.getFirstChild(); b != null; b = b.getNextSibling())
-						{
-							if ("enchant".equalsIgnoreCase(b.getNodeName()))
-							{
-								attrs = b.getAttributes();
-								set = new StatsSet();
-								
-								for (int i = 0; i < attrs.getLength(); i++)
-								{
-									att = attrs.item(i);
-									set.set(att.getNodeName(), att.getNodeValue());
-								}
-								group.addEnchantDetail(new EnchantSkillHolder(set));
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	
-	/**
-	 * Adds the new route for skill.
-	 * @param skillId the skill id
-	 * @param maxLvL the max lvl
-	 * @param route the route
-	 * @param group the group
-	 * @return the int
-	 */
-	public int addNewRouteForSkill(int skillId, int maxLvL, int route, int group)
-	{
-		EnchantSkillLearn enchantableSkill = _enchantSkillTrees.get(skillId);
-		if (enchantableSkill == null)
-		{
-			enchantableSkill = new EnchantSkillLearn(skillId, maxLvL);
-			_enchantSkillTrees.put(skillId, enchantableSkill);
-		}
-		if (_enchantSkillGroups.containsKey(group))
-		{
-			enchantableSkill.addNewEnchantRoute(route, group);
+			final EnchantSkillHolder enchantSkillHolder = new EnchantSkillHolder(new StatsSet(parseAttributes(enchantNode)));
 			
-			return _enchantSkillGroups.get(group).getEnchantGroupDetails().size();
-		}
-		LOGGER.error("Error while loading generating enchant skill id: {}; route: {} missing group: {}", skillId, route, group);
-		return 0;
-	}
-	
-	/**
-	 * Gets the skill enchantment for skill.
-	 * @param skill the skill
-	 * @return the skill enchantment for skill
-	 */
-	public EnchantSkillLearn getSkillEnchantmentForSkill(Skill skill)
-	{
-		// there is enchantment for this skill and we have the required level of it
-		final EnchantSkillLearn esl = getSkillEnchantmentBySkillId(skill.getId());
-		if ((esl != null) && (skill.getLevel() >= esl.getBaseLevel()))
-		{
-			return esl;
-		}
-		return null;
-	}
-	
-	/**
-	 * Gets the skill enchantment by skill id.
-	 * @param skillId the skill id
-	 * @return the skill enchantment by skill id
-	 */
-	public EnchantSkillLearn getSkillEnchantmentBySkillId(int skillId)
-	{
-		return _enchantSkillTrees.get(skillId);
-	}
-	
-	/**
-	 * Gets the enchant skill group by id.
-	 * @param id the id
-	 * @return the enchant skill group by id
-	 */
-	public EnchantSkillGroup getEnchantSkillGroupById(int id)
-	{
-		return _enchantSkillGroups.get(id);
-	}
-	
-	/**
-	 * Gets the enchant skill sp cost.
-	 * @param skill the skill
-	 * @return the enchant skill sp cost
-	 */
-	public int getEnchantSkillSpCost(Skill skill)
-	{
-		final EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
-		if (enchantSkillLearn != null)
-		{
-			final EnchantSkillHolder esh = enchantSkillLearn.getEnchantSkillHolder(skill.getLevel());
-			if (esh != null)
+			forEach(enchantNode, "sps", spsNode -> forEach(spsNode, "sp", spNode ->
 			{
-				return esh.getSpCost();
-			}
-		}
-		return Integer.MAX_VALUE;
-	}
-	
-	/**
-	 * Gets the enchant skill Adena cost.
-	 * @param skill the skill
-	 * @return the enchant skill Adena cost
-	 */
-	public int getEnchantSkillAdenaCost(Skill skill)
-	{
-		final EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
-		if (enchantSkillLearn != null)
-		{
-			final EnchantSkillHolder esh = enchantSkillLearn.getEnchantSkillHolder(skill.getLevel());
-			if (esh != null)
+				enchantSkillHolder.addSp(parseEnum(spNode.getAttributes(), SkillEnchantType.class, "type"), parseInteger(spNode.getAttributes(), "amount"));
+			}));
+			
+			forEach(enchantNode, "chances", chancesNode -> forEach(chancesNode, "chance", chanceNode ->
 			{
-				return esh.getAdenaCost();
-			}
-		}
-		return Integer.MAX_VALUE;
-	}
-	
-	/**
-	 * Gets the enchant skill rate.
-	 * @param player the player
-	 * @param skill the skill
-	 * @return the enchant skill rate
-	 */
-	public byte getEnchantSkillRate(PlayerInstance player, Skill skill)
-	{
-		final EnchantSkillLearn enchantSkillLearn = _enchantSkillTrees.get(skill.getId());
-		if (enchantSkillLearn != null)
-		{
-			final EnchantSkillHolder esh = enchantSkillLearn.getEnchantSkillHolder(skill.getLevel());
-			if (esh != null)
+				enchantSkillHolder.addChance(parseEnum(chanceNode.getAttributes(), SkillEnchantType.class, "type"), parseInteger(chanceNode.getAttributes(), "value"));
+			}));
+			
+			forEach(enchantNode, "items", itemsNode -> forEach(itemsNode, "item", itemNode ->
 			{
-				return esh.getRate(player);
-			}
-		}
-		return 0;
+				enchantSkillHolder.addRequiredItem(parseEnum(itemNode.getAttributes(), SkillEnchantType.class, "type"), new ItemHolder(new StatsSet(parseAttributes(itemNode))));
+			}));
+			
+			_enchantSkillHolders.put(parseInteger(enchantNode.getAttributes(), "level"), enchantSkillHolder);
+		}));
 	}
 	
-	/**
-	 * Gets the single instance of EnchantGroupsData.
-	 * @return single instance of EnchantGroupsData
-	 */
+	public void addRouteForSkill(int skillId, int level, int route)
+	{
+		addRouteForSkill(new SkillHolder(skillId, level), route);
+	}
+	
+	public void addRouteForSkill(SkillHolder holder, int route)
+	{
+		_enchantSkillTrees.computeIfAbsent(holder, k -> new HashSet<>()).add(route);
+	}
+	
+	public Set<Integer> getRouteForSkill(int skillId, int level)
+	{
+		return getRouteForSkill(skillId, level, 0);
+	}
+	
+	public Set<Integer> getRouteForSkill(int skillId, int level, int subLevel)
+	{
+		return getRouteForSkill(new SkillHolder(skillId, level, subLevel));
+	}
+	
+	public Set<Integer> getRouteForSkill(SkillHolder holder)
+	{
+		return _enchantSkillTrees.getOrDefault(holder, Collections.emptySet());
+	}
+	
+	public boolean isEnchantable(Skill skill)
+	{
+		return isEnchantable(new SkillHolder(skill.getId(), skill.getLevel()));
+	}
+	
+	public boolean isEnchantable(SkillHolder holder)
+	{
+		return _enchantSkillTrees.containsKey(holder);
+	}
+	
+	public EnchantSkillHolder getEnchantSkillHolder(int level)
+	{
+		return _enchantSkillHolders.getOrDefault(level, null);
+	}
+	
 	public static EnchantSkillGroupsData getInstance()
 	{
 		return SingletonHolder._instance;

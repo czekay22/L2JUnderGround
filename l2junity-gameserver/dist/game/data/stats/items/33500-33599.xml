@@ -2665,7 +2665,7 @@
 			<stat type="pDef">61</stat>
 		</stats>
 	</item>
-	<item id="33596" name="Bound Dynasty Shield" name_additional="Event" type="Weapon">
+	<item id="33596" name="Bound Dynasty Shield" name_additional="Event" type="Armor">
 		<!-- Cannot be unbound through Unbind Scrolls or otherwise. -->
 		<set name="icon" val="icon.shield_dynasty_shield_i00" />
 		<set name="default_action" val="EQUIP" />

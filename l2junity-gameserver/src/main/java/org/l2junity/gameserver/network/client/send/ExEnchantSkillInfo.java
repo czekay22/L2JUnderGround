@@ -18,83 +18,48 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Set;
 
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
-import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
 public final class ExEnchantSkillInfo implements IClientOutgoingPacket
 {
-	private final List<Integer> _routes = new LinkedList<>(); // skill lvls for each route
+	private final Set<Integer> _routes;
 	
-	private final int _id;
-	private final int _lvl;
-	private boolean _maxEnchanted = false;
+	private final int _skillId;
+	private final int _skillLevel;
+	private final int _skillSubLevel;
+	private final int _currentSubLevel;
 	
-	public ExEnchantSkillInfo(int id, int lvl)
+	public ExEnchantSkillInfo(int skillId, int skillLevel, int skillSubLevel, int currentSubLevel)
 	{
-		_id = id;
-		_lvl = lvl;
-		
-		EnchantSkillLearn enchantLearn = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_id);
-		// do we have this skill?
-		if (enchantLearn != null)
-		{
-			// skill already enchanted?
-			if (_lvl > 100)
-			{
-				_maxEnchanted = enchantLearn.isMaxEnchant(_lvl);
-				
-				// get detail for next level
-				EnchantSkillHolder esd = enchantLearn.getEnchantSkillHolder(_lvl);
-				
-				// if it exists add it
-				if (esd != null)
-				{
-					_routes.add(_lvl); // current enchant add firts
-				}
-				
-				int skillLvL = (_lvl % 100);
-				
-				for (int route : enchantLearn.getAllRoutes())
-				{
-					if (((route * 100) + skillLvL) == _lvl)
-					{
-						continue;
-					}
-					// add other levels of all routes - same lvl as enchanted
-					// lvl
-					_routes.add((route * 100) + skillLvL);
-				}
-				
-			}
-			else
-			// not already enchanted
-			{
-				for (int route : enchantLearn.getAllRoutes())
-				{
-					// add first level (+1) of all routes
-					_routes.add((route * 100) + 1);
-				}
-			}
-		}
+		_skillId = skillId;
+		_skillLevel = skillLevel;
+		_skillSubLevel = skillSubLevel;
+		_currentSubLevel = currentSubLevel;
+		_routes = EnchantSkillGroupsData.getInstance().getRouteForSkill(_skillId, _skillLevel);
 	}
 	
 	@Override
 	public boolean write(PacketWriter packet)
 	{
 		OutgoingPackets.EX_ENCHANT_SKILL_INFO.writeId(packet);
-		
-		packet.writeD(_id);
-		packet.writeD(_lvl);
-		packet.writeD(_maxEnchanted ? 0 : 1);
-		packet.writeD(_lvl > 100 ? 1 : 0); // enchanted?
+		packet.writeD(_skillId);
+		packet.writeH(_skillLevel);
+		packet.writeH(_skillSubLevel);
+		packet.writeD((_skillSubLevel % 1000) == EnchantSkillGroupsData.MAX_ENCHANT_LEVEL ? 0 : 1);
+		packet.writeD(_skillSubLevel > 1000 ? 1 : 0);
 		packet.writeD(_routes.size());
-		_routes.forEach(packet::writeD);
+		_routes.forEach(route ->
+		{
+			final int routeId = route / 1000;
+			final int currentRouteId = _skillSubLevel / 1000;
+			final int subLevel = _currentSubLevel > 0 ? (route + (_currentSubLevel % 1000)) - 1 : route;
+			packet.writeH(_skillLevel);
+			packet.writeH(currentRouteId != routeId ? subLevel : subLevel + 1);
+		});
 		return true;
 	}
 }

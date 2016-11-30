@@ -300,7 +300,7 @@ public class L2ServitorInstance extends Summon implements Runnable
 			
 			int buff_index = 0;
 			
-			final List<Integer> storedSkills = new CopyOnWriteArrayList<>();
+			final List<Long> storedSkills = new CopyOnWriteArrayList<>();
 			
 			// Store all effect data along with calculated remaining
 			if (storeEffects)

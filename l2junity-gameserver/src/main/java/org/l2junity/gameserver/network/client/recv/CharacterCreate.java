@@ -263,11 +263,6 @@ public final class CharacterCreate implements IClientIncomingPacket
 			}
 		}
 		
-		for (SkillLearn skill : SkillTreesData.getInstance().getRaceSkillTree(newChar.getRace()))
-		{
-			newChar.addSkill(SkillData.getInstance().getSkill(skill.getSkillId(), skill.getSkillLevel()), true);
-		}
-		
 		for (SkillLearn skill : SkillTreesData.getInstance().getAvailableSkills(newChar, newChar.getClassId(), false, true))
 		{
 			if (Config.DEBUG)

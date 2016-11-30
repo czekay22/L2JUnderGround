@@ -82,6 +82,7 @@ public final class IstinaCavern extends AbstractInstance
 	
 	public IstinaCavern()
 	{
+		super(TEMPLATE_ID_COMMON, TEMPLATE_ID_EXTREME);
 		addStartNpc(RUMIESE);
 		addTalkId(RUMIESE, RUMIESE_INSTANCE);
 		addFirstTalkId(RUMIESE_INSTANCE);
@@ -97,7 +98,7 @@ public final class IstinaCavern extends AbstractInstance
 	{
 		String htmltext = null;
 		final Instance instance = npc.getInstanceWorld();
-		if (isIstinaInstance(instance))
+		if (isInInstance(instance))
 		{
 			switch (event)
 			{
@@ -159,7 +160,7 @@ public final class IstinaCavern extends AbstractInstance
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isIstinaInstance(instance))
+		if (isInInstance(instance))
 		{
 			final StatsSet npcParams = npc.getParameters();
 			final StatsSet npcVars = npc.getVariables();
@@ -365,7 +366,7 @@ public final class IstinaCavern extends AbstractInstance
 	public String onSpellFinished(Npc npc, PlayerInstance player, Skill skill)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if ((skill != null) && isIstinaInstance(instance))
+		if ((skill != null) && isInInstance(instance))
 		{
 			final int skillId = skill.getId();
 			
@@ -435,7 +436,7 @@ public final class IstinaCavern extends AbstractInstance
 	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isIstinaInstance(instance))
+		if (isInInstance(instance))
 		{
 			final StatsSet npcVars = npc.getVariables();
 			final int stage = npcVars.getInt("ISTINA_STAGE", -1);
@@ -573,7 +574,7 @@ public final class IstinaCavern extends AbstractInstance
 	public String onSpawn(Npc npc)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isIstinaInstance(instance))
+		if (isInInstance(instance))
 		{
 			if (npc.getId() == INVISIBLE_NPC)
 			{
@@ -597,7 +598,7 @@ public final class IstinaCavern extends AbstractInstance
 	{
 		String htmltext = null;
 		final Instance instance = npc.getInstanceWorld();
-		if (isIstinaInstance(instance))
+		if (isInInstance(instance))
 		{
 			switch (instance.getStatus())
 			{
@@ -624,11 +625,6 @@ public final class IstinaCavern extends AbstractInstance
 	private boolean isExtremeMode(Instance instance)
 	{
 		return instance.getTemplateId() == TEMPLATE_ID_EXTREME;
-	}
-	
-	private boolean isIstinaInstance(Instance instance)
-	{
-		return (instance != null) && ((instance.getTemplateId() == TEMPLATE_ID_COMMON) || (instance.getTemplateId() == TEMPLATE_ID_EXTREME));
 	}
 	
 	private int getChargedPercent(int score, boolean isExtreme)

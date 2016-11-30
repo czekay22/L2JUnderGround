@@ -225,7 +225,7 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 		final PlayerInstance player = event.getActiveChar();
 		final QuestState qs = getQuestState(player, false);
 		
-		if ((qs == null) && canStartQuest(player))
+		if ((qs == null) && canStartQuest(player) && !hasQuestItems(player, LADA_LETTER))
 		{
 			player.sendPacket(new TutorialShowQuestionMark(getId()));
 			playSound(player, QuestSound.ITEMSOUND_QUEST_TUTORIAL);
@@ -237,7 +237,7 @@ public final class Q10301_ShadowOfTerrorBlackishRedFog extends Quest
 	public void onPlayerPressTutorialMark(OnPlayerPressTutorialMark event)
 	{
 		final PlayerInstance player = event.getActiveChar();
-		if ((event.getMarkId() == getId()) && canStartQuest(player))
+		if ((event.getMarkId() == getId()) && canStartQuest(player) && !hasQuestItems(player, LADA_LETTER))
 		{
 			final String html = getHtm(player.getHtmlPrefix(), "popup.html");
 			player.sendPacket(new TutorialShowHtml(html));

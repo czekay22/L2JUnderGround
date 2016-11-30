@@ -40,6 +40,12 @@
 			<slot slotId="1" shortcutType="SKILL" shortcutId="1001" shortcutLevel="1" /> <!-- Soul Cry -->
 		</page>
 	</shortcuts>
+	<!-- Ertheia Wizard -->
+	<shortcuts classId="183">
+		<page pageId="0">
+			<slot slotId="1" shortcutType="SKILL" shortcutId="30001" shortcutLevel="1" /> <!-- Hydro Attack -->
+		</page>
+	</shortcuts>	
 	<!-- Macro presets -->
 	<macros>
 		<!-- Macro example with multiple commands. -->

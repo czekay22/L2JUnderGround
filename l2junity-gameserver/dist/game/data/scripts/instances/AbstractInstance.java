@@ -20,6 +20,7 @@ package instances;
 
 import java.util.List;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.InstanceReenterType;
 import org.l2junity.gameserver.instancemanager.InstanceManager;
 import org.l2junity.gameserver.model.Location;
@@ -40,6 +41,27 @@ import ai.AbstractNpcAI;
  */
 public abstract class AbstractInstance extends AbstractNpcAI
 {
+	private final int[] _templateIds;
+	
+	public AbstractInstance(int... templateId)
+	{
+		if (templateId.length == 0)
+		{
+			throw new IllegalStateException("No template ids were provided!");
+		}
+		_templateIds = templateId;
+	}
+	
+	public int[] getTemplateId()
+	{
+		return _templateIds;
+	}
+	
+	public boolean isInInstance(Instance instance)
+	{
+		return (instance != null) && CommonUtil.contains(_templateIds, instance.getTemplateId());
+	}
+	
 	/**
 	 * Get instance world associated with {@code player}.<br>
 	 * @param player player who wants get instance world

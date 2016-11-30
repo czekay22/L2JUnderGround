@@ -84,6 +84,7 @@
 		<!-- Made by Shadai, who was inspired by Moon Voice Irene. Activates 5 Jewel Slots. -->
 		<set name="icon" val="icon.etc_bm_brooch_lavianrose_i02" />
 		<set name="default_action" val="EQUIP" />
+		<set name="bodypart" val="brooch" />
 		<set name="is_freightable" val="false" />
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />

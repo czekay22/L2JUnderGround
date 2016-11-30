@@ -57,6 +57,7 @@ public final class NightmareKamaloka extends AbstractInstance
 	
 	public NightmareKamaloka()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(KURTIZ);
 		addTalkId(KURTIZ);
 		addSpawnId(INVISIBLE_NPC);
@@ -68,7 +69,7 @@ public final class NightmareKamaloka extends AbstractInstance
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isNightmareKamalokaInstance(instance))
+		if (isInInstance(instance))
 		{
 			switch (event)
 			{
@@ -95,7 +96,7 @@ public final class NightmareKamaloka extends AbstractInstance
 	public String onSpawn(Npc npc)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isNightmareKamalokaInstance(instance))
+		if (isInInstance(instance))
 		{
 			if (npc.getId() == INVISIBLE_NPC)
 			{
@@ -109,7 +110,7 @@ public final class NightmareKamaloka extends AbstractInstance
 	public String onKill(Npc npc, PlayerInstance killer, boolean isSummon)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isNightmareKamalokaInstance(instance))
+		if (isInInstance(instance))
 		{
 			final int nextDoorId = BOSS_MAP.getOrDefault(npc.getId(), -1);
 			if (nextDoorId == -1)
@@ -128,7 +129,7 @@ public final class NightmareKamaloka extends AbstractInstance
 	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isNightmareKamalokaInstance(instance))
+		if (isInInstance(instance))
 		{
 			if (npc.getId() == DARK_RIDER_UD)
 			{
@@ -155,11 +156,6 @@ public final class NightmareKamaloka extends AbstractInstance
 			}
 		}
 		return super.onAttack(npc, attacker, damage, isSummon);
-	}
-	
-	private boolean isNightmareKamalokaInstance(Instance instance)
-	{
-		return ((instance != null) && (instance.getTemplateId() == TEMPLATE_ID));
 	}
 	
 	public static void main(String[] args)

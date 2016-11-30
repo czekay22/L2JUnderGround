@@ -21,11 +21,11 @@ package ai.group;
 import java.util.List;
 
 import org.l2junity.commons.util.CommonUtil;
-import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.L2MonsterInstance;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.holders.SkillHolder;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.MagicSkillUse;
 import org.l2junity.gameserver.util.Broadcast;
@@ -83,6 +83,8 @@ public final class StakatoNest extends AbstractNpcAI
 	// Large Stakato Cocoon
 	private static final int LARGE_COCOON = 14834;
 	
+	private static final SkillHolder DEVOUR_SUBORDINATE = new SkillHolder(4484, 1);
+	
 	private StakatoNest()
 	{
 		registerMobs(STAKATO_MOBS);
@@ -106,7 +108,7 @@ public final class StakatoNest extends AbstractNpcAI
 					mob.abortAttack();
 					mob.abortCast();
 					mob.setHeading(Util.calculateHeadingFrom(mob, _follower));
-					mob.doCast(SkillData.getInstance().getSkill(4484, 1));
+					mob.doCast(DEVOUR_SUBORDINATE.getSkill());
 					mob.setCurrentHp(mob.getCurrentHp() + _hp);
 					_follower.doDie(_follower);
 					_follower.deleteMe();

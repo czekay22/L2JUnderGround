@@ -54,7 +54,6 @@ import org.l2junity.gameserver.model.quest.Quest;
 import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.network.client.L2GameClient;
-import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.Die;
 import org.l2junity.gameserver.network.client.send.EtcStatusUpdate;
 import org.l2junity.gameserver.network.client.send.ExAdenaInvenCount;
@@ -321,16 +320,13 @@ public class EnterWorld implements IClientIncomingPacket
 		}
 		
 		// Send GG check
-		activeChar.queryGameGuard();
+		// activeChar.queryGameGuard();
 		
 		// Send Dye Information
 		activeChar.sendPacket(new HennaInfo(activeChar));
 		
 		// Send Skill list
 		activeChar.sendSkillList();
-		
-		// Send acquirable skill list
-		activeChar.sendPacket(new AcquireSkillList(activeChar));
 		
 		// Send EtcStatusUpdate
 		activeChar.sendPacket(new EtcStatusUpdate(activeChar));

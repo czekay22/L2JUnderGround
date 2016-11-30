@@ -55,6 +55,7 @@ public final class TalkingIslandPast extends AbstractInstance
 	
 	public TalkingIslandPast()
 	{
+		super(TEMPLATE_ID);
 		addTalkId(DARIN, ROXXY, MYSTERIOUS_DARK_KNIGHT);
 		addFirstTalkId(DARIN, ROXXY, MYSTERIOUS_DARK_KNIGHT);
 		addExitZoneId(TALKING_ISLAND_ZONE);

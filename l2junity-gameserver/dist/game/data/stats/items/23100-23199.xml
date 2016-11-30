@@ -576,7 +576,7 @@
 			<stat type="pDef">71</stat>
 		</stats>
 	</item>
-	<item id="23122" name="Vorpal Shield of Fortune" name_additional="90-day" type="Weapon">
+	<item id="23122" name="Vorpal Shield of Fortune" name_additional="90-day" type="Armor">
 		<set name="icon" val="icon.Evilgate_Shield_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

@@ -882,12 +882,12 @@ public final class ItemInstance extends WorldObject
 		final Summon pet = player.getPet();
 		
 		return ((!isEquipped()) // Not equipped
-		&& (getItem().getType2() != L2Item.TYPE2_QUEST) // Not Quest Item
-		&& ((getItem().getType2() != L2Item.TYPE2_MONEY) || (getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR)) // not money, not shield
-		&& ((pet == null) || (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
-		&& !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
-		&& (allowAdena || (getId() != Inventory.ADENA_ID)) // Not Adena
-		&& (!player.isCastingNow(s -> s.getSkill().getItemConsumeId() != getId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
+			&& (getItem().getType2() != L2Item.TYPE2_QUEST) // Not Quest Item
+			&& ((getItem().getType2() != L2Item.TYPE2_MONEY) || (getItem().getType1() != L2Item.TYPE1_SHIELD_ARMOR)) // not money, not shield
+			&& ((pet == null) || (getObjectId() != pet.getControlObjectId())) // Not Control item of currently summoned pet
+			&& !(player.isProcessingItem(getObjectId())) // Not momentarily used enchant scroll
+			&& (allowAdena || (getId() != Inventory.ADENA_ID)) // Not Adena
+			&& (!player.isCastingNow(s -> s.getSkill().getItemConsumeId() != getId())) && (allowNonTradeable || (isTradeable() && (!((getItem().getItemType() == EtcItemType.PET_COLLAR) && player.havePetInvItems())))));
 	}
 	
 	/**
@@ -2134,6 +2134,11 @@ public final class ItemInstance extends WorldObject
 	
 	public void applySpecialAbilities()
 	{
+		if (!isEquipped())
+		{
+			return;
+		}
+		
 		_ensoulOptions.values().forEach(this::applySpecialAbility);
 		_ensoulSpecialOptions.values().forEach(this::applySpecialAbility);
 	}

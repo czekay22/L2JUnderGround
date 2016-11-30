@@ -32,11 +32,13 @@ import java.util.stream.Collectors;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.Rnd;
+import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.data.xml.impl.SkillTreesData;
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.enums.BasicProperty;
 import org.l2junity.gameserver.enums.MountType;
+import org.l2junity.gameserver.enums.NextActionType;
 import org.l2junity.gameserver.enums.ShotType;
 import org.l2junity.gameserver.handler.AffectScopeHandler;
 import org.l2junity.gameserver.handler.IAffectScopeHandler;
@@ -64,7 +66,6 @@ import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.model.stats.BasicPropertyResist;
 import org.l2junity.gameserver.model.stats.Formulas;
 import org.l2junity.gameserver.model.stats.TraitType;
-import org.l2junity.gameserver.network.client.send.FlyToLocation.FlyType;
 import org.l2junity.gameserver.network.client.send.SystemMessage;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 import org.slf4j.Logger;
@@ -78,6 +79,8 @@ public final class Skill implements IIdentifiable
 	private final int _id;
 	/** Skill level. */
 	private final int _level;
+	/** Skill sub level. */
+	private final int _subLevel;
 	/** Custom skill ID displayed by the client. */
 	private final int _displayId;
 	/** Custom skill level displayed by the client. */
@@ -125,7 +128,7 @@ public final class Skill implements IIdentifiable
 	private final int _hitTime;
 	// private final int _skillInterruptTime;
 	private final int _coolTime;
-	private final int _reuseHashCode;
+	private final long _reuseHashCode;
 	private final int _reuseDelay;
 	private final int _reuseDelayGroup;
 	
@@ -146,7 +149,7 @@ public final class Skill implements IIdentifiable
 	private final int[] _affectLimit = new int[3]; // TODO: Third value is unknown... find it out!
 	private final int[] _affectHeight = new int[2];
 	
-	private final boolean _nextActionIsAttack;
+	private final NextActionType _nextAction;
 	
 	private final boolean _removedOnAnyActionExceptMove;
 	private final boolean _removedOnDamage;
@@ -167,10 +170,6 @@ public final class Skill implements IIdentifiable
 	
 	private final Map<SkillConditionScope, List<ISkillCondition>> _conditionLists = new EnumMap<>(SkillConditionScope.class);
 	private final Map<EffectScope, List<AbstractEffect>> _effectLists = new EnumMap<>(EffectScope.class);
-	
-	// Flying support
-	private final FlyType _flyType;
-	private final int _flyRadius;
 	
 	private final boolean _isDebuff;
 	
@@ -215,6 +214,7 @@ public final class Skill implements IIdentifiable
 	{
 		_id = set.getInt(".id");
 		_level = set.getInt(".level");
+		_subLevel = set.getInt(".subLevel", 0);
 		_refId = set.getInt(".referenceId", 0);
 		_displayId = set.getInt(".displayId", _id);
 		_displayLevel = set.getInt(".displayLevel", _level);
@@ -273,7 +273,7 @@ public final class Skill implements IIdentifiable
 		}
 		
 		_reuseDelayGroup = set.getInt("reuseDelayGroup", -1);
-		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level);
+		_reuseHashCode = SkillData.getSkillHashCode(_reuseDelayGroup > 0 ? _reuseDelayGroup : _id, _level, _subLevel);
 		
 		_targetType = set.getEnum("targetType", TargetType.class, TargetType.SELF);
 		_affectScope = set.getEnum("affectScope", AffectScope.class, AffectScope.SINGLE);
@@ -362,7 +362,7 @@ public final class Skill implements IIdentifiable
 		_minChance = set.getInt("minChance", Config.MIN_ABNORMAL_STATE_SUCCESS_RATE);
 		_maxChance = set.getInt("maxChance", Config.MAX_ABNORMAL_STATE_SUCCESS_RATE);
 		
-		_nextActionIsAttack = set.getBoolean("nextActionAttack", false);
+		_nextAction = set.getEnum("nextAction", NextActionType.class, NextActionType.NONE);
 		
 		_removedOnAnyActionExceptMove = set.getBoolean("removedOnAnyActionExceptMove", false);
 		_removedOnDamage = set.getBoolean("removedOnDamage", false);
@@ -382,9 +382,6 @@ public final class Skill implements IIdentifiable
 		
 		_isTriggeredSkill = set.getBoolean("isTriggeredSkill", false);
 		_effectPoint = set.getInt("effectPoint", 0);
-		
-		_flyType = set.getEnum("flyType", FlyType.class, null);
-		_flyRadius = set.getInt("flyRadius", 0);
 		
 		_canBeDispelled = set.getBoolean("canBeDispelled", true);
 		
@@ -623,12 +620,12 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
-	 * Return true if character should attack target after skill
+	 * Return character action after cast
 	 * @return
 	 */
-	public boolean nextActionIsAttack()
+	public NextActionType getNextAction()
 	{
-		return _nextActionIsAttack;
+		return _nextAction;
 	}
 	
 	/**
@@ -727,6 +724,14 @@ public final class Skill implements IIdentifiable
 	}
 	
 	/**
+	 * @return Returns the sub level.
+	 */
+	public int getSubLevel()
+	{
+		return _subLevel;
+	}
+	
+	/**
 	 * @return isMagic integer value from the XML.
 	 */
 	public int getMagicType()
@@ -822,7 +827,7 @@ public final class Skill implements IIdentifiable
 		return _reuseDelayGroup;
 	}
 	
-	public int getReuseHashCode()
+	public long getReuseHashCode()
 	{
 		return _reuseHashCode;
 	}
@@ -938,6 +943,11 @@ public final class Skill implements IIdentifiable
 		return _operateType.isContinuous() || isSelfContinuous();
 	}
 	
+	public boolean isFlyType()
+	{
+		return _operateType.isFlyType();
+	}
+	
 	public boolean isSelfContinuous()
 	{
 		return _operateType.isSelfContinuous();
@@ -956,6 +966,11 @@ public final class Skill implements IIdentifiable
 	public boolean isSynergySkill()
 	{
 		return _operateType.isSynergy();
+	}
+	
+	public SkillOperateType getOperateType()
+	{
+		return _operateType;
 	}
 	
 	/**
@@ -1021,16 +1036,6 @@ public final class Skill implements IIdentifiable
 		return _soulMaxConsume;
 	}
 	
-	public FlyType getFlyType()
-	{
-		return _flyType;
-	}
-	
-	public int getFlyRadius()
-	{
-		return _flyRadius;
-	}
-	
 	public boolean isStayAfterDeath()
 	{
 		return _stayAfterDeath || isIrreplacableBuff() || isNecessaryToggle();
@@ -1056,7 +1061,7 @@ public final class Skill implements IIdentifiable
 			return false;
 		}
 		
-		return checkConditions(SkillConditionScope.GENERAL, activeChar, object);
+		return checkConditions(SkillConditionScope.GENERAL, activeChar, object) && checkConditions(SkillConditionScope.TARGET, activeChar, object);
 	}
 	
 	/**
@@ -1527,7 +1532,7 @@ public final class Skill implements IIdentifiable
 	@Override
 	public String toString()
 	{
-		return "Skill " + _name + "(" + _id + "," + _level + ")";
+		return "Skill " + _name + "(" + _id + "," + _level + "," + _subLevel + ")";
 	}
 	
 	/**
@@ -1714,7 +1719,7 @@ public final class Skill implements IIdentifiable
 		// If character is double casting, return double cast skill.
 		if ((getDoubleCastSkill() > 0) && activeChar.isAffected(EffectFlag.DOUBLE_CAST))
 		{
-			return SkillData.getInstance().getSkill(getDoubleCastSkill(), getLevel());
+			return SkillData.getInstance().getSkill(getDoubleCastSkill(), getLevel(), getSubLevel());
 		}
 		
 		// Default toggle group ID, assume nothing attached.
@@ -1744,7 +1749,7 @@ public final class Skill implements IIdentifiable
 			return null;
 		}
 		
-		return SkillData.getInstance().getSkill(attachedSkill.getSkillId(), getLevel());
+		return SkillData.getInstance().getSkill(attachedSkill.getSkillId(), getLevel(), getSubLevel());
 	}
 	
 	public boolean canDoubleCast()
@@ -1818,5 +1823,10 @@ public final class Skill implements IIdentifiable
 	public double getMagicCriticalRate()
 	{
 		return _magicCriticalRate;
+	}
+	
+	public boolean isEnchantable()
+	{
+		return EnchantSkillGroupsData.getInstance().isEnchantable(this);
 	}
 }

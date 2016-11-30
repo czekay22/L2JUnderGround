@@ -112,6 +112,7 @@ public final class DarkCloudMansion extends AbstractInstance
 	
 	public DarkCloudMansion()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(YIYEN);
 		addFirstTalkId(MONOLITH, TRUTH, FAITH, ADVERSITY, ADVENTURE);
 		addTalkId(YIYEN, TRUTH);

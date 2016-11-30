@@ -582,7 +582,7 @@
 			<stat type="pDef">39</stat>
 		</stats>
 	</item>
-	<item id="37139" name="Steel Plate Shield (60-day)" type="Weapon">
+	<item id="37139" name="Steel Plate Shield (60-day)" type="Armor">
 		<!-- Full Plate Shield with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_full_plate_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -835,7 +835,7 @@
 			<stat type="pDef">270</stat>
 		</stats>
 	</item>
-	<item id="37152" name="Steel Doom Shield (60-day)" type="Weapon">
+	<item id="37152" name="Steel Doom Shield (60-day)" type="Armor">
 		<!-- Doom Shield with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_doom_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -933,7 +933,7 @@
 			<stat type="pDef">41</stat>
 		</stats>
 	</item>
-	<item id="37157" name="Steel Avadon Shield (60-day)" type="Weapon">
+	<item id="37157" name="Steel Avadon Shield (60-day)" type="Armor">
 		<!-- Avadon Shield with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_avadon_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1088,7 +1088,7 @@
 			<stat type="pDef">49</stat>
 		</stats>
 	</item>
-	<item id="37165" name="Steel Shield of Nightmare (60-day)" type="Weapon">
+	<item id="37165" name="Steel Shield of Nightmare (60-day)" type="Armor">
 		<!-- Shield of Nightmare with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_shield_of_nightmare_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1186,7 +1186,7 @@
 			<stat type="pDef">46</stat>
 		</stats>
 	</item>
-	<item id="37170" name="Steel Dark Crystal Shield (60-day)" type="Weapon">
+	<item id="37170" name="Steel Dark Crystal Shield (60-day)" type="Armor">
 		<!-- Dark Crystal Shield with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_dark_crystal_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1382,7 +1382,7 @@
 			<stat type="pDef">83</stat>
 		</stats>
 	</item>
-	<item id="37180" name="Steel Imperial Crusader Shield (60-day)" type="Weapon">
+	<item id="37180" name="Steel Imperial Crusader Shield (60-day)" type="Armor">
 		<!-- Imperial Crusader Helmet with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_imperial_crusader_shield_i00" />
 		<set name="default_action" val="EQUIP" />
@@ -1675,7 +1675,7 @@
 			<stat type="pDef">61</stat>
 		</stats>
 	</item>
-	<item id="37195" name="Steel Dynasty Shield (60-day)" type="Weapon">
+	<item id="37195" name="Steel Dynasty Shield (60-day)" type="Armor">
 		<!-- Dynasty Shield with limited ability enhancement (enchantment, soul crystal enhancement and augmenting). 60-day. -->
 		<set name="icon" val="icon.shield_dynasty_shield_i00" />
 		<set name="default_action" val="EQUIP" />

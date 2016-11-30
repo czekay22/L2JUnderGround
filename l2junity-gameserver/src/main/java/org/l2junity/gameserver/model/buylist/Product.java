@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model.buylist;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.Objects;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
@@ -47,6 +48,7 @@ public final class Product
 	
 	public Product(int buyListId, L2Item item, long price, long restockDelay, long maxCount)
 	{
+		Objects.requireNonNull(item);
 		_buyListId = buyListId;
 		_item = item;
 		_price = price;

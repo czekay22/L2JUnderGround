@@ -19,6 +19,7 @@
 package org.l2junity.gameserver.model.items;
 
 import java.util.Collection;
+import java.util.Objects;
 
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.ensoul.EnsoulOption;
@@ -72,6 +73,7 @@ public class WarehouseItem
 	
 	public WarehouseItem(ItemInstance item)
 	{
+		Objects.requireNonNull(item);
 		_item = item.getItem();
 		_object = item.getObjectId();
 		_count = item.getCount();

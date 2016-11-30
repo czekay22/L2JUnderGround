@@ -35,6 +35,7 @@ public final class TutorialShowQuestionMark implements IClientOutgoingPacket
 	{
 		OutgoingPackets.TUTORIAL_SHOW_QUESTION_MARK.writeId(packet);
 		
+		packet.writeC(0x01); // Number of mark, most likely ?
 		packet.writeD(_markId);
 		return true;
 	}

@@ -40,6 +40,7 @@ public final class EvasHiddenSpace extends AbstractInstance
 	
 	public EvasHiddenSpace()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(CERENAS);
 		addTalkId(CERENAS, EVAS_AVATAR);
 		addFirstTalkId(EVAS_AVATAR);

@@ -65,7 +65,7 @@ public class CharStat
 	private final int[] _traitsInvul = new int[TraitType.values().length];
 	/** Creature's maximum buff count. */
 	private int _maxBuffCount = Config.BUFFS_MAX_AMOUNT;
-	private int _vampiricSum = 0;
+	private double _vampiricSum = 0;
 	
 	private final Map<Stats, Double> _statsAdd = new EnumMap<>(Stats.class);
 	private final Map<Stats, Double> _statsMul = new EnumMap<>(Stats.class);
@@ -403,7 +403,7 @@ public class CharStat
 	 */
 	public final int getShldDef()
 	{
-		return (int) getValue(Stats.SHIELD_DEFENCE, 0);
+		return (int) getValue(Stats.SHIELD_DEFENCE);
 	}
 	
 	public long getSp()
@@ -871,12 +871,12 @@ public class CharStat
 		});
 	}
 	
-	public void addToVampiricSum(int sum)
+	public void addToVampiricSum(double sum)
 	{
 		_vampiricSum += sum;
 	}
 	
-	public int getVampiricSum()
+	public double getVampiricSum()
 	{
 		_lock.readLock().lock();
 		try

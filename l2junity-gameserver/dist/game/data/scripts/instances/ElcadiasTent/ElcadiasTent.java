@@ -41,6 +41,7 @@ public final class ElcadiasTent extends AbstractInstance
 	
 	public ElcadiasTent()
 	{
+		super(TEMPLATE_ID);
 		addFirstTalkId(GRUFF_LOOKING_MAN, ELCADIA);
 		addStartNpc(GRUFF_LOOKING_MAN, ELCADIA);
 		addTalkId(GRUFF_LOOKING_MAN, ELCADIA);
@@ -55,9 +56,9 @@ public final class ElcadiasTent extends AbstractInstance
 			final QuestState ForbiddenBook = talker.getQuestState(Q10293_SevenSignsForbiddenBookOfTheElmoreAdenKingdom.class.getSimpleName());
 			final QuestState Monastery = talker.getQuestState(Q10294_SevenSignsToTheMonasteryOfSilence.class.getSimpleName());
 			if (((GirlOfDoubt != null) && GirlOfDoubt.isStarted()) //
-			|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
-			|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
-			|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)))
+				|| ((GirlOfDoubt != null) && GirlOfDoubt.isCompleted() && (ForbiddenBook == null)) //
+				|| ((ForbiddenBook != null) && ForbiddenBook.isStarted()) //
+				|| ((ForbiddenBook != null) && ForbiddenBook.isCompleted() && (Monastery == null)))
 			{
 				enterInstance(talker, npc, TEMPLATE_ID);
 			}

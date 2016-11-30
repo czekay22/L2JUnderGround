@@ -21,7 +21,6 @@ package org.l2junity.gameserver.network.client.send;
 
 import java.util.Collection;
 
-import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
@@ -56,7 +55,7 @@ public class GMViewSkillInfo implements IClientOutgoingPacket
 			packet.writeD(skill.getDisplayId());
 			packet.writeD(0x00);
 			packet.writeC(isDisabled && skill.isClanSkill() ? 1 : 0);
-			packet.writeC(SkillData.getInstance().isEnchantable(skill.getDisplayId()) ? 1 : 0);
+			packet.writeC(skill.isEnchantable() ? 1 : 0);
 		}
 		return true;
 	}

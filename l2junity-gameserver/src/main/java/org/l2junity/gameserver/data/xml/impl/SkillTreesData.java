@@ -82,35 +82,35 @@ public final class SkillTreesData implements IGameXmlReader
 	private static final Logger LOGGER = LoggerFactory.getLogger(SkillTreesData.class);
 	
 	// ClassId, Map of Skill Hash Code, L2SkillLearn
-	private static final Map<ClassId, Map<Integer, SkillLearn>> _classSkillTrees = new HashMap<>();
-	private static final Map<ClassId, Map<Integer, SkillLearn>> _transferSkillTrees = new HashMap<>();
-	private static final Map<Race, Map<Integer, SkillLearn>> _raceSkillTree = new HashMap<>();
-	private static final Map<SubclassType, Map<Integer, SkillLearn>> _revelationSkillTree = new HashMap<>();
+	private static final Map<ClassId, Map<Long, SkillLearn>> _classSkillTrees = new HashMap<>();
+	private static final Map<ClassId, Map<Long, SkillLearn>> _transferSkillTrees = new HashMap<>();
+	private static final Map<Race, Map<Long, SkillLearn>> _raceSkillTree = new HashMap<>();
+	private static final Map<SubclassType, Map<Long, SkillLearn>> _revelationSkillTree = new HashMap<>();
 	private static final Map<ClassId, Set<Integer>> _awakeningSaveSkillTree = new HashMap<>();
 	// Skill Hash Code, L2SkillLearn
-	private static final Map<Integer, SkillLearn> _collectSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _fishingSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _pledgeSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _subClassSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _subPledgeSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _transformSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _commonSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _subClassChangeSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _abilitySkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _alchemySkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _dualClassSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _collectSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _fishingSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _pledgeSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _subClassSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _subPledgeSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _transformSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _commonSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _subClassChangeSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _abilitySkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _alchemySkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _dualClassSkillTree = new HashMap<>();
 	// Other skill trees
-	private static final Map<Integer, SkillLearn> _nobleSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _heroSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _gameMasterSkillTree = new HashMap<>();
-	private static final Map<Integer, SkillLearn> _gameMasterAuraSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _nobleSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _heroSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _gameMasterSkillTree = new HashMap<>();
+	private static final Map<Long, SkillLearn> _gameMasterAuraSkillTree = new HashMap<>();
 	// Remove skill tree
 	private static final Map<ClassId, Set<Integer>> _removeSkillCache = new HashMap<>();
 	
 	// Checker, sorted arrays of hash codes
-	private Map<Integer, int[]> _skillsByClassIdHashCodes; // Occupation skills
-	private Map<Integer, int[]> _skillsByRaceHashCodes; // Race-specific Transformations
-	private int[] _allSkillsHashCodes; // Fishing, Collection, Transformations, Common Skills.
+	private Map<Integer, long[]> _skillsByClassIdHashCodes; // Occupation skills
+	private Map<Integer, long[]> _skillsByRaceHashCodes; // Race-specific Transformations
+	private long[] _allSkillsHashCodes; // Fishing, Collection, Transformations, Common Skills.
 	
 	private boolean _loading = true;
 	
@@ -184,10 +184,10 @@ public final class SkillTreesData implements IGameXmlReader
 				{
 					if ("skillTree".equalsIgnoreCase(d.getNodeName()))
 					{
-						final Map<Integer, SkillLearn> classSkillTree = new HashMap<>();
-						final Map<Integer, SkillLearn> transferSkillTree = new HashMap<>();
-						final Map<Integer, SkillLearn> raceSkillTree = new HashMap<>();
-						final Map<Integer, SkillLearn> revelationSkillTree = new HashMap<>();
+						final Map<Long, SkillLearn> classSkillTree = new HashMap<>();
+						final Map<Long, SkillLearn> transferSkillTree = new HashMap<>();
+						final Map<Long, SkillLearn> raceSkillTree = new HashMap<>();
+						final Map<Long, SkillLearn> revelationSkillTree = new HashMap<>();
 						
 						type = d.getAttributes().getNamedItem("type").getNodeValue();
 						attr = d.getAttributes().getNamedItem("classId");
@@ -264,7 +264,7 @@ public final class SkillTreesData implements IGameXmlReader
 									}
 								}
 								
-								final int skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
+								final long skillHashCode = SkillData.getSkillHashCode(skillLearn.getSkillId(), skillLearn.getSkillLevel());
 								switch (type)
 								{
 									case "classSkillTree":
@@ -383,7 +383,7 @@ public final class SkillTreesData implements IGameXmlReader
 						}
 						else if (type.equals("classSkillTree") && (cId > -1))
 						{
-							final Map<Integer, SkillLearn> classSkillTrees = _classSkillTrees.get(classId);
+							final Map<Long, SkillLearn> classSkillTrees = _classSkillTrees.get(classId);
 							if (classSkillTrees == null)
 							{
 								_classSkillTrees.put(classId, classSkillTree);
@@ -395,7 +395,7 @@ public final class SkillTreesData implements IGameXmlReader
 						}
 						else if (type.equals("raceSkillTree") && (race != null))
 						{
-							final Map<Integer, SkillLearn> raceSkillTrees = _raceSkillTree.get(race);
+							final Map<Long, SkillLearn> raceSkillTrees = _raceSkillTree.get(race);
 							if (raceSkillTrees == null)
 							{
 								_raceSkillTree.put(race, raceSkillTree);
@@ -407,7 +407,7 @@ public final class SkillTreesData implements IGameXmlReader
 						}
 						else if (type.equals("revelationSkillTree") && (subType != null))
 						{
-							final Map<Integer, SkillLearn> revelationSkillTrees = _revelationSkillTree.get(race);
+							final Map<Long, SkillLearn> revelationSkillTrees = _revelationSkillTree.get(race);
 							if (revelationSkillTrees == null)
 							{
 								_revelationSkillTree.put(subType, revelationSkillTree);
@@ -430,9 +430,9 @@ public final class SkillTreesData implements IGameXmlReader
 	 * @param classId the class skill tree Id
 	 * @return the complete Class Skill Tree including skill trees from parent class for a given {@code classId}
 	 */
-	public Map<Integer, SkillLearn> getCompleteClassSkillTree(ClassId classId)
+	public Map<Long, SkillLearn> getCompleteClassSkillTree(ClassId classId)
 	{
-		final Map<Integer, SkillLearn> skillTree = new HashMap<>();
+		final Map<Long, SkillLearn> skillTree = new HashMap<>();
 		// Add all skills that belong to all classes.
 		skillTree.putAll(_commonSkillTree);
 		while ((classId != null) && (_classSkillTrees.get(classId) != null))
@@ -449,7 +449,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * @param classId the transfer skill tree Id
 	 * @return the complete Transfer Skill Tree for a given {@code classId}
 	 */
-	public Map<Integer, SkillLearn> getTransferSkillTree(ClassId classId)
+	public Map<Long, SkillLearn> getTransferSkillTree(ClassId classId)
 	{
 		return _transferSkillTrees.get(classId);
 	}
@@ -468,7 +468,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the common skill tree.
 	 * @return the complete Common Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getCommonSkillTree()
+	public Map<Long, SkillLearn> getCommonSkillTree()
 	{
 		return _commonSkillTree;
 	}
@@ -477,7 +477,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the collect skill tree.
 	 * @return the complete Collect Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getCollectSkillTree()
+	public Map<Long, SkillLearn> getCollectSkillTree()
 	{
 		return _collectSkillTree;
 	}
@@ -486,7 +486,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the fishing skill tree.
 	 * @return the complete Fishing Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getFishingSkillTree()
+	public Map<Long, SkillLearn> getFishingSkillTree()
 	{
 		return _fishingSkillTree;
 	}
@@ -495,7 +495,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the pledge skill tree.
 	 * @return the complete Pledge Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getPledgeSkillTree()
+	public Map<Long, SkillLearn> getPledgeSkillTree()
 	{
 		return _pledgeSkillTree;
 	}
@@ -504,7 +504,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the sub class skill tree.
 	 * @return the complete Sub-Class Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getSubClassSkillTree()
+	public Map<Long, SkillLearn> getSubClassSkillTree()
 	{
 		return _subClassSkillTree;
 	}
@@ -513,7 +513,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the sub class change skill tree.
 	 * @return the complete Common Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getSubClassChangeSkillTree()
+	public Map<Long, SkillLearn> getSubClassChangeSkillTree()
 	{
 		return _subClassChangeSkillTree;
 	}
@@ -522,7 +522,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the sub pledge skill tree.
 	 * @return the complete Sub-Pledge Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getSubPledgeSkillTree()
+	public Map<Long, SkillLearn> getSubPledgeSkillTree()
 	{
 		return _subPledgeSkillTree;
 	}
@@ -531,7 +531,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the transform skill tree.
 	 * @return the complete Transform Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getTransformSkillTree()
+	public Map<Long, SkillLearn> getTransformSkillTree()
 	{
 		return _transformSkillTree;
 	}
@@ -540,7 +540,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the ability skill tree.
 	 * @return the complete Ability Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getAbilitySkillTree()
+	public Map<Long, SkillLearn> getAbilitySkillTree()
 	{
 		return _abilitySkillTree;
 	}
@@ -549,7 +549,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the ability skill tree.
 	 * @return the complete Ability Skill Tree
 	 */
-	public Map<Integer, SkillLearn> getAlchemySkillTree()
+	public Map<Long, SkillLearn> getAlchemySkillTree()
 	{
 		return _alchemySkillTree;
 	}
@@ -558,11 +558,11 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the noble skill tree.
 	 * @return the complete Noble Skill Tree
 	 */
-	public Map<Integer, Skill> getNobleSkillTree()
+	public Map<Long, Skill> getNobleSkillTree()
 	{
-		final Map<Integer, Skill> tree = new HashMap<>();
+		final Map<Long, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, SkillLearn> e : _nobleSkillTree.entrySet())
+		for (Entry<Long, SkillLearn> e : _nobleSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -573,11 +573,11 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the hero skill tree.
 	 * @return the complete Hero Skill Tree
 	 */
-	public Map<Integer, Skill> getHeroSkillTree()
+	public Map<Long, Skill> getHeroSkillTree()
 	{
-		final Map<Integer, Skill> tree = new HashMap<>();
+		final Map<Long, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, SkillLearn> e : _heroSkillTree.entrySet())
+		for (Entry<Long, SkillLearn> e : _heroSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -588,11 +588,11 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the Game Master skill tree.
 	 * @return the complete Game Master Skill Tree
 	 */
-	public Map<Integer, Skill> getGMSkillTree()
+	public Map<Long, Skill> getGMSkillTree()
 	{
-		final Map<Integer, Skill> tree = new HashMap<>();
+		final Map<Long, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, SkillLearn> e : _gameMasterSkillTree.entrySet())
+		for (Entry<Long, SkillLearn> e : _gameMasterSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -603,11 +603,11 @@ public final class SkillTreesData implements IGameXmlReader
 	 * Gets the Game Master Aura skill tree.
 	 * @return the complete Game Master Aura Skill Tree
 	 */
-	public Map<Integer, Skill> getGMAuraSkillTree()
+	public Map<Long, Skill> getGMAuraSkillTree()
 	{
-		final Map<Integer, Skill> tree = new HashMap<>();
+		final Map<Long, Skill> tree = new HashMap<>();
 		final SkillData st = SkillData.getInstance();
-		for (Entry<Integer, SkillLearn> e : _gameMasterAuraSkillTree.entrySet())
+		for (Entry<Long, SkillLearn> e : _gameMasterAuraSkillTree.entrySet())
 		{
 			tree.put(e.getKey(), st.getSkill(e.getValue().getSkillId(), e.getValue().getSkillLevel()));
 		}
@@ -621,7 +621,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 */
 	public boolean hasAvailableSkills(PlayerInstance player, ClassId classId)
 	{
-		final Map<Integer, SkillLearn> skills = getCompleteClassSkillTree(classId);
+		final Map<Long, SkillLearn> skills = getCompleteClassSkillTree(classId);
 		for (SkillLearn skill : skills.values())
 		{
 			if ((skill.getSkillId() == CommonSkill.DIVINE_INSPIRATION.getId()) || skill.isAutoGet() || skill.isLearnedByFS() || (skill.getGetLevel() > player.getLevel()))
@@ -666,7 +666,7 @@ public final class SkillTreesData implements IGameXmlReader
 	private List<SkillLearn> getAvailableSkills(PlayerInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet, ISkillsHolder holder)
 	{
 		final List<SkillLearn> result = new LinkedList<>();
-		final Map<Integer, SkillLearn> skills = getCompleteClassSkillTree(classId);
+		final Map<Long, SkillLearn> skills = getCompleteClassSkillTree(classId);
 		
 		if (skills.isEmpty())
 		{
@@ -677,7 +677,7 @@ public final class SkillTreesData implements IGameXmlReader
 		
 		final boolean isAwaken = player.isInCategory(CategoryType.AWAKEN_GROUP) && (player.getRace() != Race.ERTHEIA);
 		
-		for (Entry<Integer, SkillLearn> entry : skills.entrySet())
+		for (Entry<Long, SkillLearn> entry : skills.entrySet())
 		{
 			final SkillLearn skill = entry.getValue();
 			
@@ -780,7 +780,7 @@ public final class SkillTreesData implements IGameXmlReader
 	public List<SkillLearn> getAvailableAutoGetSkills(PlayerInstance player)
 	{
 		final List<SkillLearn> result = new ArrayList<>();
-		final Map<Integer, SkillLearn> skills = getCompleteClassSkillTree(player.getClassId());
+		final Map<Long, SkillLearn> skills = getCompleteClassSkillTree(player.getClassId());
 		if (skills.isEmpty())
 		{
 			// The Skill Tree for this class is undefined, so we return an empty list.
@@ -811,7 +811,7 @@ public final class SkillTreesData implements IGameXmlReader
 			}
 			
 			final int maxLvl = SkillData.getInstance().getMaxLevel(skill.getSkillId());
-			final int hashCode = SkillData.getSkillHashCode(skill.getSkillId(), maxLvl);
+			final long hashCode = SkillData.getSkillHashCode(skill.getSkillId(), maxLvl);
 			
 			if (skill.isAutoGet() && (player.getLevel() >= skill.getGetLevel()))
 			{
@@ -877,7 +877,7 @@ public final class SkillTreesData implements IGameXmlReader
 	public List<SkillLearn> getAvailableRevelationSkills(PlayerInstance player, SubclassType type)
 	{
 		final List<SkillLearn> result = new ArrayList<>();
-		Map<Integer, SkillLearn> revelationSkills = _revelationSkillTree.get(type);
+		Map<Long, SkillLearn> revelationSkills = _revelationSkillTree.get(type);
 		
 		for (SkillLearn skill : revelationSkills.values())
 		{
@@ -1375,7 +1375,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 * @param skillTree the skill tree to search the minimum get level
 	 * @return the minimum level for a new skill for a given {@code player} and {@code skillTree}
 	 */
-	public int getMinLevelForNewSkill(PlayerInstance player, Map<Integer, SkillLearn> skillTree)
+	public int getMinLevelForNewSkill(PlayerInstance player, Map<Long, SkillLearn> skillTree)
 	{
 		int minLevel = 0;
 		if (skillTree.isEmpty())
@@ -1400,7 +1400,7 @@ public final class SkillTreesData implements IGameXmlReader
 	
 	public List<SkillLearn> getNextAvailableSkills(PlayerInstance player, ClassId classId, boolean includeByFs, boolean includeAutoGet)
 	{
-		final Map<Integer, SkillLearn> completeClassSkillTree = getCompleteClassSkillTree(classId);
+		final Map<Long, SkillLearn> completeClassSkillTree = getCompleteClassSkillTree(classId);
 		final List<SkillLearn> result = new LinkedList<>();
 		if (completeClassSkillTree.isEmpty())
 		{
@@ -1441,7 +1441,7 @@ public final class SkillTreesData implements IGameXmlReader
 		for (Skill skill : player.getAllSkills())
 		{
 			final int maxLvl = SkillData.getInstance().getMaxLevel(skill.getId());
-			final int hashCode = SkillData.getSkillHashCode(skill.getId(), maxLvl);
+			final long hashCode = SkillData.getSkillHashCode(skill.getId(), maxLvl);
 			
 			if (!isCurrentClassSkillNoParent(player.getClassId(), hashCode) && !isRemoveSkill(player.getClassId(), skill.getId()) && !isAwakenSaveSkill(player.getClassId(), skill.getId()))
 			{
@@ -1474,7 +1474,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 */
 	public boolean isGMSkill(int skillId, int skillLevel)
 	{
-		final int hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
+		final long hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
 		return _gameMasterSkillTree.containsKey(hashCode) || _gameMasterAuraSkillTree.containsKey(hashCode);
 	}
 	
@@ -1486,7 +1486,7 @@ public final class SkillTreesData implements IGameXmlReader
 	 */
 	public boolean isClanSkill(int skillId, int skillLevel)
 	{
-		final int hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
+		final long hashCode = SkillData.getSkillHashCode(skillId, skillLevel);
 		return _pledgeSkillTree.containsKey(hashCode) || _subPledgeSkillTree.containsKey(hashCode);
 	}
 	
@@ -1506,7 +1506,7 @@ public final class SkillTreesData implements IGameXmlReader
 		return _removeSkillCache.getOrDefault(classId, Collections.emptySet()).contains(skillId);
 	}
 	
-	public boolean isCurrentClassSkillNoParent(ClassId classId, Integer hashCode)
+	public boolean isCurrentClassSkillNoParent(ClassId classId, Long hashCode)
 	{
 		return _classSkillTrees.getOrDefault(classId, Collections.emptyMap()).containsKey(hashCode);
 	}
@@ -1537,18 +1537,18 @@ public final class SkillTreesData implements IGameXmlReader
 	private void generateCheckArrays()
 	{
 		int i;
-		int[] array;
+		long[] array;
 		
 		// Class specific skills:
-		Map<Integer, SkillLearn> tempMap;
+		Map<Long, SkillLearn> tempMap;
 		final Set<ClassId> keySet = _classSkillTrees.keySet();
 		_skillsByClassIdHashCodes = new HashMap<>(keySet.size());
 		for (ClassId cls : keySet)
 		{
 			i = 0;
 			tempMap = getCompleteClassSkillTree(cls);
-			array = new int[tempMap.size()];
-			for (int h : tempMap.keySet())
+			array = new long[tempMap.size()];
+			for (long h : tempMap.keySet())
 			{
 				array[i++] = h;
 			}
@@ -1558,7 +1558,7 @@ public final class SkillTreesData implements IGameXmlReader
 		}
 		
 		// Race specific skills from Fishing and Transformation skill trees.
-		final List<Integer> list = new ArrayList<>();
+		final List<Long> list = new ArrayList<>();
 		_skillsByRaceHashCodes = new HashMap<>(Race.values().length);
 		for (Race r : Race.values())
 		{
@@ -1579,8 +1579,8 @@ public final class SkillTreesData implements IGameXmlReader
 			}
 			
 			i = 0;
-			array = new int[list.size()];
-			for (int s : list)
+			array = new long[list.size()];
+			for (long s : list)
 			{
 				array[i++] = s;
 			}
@@ -1629,9 +1629,9 @@ public final class SkillTreesData implements IGameXmlReader
 			list.add(SkillData.getSkillHashCode(s.getSkillId(), s.getSkillLevel()));
 		}
 		
-		_allSkillsHashCodes = new int[list.size()];
+		_allSkillsHashCodes = new long[list.size()];
 		int j = 0;
-		for (int hashcode : list)
+		for (long hashcode : list)
 		{
 			_allSkillsHashCodes[j++] = hashcode;
 		}
@@ -1664,7 +1664,7 @@ public final class SkillTreesData implements IGameXmlReader
 		}
 		
 		final int maxLvl = SkillData.getInstance().getMaxLevel(skill.getId());
-		final int hashCode = SkillData.getSkillHashCode(skill.getId(), Math.min(skill.getLevel(), maxLvl));
+		final long hashCode = SkillData.getSkillHashCode(skill.getId(), Math.min(skill.getLevel(), maxLvl));
 		
 		if (Arrays.binarySearch(_skillsByClassIdHashCodes.get(player.getClassId().ordinal()), hashCode) >= 0)
 		{
@@ -1701,25 +1701,25 @@ public final class SkillTreesData implements IGameXmlReader
 	private void report()
 	{
 		int classSkillTreeCount = 0;
-		for (Map<Integer, SkillLearn> classSkillTree : _classSkillTrees.values())
+		for (Map<Long, SkillLearn> classSkillTree : _classSkillTrees.values())
 		{
 			classSkillTreeCount += classSkillTree.size();
 		}
 		
 		int transferSkillTreeCount = 0;
-		for (Map<Integer, SkillLearn> trasferSkillTree : _transferSkillTrees.values())
+		for (Map<Long, SkillLearn> trasferSkillTree : _transferSkillTrees.values())
 		{
 			transferSkillTreeCount += trasferSkillTree.size();
 		}
 		
 		int raceSkillTreeCount = 0;
-		for (Map<Integer, SkillLearn> raceSkillTree : _raceSkillTree.values())
+		for (Map<Long, SkillLearn> raceSkillTree : _raceSkillTree.values())
 		{
 			raceSkillTreeCount += raceSkillTree.size();
 		}
 		
 		int revelationSkillTreeCount = 0;
-		for (Map<Integer, SkillLearn> revelationSkillTree : _revelationSkillTree.values())
+		for (Map<Long, SkillLearn> revelationSkillTree : _revelationSkillTree.values())
 		{
 			revelationSkillTreeCount += revelationSkillTree.size();
 		}

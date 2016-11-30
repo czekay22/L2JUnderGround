@@ -265,9 +265,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">51</stat>
 		</stats>
@@ -289,9 +286,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">51</stat>
 		</stats>
@@ -313,9 +307,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">51</stat>
 			<stat type="maxMp">96</stat>
@@ -359,9 +350,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">51</stat>
 			<stat type="maxMp">142</stat>
@@ -384,9 +372,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">32</stat>
 		</stats>
@@ -408,9 +393,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">32</stat>
 		</stats>
@@ -432,9 +414,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">32</stat>
 			<stat type="maxMp">60</stat>
@@ -478,9 +457,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">32</stat>
 			<stat type="maxMp">79</stat>

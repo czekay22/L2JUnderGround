@@ -32,6 +32,7 @@ import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Summon;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
+import org.l2junity.gameserver.model.interfaces.ILocational;
 import org.l2junity.gameserver.model.items.instance.ItemInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
@@ -128,10 +129,8 @@ public abstract class AbstractAI implements Ctrl
 	
 	/**
 	 * Set the Intention of this AbstractAI.<br>
-	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is USED by AI classes</B></FONT><B><U><br>
-	 * Overridden in </U> : </B><BR>
-	 * <B>L2AttackableAI</B> : Create an AI Task executed every 1s (if necessary)<BR>
-	 * <B>L2PlayerAI</B> : Stores the current AI intention parameters to later restore it if necessary.
+	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : This method is USED by AI classes</B></FONT><B><U><br> Overridden in </U> : </B><BR> <B>L2AttackableAI</B> : Create an AI Task executed every 1s (if necessary)<BR> <B>L2PlayerAI</B> : Stores the current AI intention parameters to later restore it if
+	 * necessary.
 	 * @param intention The new Intention to set to the AI
 	 * @param args The first parameter of the Intention
 	 */
@@ -461,6 +460,11 @@ public abstract class AbstractAI implements Ctrl
 		}
 	}
 	
+	public void moveTo(ILocational loc)
+	{
+		moveTo(loc.getX(), loc.getY(), loc.getZ());
+	}
+	
 	/**
 	 * Move the actor to Location (x,y,z) server side AND client side by sending Server->Client packet CharMoveToLocation <I>(broadcast)</I>.<br>
 	 * <FONT COLOR=#FF0000><B> <U>Caution</U> : Low level function, used by AI subclasses</B></FONT>
@@ -715,7 +719,7 @@ public abstract class AbstractAI implements Ctrl
 			{
 				LOGGER.warn("Error: " + e.getMessage());
 			}
-		}, 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
+		} , 5, range == -1 ? FOLLOW_INTERVAL : ATTACK_FOLLOW_INTERVAL);
 	}
 	
 	/**

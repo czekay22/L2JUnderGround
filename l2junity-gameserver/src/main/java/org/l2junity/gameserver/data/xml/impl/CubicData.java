@@ -29,9 +29,10 @@ import org.l2junity.gameserver.model.StatsSet;
 import org.l2junity.gameserver.model.actor.templates.L2CubicTemplate;
 import org.l2junity.gameserver.model.cubic.CubicSkill;
 import org.l2junity.gameserver.model.cubic.ICubicConditionHolder;
-import org.l2junity.gameserver.model.cubic.conditions.GeneralCondition;
-import org.l2junity.gameserver.model.cubic.conditions.GeneralCondition.GeneralConditionType;
 import org.l2junity.gameserver.model.cubic.conditions.HealthCondition;
+import org.l2junity.gameserver.model.cubic.conditions.HpCondition;
+import org.l2junity.gameserver.model.cubic.conditions.HpCondition.HpConditionType;
+import org.l2junity.gameserver.model.cubic.conditions.RangeCondition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -104,12 +105,17 @@ public class CubicData implements IGameXmlReader
 		{
 			switch (conditionNode.getNodeName())
 			{
-				case "general":
+				case "hp":
 				{
-					final GeneralConditionType type = parseEnum(conditionNode.getAttributes(), GeneralConditionType.class, "type");
-					final int hpPer = parseInteger(conditionNode.getAttributes(), "hpPercent");
-					final int hp = parseInteger(conditionNode.getAttributes(), "hp");
-					holder.addCondition(new GeneralCondition(type, hpPer, hp));
+					final HpConditionType type = parseEnum(conditionNode.getAttributes(), HpConditionType.class, "type");
+					final int hpPer = parseInteger(conditionNode.getAttributes(), "percent");
+					holder.addCondition(new HpCondition(type, hpPer));
+					break;
+				}
+				case "range":
+				{
+					final int range = parseInteger(conditionNode.getAttributes(), "value");
+					holder.addCondition(new RangeCondition(range));
 					break;
 				}
 				case "healthPercent":
@@ -126,6 +132,7 @@ public class CubicData implements IGameXmlReader
 				}
 			}
 		});
+		
 	}
 	
 	/**

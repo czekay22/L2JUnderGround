@@ -9,9 +9,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="8804000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -25,9 +22,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="8804000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -67,9 +61,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="6603000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -97,9 +88,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="1422000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -128,9 +116,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="8804000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -144,9 +129,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="1355000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -173,9 +155,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="1355000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -202,9 +181,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="6603000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -219,9 +195,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="1355000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -248,9 +221,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="1355000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -264,9 +234,6 @@
 		<set name="crystal_type" val="A" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="1422000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -344,9 +311,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -360,9 +324,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="15577000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="maxMp">866</stat>
 		</stats>
@@ -376,9 +337,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -392,9 +350,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="4793000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 		</stats>
@@ -457,9 +412,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -473,9 +425,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="15577000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="maxMp">866</stat>
 		</stats>
@@ -489,9 +438,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -505,9 +451,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="HELMET" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 		</stats>
@@ -521,9 +464,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="7988000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 	</item>
 	<item id="12636" name="Foundation Sealed Imperial Crusader Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t88_g_i02" />
@@ -534,9 +474,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -550,9 +487,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -566,9 +500,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="3355000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -583,9 +514,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="4793000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 		</stats>
@@ -599,9 +527,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="12781000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 	</item>
 	<item id="12641" name="Foundation Imperial Crusader Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t88_l_i00" />
@@ -612,9 +537,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="7988000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 	</item>
 	<item id="12642" name="Foundation Imperial Crusader Gauntlets" type="EtcItem">
 		<set name="icon" val="icon.armor_t88_g_i00" />
@@ -625,9 +547,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -641,9 +560,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="3195000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -657,9 +573,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="3355000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -674,9 +587,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="4793000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 		</stats>
@@ -690,9 +600,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="12781000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 	</item>
 	<item id="12647" name="Foundation Dynasty Gaiters" type="EtcItem">
 		<set name="icon" val="icon.armor_t91_l_i00" />
@@ -703,9 +610,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="15248000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">141</stat>
 		</stats>
@@ -719,9 +623,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="6099000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">61</stat>
 		</stats>
@@ -735,9 +636,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="6099000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">61</stat>
 		</stats>
@@ -918,9 +816,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="6099000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">61</stat>
 		</stats>
@@ -934,9 +829,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="24398000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">226</stat>
 		</stats>
@@ -1026,9 +918,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="6404000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -1044,9 +933,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="6099000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">61</stat>
 		</stats>
@@ -1060,9 +946,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="25255000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="maxMp">592</stat>
 		</stats>
@@ -1152,9 +1035,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="9149000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">92</stat>
 		</stats>
@@ -1256,9 +1136,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="18298000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">113</stat>
 			<stat type="maxMp">592</stat>
@@ -1353,9 +1230,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="33673000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 	</item>
 	<item id="12688" name="Foundation Dynasty Platinum Plate" type="EtcItem">
 		<set name="icon" val="icon.armor_t91_uk_i00" />
@@ -1430,9 +1304,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="9149000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">92</stat>
 		</stats>
@@ -1446,9 +1317,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="11436000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">71</stat>
 			<stat type="maxMp">370</stat>
@@ -1463,9 +1331,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">134</stat>
 		</stats>
@@ -1479,9 +1344,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">61</stat>
 		</stats>
@@ -1495,9 +1357,6 @@
 		<set name="crystal_type" val="S" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="6099000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">61</stat>
 		</stats>

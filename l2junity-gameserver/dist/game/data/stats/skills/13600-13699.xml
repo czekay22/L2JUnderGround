@@ -331,46 +331,82 @@
 		<operateType>P</operateType>
 	</skill>
 	<skill id="13655" toLevel="1" name="Basic Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 1 Jewel can be equipped. -->
 		<icon>icon.etc_bm_brooch_lavianrose_i00</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>1</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13656" toLevel="1" name="La Vie En Rose's Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 2 Jewels can be equipped. -->
 		<icon>icon.etc_bm_brooch_lavianrose_i00</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>2</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13657" toLevel="1" name="La Vie En Rose's Noble Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 3 Jewels can be equipped. -->
 		<icon>icon.etc_bm_brooch_lavianrose_i01</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>3</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13658" toLevel="1" name="La Vie En Rose's Brilliant Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 4 Jewels can be equipped. -->
 		<icon>icon.etc_bm_brooch_lavianrose_i02</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>4</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13659" toLevel="1" name="La Vie En Rose's Radiant Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 5 Jewels can be equipped. -->
 		<icon>icon.etc_bm_brooch_lavianrose_i03</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>5</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13660" toLevel="1" name="Noble Top-grade Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- 6 Jewels can be equipped. -->
 		<icon>icon.etc_rbracelet_s_i03</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="JewelSlot">
+				<amount>6</amount>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13661" toLevel="1" name="La Vie En Rose's Brilliant Brooch">
-		<!-- AUTO GENERATED SKILL -->
+		<!-- Updated to IO -->
 		<!-- Increases the inventory size. -->
 		<icon>icon.etc_bm_brooch_lavianrose_i02</icon>
 		<operateType>P</operateType>
+		<effects>
+			<effect name="EnlargeSlot">
+				<amount>12</amount>
+				<type>INVENTORY_NORMAL</type>
+			</effect>
+		</effects>
 	</skill>
 	<skill id="13662" toLevel="1" name="Orichalcum Arrow - Atk. Spd.">
 		<!-- Updated to IO -->

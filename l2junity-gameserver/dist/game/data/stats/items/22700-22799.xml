@@ -643,7 +643,7 @@
 			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
-	<item id="22725" name="Japanese Shield" type="Weapon">
+	<item id="22725" name="Japanese Shield" type="Armor">
 		<!-- Japanese weapon. Shield form. Basic Japanese Weapon Appearance Stone. -->
 		<set name="icon" val="BranchSys3.Icon.g_japan_shield" />
 		<set name="default_action" val="EQUIP" />

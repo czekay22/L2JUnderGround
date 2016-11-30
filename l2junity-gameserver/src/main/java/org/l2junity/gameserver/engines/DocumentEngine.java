@@ -19,17 +19,13 @@
 package org.l2junity.gameserver.engines;
 
 import java.io.File;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 import org.l2junity.Config;
 import org.l2junity.commons.util.file.filter.XMLFilter;
-import org.l2junity.gameserver.data.xml.impl.SkillData;
 import org.l2junity.gameserver.engines.items.DocumentItem;
 import org.l2junity.gameserver.model.items.L2Item;
-import org.l2junity.gameserver.model.skills.Skill;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,7 +37,6 @@ public class DocumentEngine
 	private static final Logger LOGGER = LoggerFactory.getLogger(DocumentEngine.class);
 	
 	private final List<File> _itemFiles = new LinkedList<>();
-	private final List<File> _skillFiles = new LinkedList<>();
 	
 	public static DocumentEngine getInstance()
 	{
@@ -54,11 +49,6 @@ public class DocumentEngine
 		if (Config.CUSTOM_ITEMS_LOAD)
 		{
 			hashFiles("data/stats/items/custom", _itemFiles);
-		}
-		hashFiles("data/stats/skills", _skillFiles);
-		if (Config.CUSTOM_SKILLS_LOAD)
-		{
-			hashFiles("data/stats/skills/custom", _skillFiles);
 		}
 	}
 	
@@ -75,35 +65,6 @@ public class DocumentEngine
 		{
 			hash.add(f);
 		}
-	}
-	
-	public List<Skill> loadSkills(File file)
-	{
-		if (file == null)
-		{
-			LOGGER.warn("Skill file not found.");
-			return null;
-		}
-		return Collections.emptyList();
-	}
-	
-	public void loadAllSkills(final Map<Integer, Skill> allSkills)
-	{
-		int count = 0;
-		for (File file : _skillFiles)
-		{
-			List<Skill> s = loadSkills(file);
-			if (s == null)
-			{
-				continue;
-			}
-			for (Skill skill : s)
-			{
-				allSkills.put(SkillData.getSkillHashCode(skill), skill);
-				count++;
-			}
-		}
-		LOGGER.info("Loaded {} Skill templates from XML files.", count);
 	}
 	
 	/**

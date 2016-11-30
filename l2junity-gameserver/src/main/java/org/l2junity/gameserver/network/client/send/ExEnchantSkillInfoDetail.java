@@ -18,12 +18,13 @@
  */
 package org.l2junity.gameserver.network.client.send;
 
-import org.l2junity.Config;
+import java.util.Set;
+
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
-import org.l2junity.gameserver.model.EnchantSkillGroup.EnchantSkillHolder;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
+import org.l2junity.gameserver.enums.SkillEnchantType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
-import org.l2junity.gameserver.model.itemcontainer.Inventory;
+import org.l2junity.gameserver.model.holders.EnchantSkillHolder;
+import org.l2junity.gameserver.model.holders.ItemHolder;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
@@ -32,89 +33,20 @@ import org.l2junity.network.PacketWriter;
  */
 public class ExEnchantSkillInfoDetail implements IClientOutgoingPacket
 {
-	private static final int TYPE_NORMAL_ENCHANT = 0;
-	private static final int TYPE_SAFE_ENCHANT = 1;
-	private static final int TYPE_UNTRAIN_ENCHANT = 2;
-	private static final int TYPE_CHANGE_ENCHANT = 3;
+	private final SkillEnchantType _type;
+	private final int _skillId;
+	private final int _skillLvl;
+	private final int _skillSubLvl;
+	private final EnchantSkillHolder _enchantSkillHolder;
 	
-	private int bookId = 0;
-	private int reqCount = 0;
-	private int multi = 1;
-	private final int _type;
-	private final int _skillid;
-	private final int _skilllvl;
-	private final int _chance;
-	private int _sp;
-	private final int _adenacount;
-	
-	public ExEnchantSkillInfoDetail(int type, int skillid, int skilllvl, PlayerInstance ply)
+	public ExEnchantSkillInfoDetail(SkillEnchantType type, int skillId, int skillLvl, int skillSubLvl, PlayerInstance player)
 	{
-		
-		EnchantSkillLearn enchantLearn = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(skillid);
-		EnchantSkillHolder esd = null;
-		// do we have this skill?
-		if (enchantLearn != null)
-		{
-			if (skilllvl > 100)
-			{
-				esd = enchantLearn.getEnchantSkillHolder(skilllvl);
-			}
-			else
-			{
-				esd = enchantLearn.getFirstRouteGroup().getEnchantGroupDetails().get(0);
-			}
-		}
-		
-		if (esd == null)
-		{
-			throw new IllegalArgumentException("Skill " + skillid + " dont have enchant data for level " + skilllvl);
-		}
-		
-		if (type == 0)
-		{
-			multi = Config.NORMAL_ENCHANT_COST_MULTIPLIER;
-		}
-		else if (type == 1)
-		{
-			multi = Config.SAFE_ENCHANT_COST_MULTIPLIER;
-		}
-		_chance = esd.getRate(ply);
-		_sp = esd.getSpCost();
-		if (type == TYPE_UNTRAIN_ENCHANT)
-		{
-			_sp = (int) (0.8 * _sp);
-		}
-		_adenacount = esd.getAdenaCost() * multi;
 		_type = type;
-		_skillid = skillid;
-		_skilllvl = skilllvl;
+		_skillId = skillId;
+		_skillLvl = skillLvl;
+		_skillSubLvl = skillSubLvl;
 		
-		switch (type)
-		{
-			case TYPE_NORMAL_ENCHANT:
-				bookId = EnchantSkillGroupsData.NORMAL_ENCHANT_BOOK;
-				reqCount = (((_skilllvl % 100) > 1) ? 0 : 1);
-				break;
-			case TYPE_SAFE_ENCHANT:
-				bookId = EnchantSkillGroupsData.SAFE_ENCHANT_BOOK;
-				reqCount = 1;
-				break;
-			case TYPE_UNTRAIN_ENCHANT:
-				bookId = EnchantSkillGroupsData.UNTRAIN_ENCHANT_BOOK;
-				reqCount = 1;
-				break;
-			case TYPE_CHANGE_ENCHANT:
-				bookId = EnchantSkillGroupsData.CHANGE_ENCHANT_BOOK;
-				reqCount = 1;
-				break;
-			default:
-				return;
-		}
-		
-		if ((type != TYPE_SAFE_ENCHANT) && !Config.ES_SP_BOOK_NEEDED)
-		{
-			reqCount = 0;
-		}
+		_enchantSkillHolder = EnchantSkillGroupsData.getInstance().getEnchantSkillHolder(skillSubLvl % 1000);
 	}
 	
 	@Override
@@ -122,16 +54,22 @@ public class ExEnchantSkillInfoDetail implements IClientOutgoingPacket
 	{
 		OutgoingPackets.EX_ENCHANT_SKILL_INFO_DETAIL.writeId(packet);
 		
-		packet.writeD(_type);
-		packet.writeD(_skillid);
-		packet.writeD(_skilllvl);
-		packet.writeQ(_sp * multi); // sp
-		packet.writeD(_chance); // exp
-		packet.writeD(0x02); // items count?
-		packet.writeD(Inventory.ADENA_ID); // Adena
-		packet.writeD(_adenacount); // Adena count
-		packet.writeD(bookId); // ItemId Required
-		packet.writeD(reqCount);
-		return true;
+		packet.writeD(_type.ordinal());
+		packet.writeD(_skillId);
+		packet.writeH(_skillLvl);
+		packet.writeH(_skillSubLvl);
+		if (_enchantSkillHolder != null)
+		{
+			packet.writeQ(_enchantSkillHolder.getSp(_type));
+			packet.writeD(_enchantSkillHolder.getChance(_type));
+			final Set<ItemHolder> holders = _enchantSkillHolder.getRequiredItems(_type);
+			packet.writeD(holders.size());
+			holders.forEach(holder ->
+			{
+				packet.writeD(holder.getId());
+				packet.writeD((int) holder.getCount());
+			});
+		}
+		return _enchantSkillHolder != null;
 	}
 }

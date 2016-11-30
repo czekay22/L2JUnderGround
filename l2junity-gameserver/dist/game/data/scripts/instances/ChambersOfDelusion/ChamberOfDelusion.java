@@ -92,6 +92,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 	
 	public ChamberOfDelusion()
 	{
+		super(ENTRANCE_GATEKEEPER.values().stream().mapToInt(Integer::valueOf).toArray());
 		addStartNpc(ENTRANCE_GATEKEEPER.keySet());
 		addStartNpc(ROOM_GATEKEEPERS);
 		addTalkId(ENTRANCE_GATEKEEPER.keySet());
@@ -130,7 +131,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 					}
 				}
 			}
-		} , 60000, 60000);
+		}, 60000, 60000);
 		instance.setParameter("banishTask", banishTask);
 	}
 	
@@ -428,7 +429,7 @@ public final class ChamberOfDelusion extends AbstractInstance
 				{
 					_log.warn("Error occured in room change task: ", e);
 				}
-			} , nextInterval - 5000);
+			}, nextInterval - 5000);
 			world.setParameter("roomChangeTask", roomChangeTask);
 		}
 	}

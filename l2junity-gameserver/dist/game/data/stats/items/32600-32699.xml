@@ -32,7 +32,7 @@
 			<stat type="pDef">116</stat>
 		</stats>
 	</item>
-	<item id="32602" name="Fantasy Vesper Shield" name_additional="Not in Use" type="Weapon">
+	<item id="32602" name="Fantasy Vesper Shield" name_additional="Not in Use" type="Armor">
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
 		<set name="default_action" val="EQUIP" />
 		<set name="bodypart" val="lhand" />

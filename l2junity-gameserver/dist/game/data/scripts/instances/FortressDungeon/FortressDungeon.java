@@ -105,6 +105,7 @@ public final class FortressDungeon extends AbstractInstance
 	
 	public FortressDungeon()
 	{
+		super(NPCS.values().stream().mapToInt(Integer::valueOf).toArray());
 		// NPCs
 		addStartNpc(NPCS.keySet());
 		addTalkId(NPCS.keySet());
@@ -249,7 +250,7 @@ public final class FortressDungeon extends AbstractInstance
 			
 			// Unset spawn task reference
 			instance.setParameter("spawnTask", null);
-		} , 2, TimeUnit.MINUTES);
+		}, 2, TimeUnit.MINUTES);
 		
 		// Save timer to instance world
 		instance.setParameter("spawnTask", spawnTask);

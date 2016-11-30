@@ -1569,9 +1569,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="13028" level="1" /> <!-- Elegia Heavy Armor Set - PvP -->
 		</skills>
@@ -1626,9 +1623,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="13030" level="1" /> <!-- Elegia Robe Set - PvP -->
 		</skills>
@@ -1657,9 +1651,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="13025" level="1" /> <!-- Vorpal Heavy Armor Set - PvP -->
 		</skills>
@@ -1714,9 +1705,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="13027" level="1" /> <!-- Vorpal Robe Set - PvP -->
 		</skills>
@@ -1745,9 +1733,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="13022" level="1" /> <!-- Moirai Heavy Armor Set - PvP -->
 		</skills>
@@ -1802,9 +1787,6 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_sellable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="13024" level="1" /> <!-- Moirai Robe Set - PvP -->
 		</skills>

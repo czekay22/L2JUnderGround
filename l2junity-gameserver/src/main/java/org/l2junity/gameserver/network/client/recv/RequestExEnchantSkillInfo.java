@@ -18,8 +18,11 @@
  */
 package org.l2junity.gameserver.network.client.recv;
 
+import java.util.Set;
+
 import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.data.xml.impl.SkillData;
+import org.l2junity.gameserver.enums.CategoryType;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.L2GameClient;
@@ -27,59 +30,62 @@ import org.l2junity.gameserver.network.client.send.ExEnchantSkillInfo;
 import org.l2junity.network.PacketReader;
 
 /**
- * Format (ch) dd c: (id) 0xD0 h: (subid) 0x06 d: skill id d: skill lvl
  * @author -Wooden-
  */
 public final class RequestExEnchantSkillInfo implements IClientIncomingPacket
 {
 	private int _skillId;
 	private int _skillLvl;
+	private int _skillSubLvl;
 	
 	@Override
 	public boolean read(L2GameClient client, PacketReader packet)
 	{
 		_skillId = packet.readD();
-		_skillLvl = packet.readD();
+		_skillLvl = packet.readH();
+		_skillSubLvl = packet.readH();
 		return true;
 	}
 	
 	@Override
 	public void run(L2GameClient client)
 	{
-		if ((_skillId <= 0) || (_skillLvl <= 0))
+		if ((_skillId <= 0) || (_skillLvl <= 0) || (_skillSubLvl < 0))
 		{
 			return;
 		}
 		
-		PlayerInstance activeChar = client.getActiveChar();
+		final PlayerInstance activeChar = client.getActiveChar();
 		
 		if (activeChar == null)
 		{
 			return;
 		}
 		
-		if (activeChar.getLevel() < 76)
+		if (!activeChar.isInCategory(CategoryType.AWAKEN_GROUP))
 		{
 			return;
 		}
 		
-		final Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLvl);
+		final Skill skill = SkillData.getInstance().getSkill(_skillId, _skillLvl, _skillSubLvl);
 		if ((skill == null) || (skill.getId() != _skillId))
 		{
 			return;
 		}
-		
-		if (EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(_skillId) == null)
+		final Set<Integer> route = EnchantSkillGroupsData.getInstance().getRouteForSkill(_skillId, _skillLvl);
+		if (route.isEmpty())
 		{
 			return;
 		}
 		
-		int playerSkillLvl = activeChar.getSkillLevel(_skillId);
-		if ((playerSkillLvl == -1) || (playerSkillLvl != _skillLvl))
+		final Skill playerSkill = activeChar.getKnownSkill(_skillId);
+		if ((playerSkill.getLevel() != _skillLvl) || (playerSkill.getSubLevel() != _skillSubLvl))
 		{
 			return;
 		}
 		
-		client.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl));
+		client.sendPacket(new ExEnchantSkillInfo(_skillId, _skillLvl, _skillSubLvl, playerSkill.getSubLevel()));
+		// ExEnchantSkillInfoDetail - not really necessary I think
+		// client.sendPacket(new ExEnchantSkillInfoDetail(SkillEnchantType.NORMAL, _skillId, _skillLvl, _skillSubLvl, activeChar));
 	}
 }

@@ -276,6 +276,11 @@ public class NpcSpawnTemplate implements Cloneable, IParameterized<StatsSet>
 		return null;
 	}
 	
+	public void spawn()
+	{
+		spawn(null);
+	}
+	
 	public void spawn(Instance instance)
 	{
 		try

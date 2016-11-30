@@ -37,6 +37,7 @@ public final class HideoutOfTheDawn extends AbstractInstance
 	
 	public HideoutOfTheDawn()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(WOOD);
 		addTalkId(WOOD, JAINA);
 	}

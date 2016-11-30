@@ -31,6 +31,7 @@ public class RequestTutorialQuestionMark implements IClientIncomingPacket
 	@Override
 	public boolean read(L2GameClient client, PacketReader packet)
 	{
+		packet.readC(); // index ?
 		_number = packet.readD();
 		return true;
 	}

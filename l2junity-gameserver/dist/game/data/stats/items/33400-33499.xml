@@ -836,7 +836,7 @@
 			<stat type="holyRes">60</stat>
 		</stats>
 	</item>
-	<item id="33424" name="Vesper Shield of Destiny (Fire, Wind, Dark)" type="Weapon">
+	<item id="33424" name="Vesper Shield of Destiny (Fire, Wind, Dark)" type="Armor">
 		<!-- Vesper Shield of Destiny (Fire, Wind, Dark) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
 		<set name="default_action" val="EQUIP" />
@@ -1285,7 +1285,7 @@
 			<stat type="darkRes">60</stat>
 		</stats>
 	</item>
-	<item id="33441" name="Vesper Shield of Destiny (Water, Earth, Holy)" type="Weapon">
+	<item id="33441" name="Vesper Shield of Destiny (Water, Earth, Holy)" type="Armor">
 		<!-- Vesper Shield of Destiny (Water, Earth, Holy) with limited ability enhancement. This item cannot be enhanced except with Destiny Enchant Scrolls. -->
 		<set name="icon" val="icon.weapon_vesper_verteidiger_i01" />
 		<set name="default_action" val="EQUIP" />

@@ -1,0 +1,1 @@
+ALTER TABLE `pledge_recruit` ADD `application_type` TINYINT(1) NOT NULL  AFTER `detailed_information`, ADD `recruit_type` TINYINT(1) NOT NULL AFTER `application_type`;

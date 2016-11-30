@@ -24,17 +24,15 @@ import org.l2junity.gameserver.model.cubic.CubicInstance;
 /**
  * @author UnAfraid
  */
-public class GeneralCondition implements ICubicCondition
+public class HpCondition implements ICubicCondition
 {
-	private final GeneralConditionType _type;
+	private final HpConditionType _type;
 	private final int _hpPer;
-	private final int _hp;
 	
-	public GeneralCondition(GeneralConditionType type, int hpPer, int hp)
+	public HpCondition(HpConditionType type, int hpPer)
 	{
 		_type = type;
 		_hpPer = hpPer;
-		_hp = hp;
 	}
 	
 	@Override
@@ -45,27 +43,11 @@ public class GeneralCondition implements ICubicCondition
 		{
 			case GREATER:
 			{
-				if (hpPer < _hpPer)
-				{
-					return false;
-				}
-				if (target.getCurrentHp() < _hp)
-				{
-					return false;
-				}
-				break;
+				return hpPer > _hpPer;
 			}
 			case LESSER:
 			{
-				if (hpPer > _hpPer)
-				{
-					return false;
-				}
-				if (target.getCurrentHp() > _hp)
-				{
-					return false;
-				}
-				break;
+				return hpPer < _hpPer;
 			}
 		}
 		return true;
@@ -74,10 +56,10 @@ public class GeneralCondition implements ICubicCondition
 	@Override
 	public String toString()
 	{
-		return getClass().getSimpleName() + " chance: " + _hpPer + " range: " + _hp;
+		return getClass().getSimpleName() + " chance: " + _hpPer;
 	}
 	
-	public static enum GeneralConditionType
+	public static enum HpConditionType
 	{
 		GREATER,
 		LESSER;

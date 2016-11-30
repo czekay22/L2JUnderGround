@@ -12,9 +12,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="7520" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">44</stat>
 		</stats>
@@ -32,9 +29,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="22540" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 			<stat type="maxMp">377</stat>
@@ -69,9 +63,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="14080" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">52</stat>
 			<stat type="maxMp">236</stat>
@@ -90,9 +81,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="30040" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">166</stat>
 		</stats>
@@ -110,9 +98,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="14080" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">52</stat>
 			<stat type="maxMp">236</stat>
@@ -131,9 +116,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="115000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">107</stat>
 		</stats>
@@ -150,9 +132,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -185,9 +164,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -222,9 +198,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="224000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">139</stat>
 			<stat type="maxMp">665</stat>
@@ -242,9 +215,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -277,9 +247,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -296,9 +263,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="48200" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -334,9 +298,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="183500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">171</stat>
 		</stats>
@@ -387,9 +348,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="115000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">107</stat>
 		</stats>
@@ -440,9 +398,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="224000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">139</stat>
 			<stat type="maxMp">665</stat>
@@ -476,9 +431,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="48200" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -514,9 +466,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="183500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">171</stat>
 		</stats>
@@ -600,9 +549,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="137700" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">86</stat>
 			<stat type="maxMp">409</stat>
@@ -621,9 +567,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="298000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">278</stat>
 		</stats>
@@ -657,9 +600,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="86000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">53</stat>
 			<stat type="maxMp">256</stat>
@@ -677,9 +617,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -712,9 +649,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -748,9 +682,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -783,9 +714,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="45900" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">46</stat>
 		</stats>
@@ -803,9 +731,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="price" val="137700" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">86</stat>
 			<stat type="maxMp">409</stat>
@@ -824,9 +749,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="298000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">278</stat>
 		</stats>
@@ -860,9 +782,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="86000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">53</stat>
 			<stat type="maxMp">256</stat>
@@ -880,9 +799,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -915,9 +831,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -952,9 +865,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="358000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -972,9 +882,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -1007,9 +914,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -1043,9 +947,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="477000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -1096,9 +997,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="358000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -1149,9 +1047,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="477000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -1169,9 +1064,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="477000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -1222,9 +1114,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="358000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -1258,9 +1147,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="77100" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -1296,9 +1182,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="477000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">293</stat>
 		</stats>
@@ -1315,9 +1198,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -1350,9 +1230,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -1387,9 +1264,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="358000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">147</stat>
 			<stat type="maxMp">718</stat>
@@ -1407,9 +1281,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -1442,9 +1313,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="73500" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">49</stat>
 		</stats>
@@ -1461,9 +1329,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="price" val="77100" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -1579,9 +1444,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="259800" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -1599,9 +1461,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="1267000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">166</stat>
 			<stat type="maxMp">866</stat>
@@ -1619,9 +1478,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="259800" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -1638,9 +1494,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="389700" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 		</stats>
@@ -1738,9 +1591,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="price" val="259800" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -1758,9 +1608,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="price" val="1267000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">157</stat>
 			<stat type="maxMp">866</stat>
@@ -1778,9 +1625,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="FEET" />
 		<set name="price" val="259800" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">55</stat>
 		</stats>
@@ -1797,9 +1641,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="price" val="389700" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">83</stat>
 		</stats>
@@ -1817,9 +1658,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="price" val="650000" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">121</stat>
 		</stats>

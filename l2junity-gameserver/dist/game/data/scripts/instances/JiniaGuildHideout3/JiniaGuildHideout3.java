@@ -39,6 +39,7 @@ public final class JiniaGuildHideout3 extends AbstractInstance
 	
 	public JiniaGuildHideout3()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(RAFFORTY);
 		addTalkId(RAFFORTY);
 	}

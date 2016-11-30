@@ -31,6 +31,7 @@ import org.l2junity.gameserver.model.World;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.skills.targets.AffectObject;
 import org.l2junity.gameserver.model.skills.targets.AffectScope;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 
@@ -55,11 +56,8 @@ public class PointBlank implements IAffectScopeHandler
 			{
 				return false;
 			}
-			if (c.isDead())
-			{
-				return false;
-			}
-			if ((affectObject != null) && !affectObject.checkAffectedObject(activeChar, c))
+			// XXX : Find a proper way to fix, if it's not proper.
+			if ((affectObject != null) && (!c.isDead() || (skill.getAffectObject() == AffectObject.OBJECT_DEAD_NPC_BODY)) && !affectObject.checkAffectedObject(activeChar, c))
 			{
 				return false;
 			}

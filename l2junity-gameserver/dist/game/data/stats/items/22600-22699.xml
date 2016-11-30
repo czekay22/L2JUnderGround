@@ -1392,7 +1392,7 @@
 			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
-	<item id="22664" name="Emerald Weapon: Shield" type="Weapon">
+	<item id="22664" name="Emerald Weapon: Shield" type="Armor">
 		<!-- Emerald Weapon. Shield form. Basic Emerald Weapon Appearance Stone. -->
 		<set name="icon" val="BranchSys3.Icon.g_beam_shield" />
 		<set name="default_action" val="EQUIP" />

@@ -29,13 +29,13 @@ import org.l2junity.gameserver.model.stats.Stats;
  */
 public class VampiricAttack extends AbstractEffect
 {
-	private final int _amount;
-	private final int _sum;
+	private final double _amount;
+	private final double _sum;
 	
 	public VampiricAttack(StatsSet params)
 	{
-		_amount = params.getInt("amount", 0);
-		_sum = _amount * params.getInt("chance", 0);
+		_amount = params.getDouble("amount");
+		_sum = _amount * params.getDouble("chance");
 	}
 	
 	@Override

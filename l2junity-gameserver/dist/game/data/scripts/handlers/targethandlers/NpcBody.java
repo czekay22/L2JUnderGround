@@ -22,7 +22,7 @@ import org.l2junity.gameserver.GeoData;
 import org.l2junity.gameserver.handler.ITargetTypeHandler;
 import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Creature;
-import org.l2junity.gameserver.model.actor.Playable;
+import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.model.skills.targets.TargetType;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
@@ -63,14 +63,14 @@ public class NpcBody implements ITargetTypeHandler
 			return null;
 		}
 		
-		Playable target = (Playable) selectedTarget;
+		Npc npc = (Npc) selectedTarget;
 		
-		if (target.isDead())
+		if (npc.isDead())
 		{
 			// Check for cast range if character cannot move. TODO: char will start follow until within castrange, but if his moving is blocked by geodata, this msg will be sent.
 			if (dontMove)
 			{
-				if (activeChar.calculateDistance(target, false, false) > skill.getCastRange())
+				if (activeChar.calculateDistance(npc, false, false) > skill.getCastRange())
 				{
 					if (sendMessage)
 					{
@@ -82,7 +82,7 @@ public class NpcBody implements ITargetTypeHandler
 			}
 			
 			// Geodata check when character is within range.
-			if (!GeoData.getInstance().canSeeTarget(activeChar, target))
+			if (!GeoData.getInstance().canSeeTarget(activeChar, npc))
 			{
 				if (sendMessage)
 				{
@@ -92,7 +92,7 @@ public class NpcBody implements ITargetTypeHandler
 				return null;
 			}
 			
-			return target;
+			return npc;
 		}
 		
 		// If target is not dead or not player/pet it will not even bother to walk within range, unlike Enemy target type.

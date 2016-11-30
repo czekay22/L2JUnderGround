@@ -1249,7 +1249,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="4" />
@@ -1262,7 +1261,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="4" />
@@ -1275,7 +1273,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
@@ -1422,7 +1419,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />
@@ -1435,7 +1431,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="4" />
@@ -1448,7 +1443,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="3" />
@@ -1461,7 +1455,6 @@
 		<set name="icon" val="icon.etc_gludio_fish_lure_i00" />
 		<set name="default_action" val="EQUIP" />
 		<set name="etcitem_type" val="LURE" />
-		<set name="bodypart" val="lhand" />
 		<set name="immediate_effect" val="true" />
 		<set name="material" val="LIQUID" />
 		<set name="weight" val="5" />

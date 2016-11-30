@@ -39,7 +39,7 @@ public class AlchemyData implements IGameXmlReader
 {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AlchemyData.class);
 	
-	private final Map<Integer, AlchemyCraftData> _alchemy = new HashMap<>();
+	private final Map<Long, AlchemyCraftData> _alchemy = new HashMap<>();
 	
 	protected AlchemyData()
 	{
@@ -114,8 +114,7 @@ public class AlchemyData implements IGameXmlReader
 								}
 							}
 						}
-						final int skillHashCode = SkillData.getSkillHashCode(set.getInt("id"), set.getInt("level"));
-						_alchemy.put(skillHashCode, alchemyCraft);
+						_alchemy.put(SkillData.getSkillHashCode(set.getInt("id"), set.getInt("level")), alchemyCraft);
 					}
 				}
 			}

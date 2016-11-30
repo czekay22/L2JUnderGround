@@ -66,7 +66,6 @@ import org.l2junity.gameserver.data.sql.impl.CharSummonTable;
 import org.l2junity.gameserver.data.sql.impl.ClanTable;
 import org.l2junity.gameserver.data.xml.impl.AdminData;
 import org.l2junity.gameserver.data.xml.impl.ClassListData;
-import org.l2junity.gameserver.data.xml.impl.EnchantSkillGroupsData;
 import org.l2junity.gameserver.data.xml.impl.ExperienceData;
 import org.l2junity.gameserver.data.xml.impl.HennaData;
 import org.l2junity.gameserver.data.xml.impl.NpcData;
@@ -86,6 +85,7 @@ import org.l2junity.gameserver.enums.HtmlActionScope;
 import org.l2junity.gameserver.enums.IllegalActionPunishmentType;
 import org.l2junity.gameserver.enums.InstanceType;
 import org.l2junity.gameserver.enums.MountType;
+import org.l2junity.gameserver.enums.NextActionType;
 import org.l2junity.gameserver.enums.PartyDistributionType;
 import org.l2junity.gameserver.enums.PartySmallWindowUpdateType;
 import org.l2junity.gameserver.enums.PlayerAction;
@@ -125,7 +125,6 @@ import org.l2junity.gameserver.model.ClanPrivilege;
 import org.l2junity.gameserver.model.ClanWar;
 import org.l2junity.gameserver.model.CommandChannel;
 import org.l2junity.gameserver.model.ContactList;
-import org.l2junity.gameserver.model.EnchantSkillLearn;
 import org.l2junity.gameserver.model.Fishing;
 import org.l2junity.gameserver.model.L2Clan;
 import org.l2junity.gameserver.model.L2Request;
@@ -261,6 +260,7 @@ import org.l2junity.gameserver.model.zone.ZoneId;
 import org.l2junity.gameserver.model.zone.ZoneType;
 import org.l2junity.gameserver.network.client.L2GameClient;
 import org.l2junity.gameserver.network.client.send.AbstractHtmlPacket;
+import org.l2junity.gameserver.network.client.send.AcquireSkillList;
 import org.l2junity.gameserver.network.client.send.ActionFailed;
 import org.l2junity.gameserver.network.client.send.ChangeWaitType;
 import org.l2junity.gameserver.network.client.send.CharInfo;
@@ -346,16 +346,16 @@ import org.l2junity.gameserver.util.Util;
 public final class PlayerInstance extends Playable
 {
 	// Character Skill SQL String Definitions:
-	private static final String RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level FROM character_skills WHERE charId=? AND class_index=?";
-	private static final String ADD_NEW_SKILL = "INSERT INTO character_skills (charId,skill_id,skill_level,class_index) VALUES (?,?,?,?)";
-	private static final String UPDATE_CHARACTER_SKILL_LEVEL = "UPDATE character_skills SET skill_level=? WHERE skill_id=? AND charId=? AND class_index=?";
-	private static final String ADD_NEW_SKILLS = "REPLACE INTO character_skills (charId,skill_id,skill_level,class_index) VALUES (?,?,?,?)";
+	private static final String RESTORE_SKILLS_FOR_CHAR = "SELECT skill_id,skill_level,skill_sub_level FROM character_skills WHERE charId=? AND class_index=?";
+	private static final String ADD_NEW_SKILL = "INSERT INTO character_skills (charId,skill_id,skill_level,skill_sub_level,class_index) VALUES (?,?,?,?,?)";
+	private static final String UPDATE_CHARACTER_SKILL_LEVEL = "UPDATE character_skills SET skill_level=?, skill_sub_level=?  WHERE skill_id=? AND charId=? AND class_index=?";
+	private static final String ADD_NEW_SKILLS = "REPLACE INTO character_skills (charId,skill_id,skill_level,skill_sub_level,class_index) VALUES (?,?,?,?,?)";
 	private static final String DELETE_SKILL_FROM_CHAR = "DELETE FROM character_skills WHERE skill_id=? AND charId=? AND class_index=?";
 	private static final String DELETE_CHAR_SKILLS = "DELETE FROM character_skills WHERE charId=? AND class_index=?";
 	
 	// Character Skill Save SQL String Definitions:
 	private static final String ADD_SKILL_SAVE = "INSERT INTO character_skills_save (charId,skill_id,skill_level,remaining_time,reuse_delay,systime,restore_type,class_index,buff_index) VALUES (?,?,?,?,?,?,?,?,?)";
-	private static final String RESTORE_SKILL_SAVE = "SELECT skill_id,skill_level,remaining_time, reuse_delay, systime, restore_type FROM character_skills_save WHERE charId=? AND class_index=? ORDER BY buff_index ASC";
+	private static final String RESTORE_SKILL_SAVE = "SELECT skill_id,skill_level,skill_sub_level,remaining_time, reuse_delay, systime, restore_type FROM character_skills_save WHERE charId=? AND class_index=? ORDER BY buff_index ASC";
 	private static final String DELETE_SKILL_SAVE = "DELETE FROM character_skills_save WHERE charId=? AND class_index=?";
 	
 	// Character Item Reuse Time String Definition:
@@ -1538,10 +1538,11 @@ public final class PlayerInstance extends Playable
 	 * Updates the shortcut bars with the new skill.
 	 * @param skillId the skill Id to search and update.
 	 * @param skillLevel the skill level to update.
+	 * @param skillSubLevel the skill sub level to update.
 	 */
-	public void updateShortCuts(int skillId, int skillLevel)
+	public void updateShortCuts(int skillId, int skillLevel, int skillSubLevel)
 	{
-		_shortCuts.updateShortCuts(skillId, skillLevel);
+		_shortCuts.updateShortCuts(skillId, skillLevel, skillSubLevel);
 	}
 	
 	/**
@@ -2034,7 +2035,7 @@ public final class PlayerInstance extends Playable
 				_curWeightPenalty = newWeightPenalty;
 				if ((newWeightPenalty > 0) && !_dietMode)
 				{
-					addSkill(SkillData.getInstance().getSkill(4270, newWeightPenalty));
+					addSkill(SkillData.getInstance().getSkill(CommonSkill.WEIGHT_PENALTY.getId(), newWeightPenalty));
 					setIsOverloaded(getCurrentLoad() > maxLoad);
 				}
 				else
@@ -3040,7 +3041,7 @@ public final class PlayerInstance extends Playable
 		
 		if (count > 0)
 		{
-			ItemInstance beautyTickets = _inventory.getAdenaInstance();
+			ItemInstance beautyTickets = _inventory.getBeautyTicketsInstance();
 			if (!_inventory.reduceBeautyTickets(process, count, this, reference))
 			{
 				return false;
@@ -6655,6 +6656,12 @@ public final class PlayerInstance extends Playable
 				return null;
 			}
 			
+			if (player.isGM())
+			{
+				final long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, PcCondOverride.getAllExceptionsMask());
+				player.setOverrideCond(masks);
+			}
+			
 			// Retrieve from the database all items of this L2PcInstance and add them to _inventory
 			player.getInventory().restore();
 			player.getFreight().restore();
@@ -6719,12 +6726,6 @@ public final class PlayerInstance extends Playable
 			if (Config.STORE_UI_SETTINGS)
 			{
 				player.restoreUISettings();
-			}
-			
-			if (player.isGM())
-			{
-				final long masks = player.getVariables().getLong(COND_OVERRIDE_KEY, PcCondOverride.getAllExceptionsMask());
-				player.setOverrideCond(masks);
 			}
 			
 			player.loadRecommendations();
@@ -7148,7 +7149,7 @@ public final class PlayerInstance extends Playable
 			delete.execute();
 			
 			int buff_index = 0;
-			final List<Integer> storedSkills = new ArrayList<>();
+			final List<Long> storedSkills = new ArrayList<>();
 			
 			// Store all effect data along with calulated remaining
 			// reuse delays for matching skills. 'restore_type'= 0.
@@ -7216,12 +7217,12 @@ public final class PlayerInstance extends Playable
 			}
 			
 			// Skills under reuse.
-			final Map<Integer, TimeStamp> reuseTimeStamps = getSkillReuseTimeStamps();
+			final Map<Long, TimeStamp> reuseTimeStamps = getSkillReuseTimeStamps();
 			if (reuseTimeStamps != null)
 			{
-				for (Entry<Integer, TimeStamp> ts : reuseTimeStamps.entrySet())
+				for (Entry<Long, TimeStamp> ts : reuseTimeStamps.entrySet())
 				{
-					final int hash = ts.getKey();
+					final long hash = ts.getKey();
 					if (storedSkills.contains(hash))
 					{
 						continue;
@@ -7408,9 +7409,10 @@ public final class PlayerInstance extends Playable
 				try (PreparedStatement ps = con.prepareStatement(UPDATE_CHARACTER_SKILL_LEVEL))
 				{
 					ps.setInt(1, newSkill.getLevel());
-					ps.setInt(2, oldSkill.getId());
-					ps.setInt(3, getObjectId());
-					ps.setInt(4, classIndex);
+					ps.setInt(2, newSkill.getSubLevel());
+					ps.setInt(3, oldSkill.getId());
+					ps.setInt(4, getObjectId());
+					ps.setInt(5, classIndex);
 					ps.execute();
 				}
 			}
@@ -7421,7 +7423,8 @@ public final class PlayerInstance extends Playable
 					ps.setInt(1, getObjectId());
 					ps.setInt(2, newSkill.getId());
 					ps.setInt(3, newSkill.getLevel());
-					ps.setInt(4, classIndex);
+					ps.setInt(4, newSkill.getSubLevel());
+					ps.setInt(5, classIndex);
 					ps.execute();
 				}
 			}
@@ -7459,7 +7462,8 @@ public final class PlayerInstance extends Playable
 				ps.setInt(1, getObjectId());
 				ps.setInt(2, addSkill.getId());
 				ps.setInt(3, addSkill.getLevel());
-				ps.setInt(4, classIndex);
+				ps.setInt(4, addSkill.getSubLevel());
+				ps.setInt(5, classIndex);
 				ps.addBatch();
 			}
 			ps.executeBatch();
@@ -7488,9 +7492,10 @@ public final class PlayerInstance extends Playable
 				{
 					final int id = rset.getInt("skill_id");
 					final int level = rset.getInt("skill_level");
+					final int subLevel = rset.getInt("skill_sub_level");
 					
 					// Create a L2Skill object for each record
-					final Skill skill = SkillData.getInstance().getSkill(id, level);
+					final Skill skill = SkillData.getInstance().getSkill(id, level, subLevel);
 					
 					if (skill == null)
 					{
@@ -7541,7 +7546,7 @@ public final class PlayerInstance extends Playable
 					long systime = rset.getLong("systime");
 					int restoreType = rset.getInt("restore_type");
 					
-					final Skill skill = SkillData.getInstance().getSkill(rset.getInt("skill_id"), rset.getInt("skill_level"));
+					final Skill skill = SkillData.getInstance().getSkill(rset.getInt("skill_id"), rset.getInt("skill_level"), rset.getInt("skill_sub_level"));
 					if (skill == null)
 					{
 						continue;
@@ -8243,11 +8248,18 @@ public final class PlayerInstance extends Playable
 			sendPacket(ActionFailed.STATIC_PACKET);
 			
 			// Upon failed conditions, next action is called.
-			if ((skill.nextActionIsAttack()) && (target != this) && target.isAutoAttackable(this))
+			if ((skill.getNextAction() != NextActionType.NONE) && (target != this) && target.isAutoAttackable(this))
 			{
 				if ((getAI().getNextIntention() == null) || (getAI().getNextIntention().getCtrlIntention() != CtrlIntention.AI_INTENTION_MOVE_TO))
 				{
-					getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+					if (skill.getNextAction() == NextActionType.ATTACK)
+					{
+						getAI().setIntention(CtrlIntention.AI_INTENTION_ATTACK, target);
+					}
+					else if (skill.getNextAction() == NextActionType.CAST)
+					{
+						getAI().setIntention(CtrlIntention.AI_INTENTION_CAST, skill, target, item, false, false);
+					}
 				}
 			}
 			
@@ -8391,8 +8403,6 @@ public final class PlayerInstance extends Playable
 		{
 			_cubics.values().forEach(CubicInstance::deactivate);
 			_cubics.clear();
-			sendPacket(new ExUserInfoCubic(this));
-			broadcastCharInfo();
 		}
 	}
 	
@@ -9233,32 +9243,15 @@ public final class PlayerInstance extends Playable
 				isDisabled = s.isClanSkill() && (getClan().getReputationScore() < 0);
 			}
 			
-			boolean isEnchantable = SkillData.getInstance().isEnchantable(s.getId());
-			if (isEnchantable)
-			{
-				EnchantSkillLearn esl = EnchantSkillGroupsData.getInstance().getSkillEnchantmentBySkillId(s.getId());
-				if (esl != null)
-				{
-					// if player dont have min level to enchant
-					if (s.getLevel() < esl.getBaseLevel())
-					{
-						isEnchantable = false;
-					}
-				}
-				// if no enchant data
-				else
-				{
-					isEnchantable = false;
-				}
-			}
-			
-			sl.addSkill(s.getDisplayId(), s.getReuseDelayGroup(), s.getDisplayLevel(), s.isPassive(), isDisabled, isEnchantable);
+			sl.addSkill(s.getDisplayId(), s.getReuseDelayGroup(), s.getDisplayLevel(), s.getSubLevel(), s.isPassive(), isDisabled, s.isEnchantable());
 		}
 		if (lastLearnedSkillId > 0)
 		{
 			sl.setLastLearnedSkillId(lastLearnedSkillId);
 		}
 		sendPacket(sl);
+		
+		sendPacket(new AcquireSkillList(this));
 	}
 	
 	/**
@@ -9325,7 +9318,7 @@ public final class PlayerInstance extends Playable
 			getSubClasses().put(newClass.getClassIndex(), newClass);
 			
 			final ClassId subTemplate = ClassId.getClassId(classId);
-			final Map<Integer, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(subTemplate);
+			final Map<Long, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(subTemplate);
 			final Map<Integer, Skill> prevSkillList = new HashMap<>();
 			for (SkillLearn skillInfo : skillTree.values())
 			{
@@ -9405,6 +9398,18 @@ public final class PlayerInstance extends Playable
 				{
 					getVariables().remove(PlayerVariables.ABILITY_POINTS_DUAL_CLASS);
 					getVariables().remove(PlayerVariables.ABILITY_POINTS_USED_DUAL_CLASS);
+					int revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS, 0);
+					if (revelationSkill != 0)
+					{
+						removeSkill(revelationSkill);
+					}
+					revelationSkill = getVariables().getInt(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS, 0);
+					if (revelationSkill != 0)
+					{
+						removeSkill(revelationSkill);
+					}
+					getVariables().remove(PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS);
+					getVariables().remove(PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS);
 				}
 			}
 			catch (Exception e)
@@ -10559,7 +10564,7 @@ public final class PlayerInstance extends Playable
 		{
 			if (isFlying())
 			{
-				removeSkill(SkillData.getInstance().getSkill(4289, 1));
+				removeSkill(SkillData.getInstance().getSkill(CommonSkill.WYVERN_BREATH.getId(), 1));
 			}
 		}
 		catch (Exception e)
@@ -10753,6 +10758,15 @@ public final class PlayerInstance extends Playable
 			{
 				_log.error("deleteMe()", e);
 			}
+		}
+		
+		try
+		{
+			stopCubics();
+		}
+		catch (Exception e)
+		{
+			_log.error("deleteMe()", e);
 		}
 		
 		// Update database with items in its inventory and remove them from the world
@@ -12352,7 +12366,7 @@ public final class PlayerInstance extends Playable
 		final int damage = (int) Formulas.calcFallDam(this, deltaZ);
 		if (damage > 0)
 		{
-			reduceCurrentHp(Math.min(damage, getCurrentHp() - 1), null, null, false, true, false, false);
+			reduceCurrentHp(Math.min(damage, getCurrentHp() - 1), this, null, false, true, false, false);
 			SystemMessage sm = SystemMessage.getSystemMessage(SystemMessageId.YOU_RECEIVED_S1_FALLING_DAMAGE);
 			sm.addInt(damage);
 			sendPacket(sm);
@@ -12504,7 +12518,7 @@ public final class PlayerInstance extends Playable
 	private void deacreaseSkillLevel(Skill skill, int lvlDiff)
 	{
 		int nextLevel = -1;
-		final Map<Integer, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(getClassId());
+		final Map<Long, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(getClassId());
 		for (SkillLearn sl : skillTree.values())
 		{
 			if ((sl.getSkillId() == skill.getId()) && (nextLevel < sl.getSkillLevel()) && (getLevel() >= (sl.getGetLevel() - lvlDiff)))
@@ -13667,6 +13681,8 @@ public final class PlayerInstance extends Playable
 		int summonSoulShotId = 0;
 		int summonSpiritShotId = 0;
 		
+		disableAutoShotsAll();
+		
 		for (ItemInstance item : getInventory().getItems(ItemInstance::isEtcItem, i -> i.getItemType() == EtcItemType.SOULSHOT))
 		{
 			switch (item.getEtcItem().getDefaultAction())
@@ -13715,9 +13731,14 @@ public final class PlayerInstance extends Playable
 		}
 		
 		sendPacket(new ExAutoSoulShot(soulShotId, true, 1));
+		addAutoSoulShot(soulShotId);
 		sendPacket(new ExAutoSoulShot(spiritShotId, true, 2));
+		addAutoSoulShot(spiritShotId);
 		sendPacket(new ExAutoSoulShot(summonSoulShotId, true, 3));
+		addAutoSoulShot(summonSoulShotId);
 		sendPacket(new ExAutoSoulShot(summonSpiritShotId, true, 4));
+		addAutoSoulShot(summonSpiritShotId);
+		rechargeShots(true, true, true);
 	}
 	
 	public GroupType getGroupType()

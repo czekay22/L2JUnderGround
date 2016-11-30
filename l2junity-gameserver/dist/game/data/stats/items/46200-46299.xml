@@ -685,7 +685,7 @@
 		<set name="is_private_storeable" val="false" />
 		<set name="is_stackable" val="true" />
 	</item>
-	<item id="46247" name="Halloween Shield" type="Weapon">
+	<item id="46247" name="Halloween Shield" type="Armor">
 		<set name="icon" val="icon.ev_wp_halloween" />
 		<set name="default_action" val="EQUIP" />
 		<set name="is_freightable" val="false" />

@@ -31,7 +31,7 @@
 							<xs:element name="first" minOccurs="0" type="fee" />
 							<xs:element name="secondary" minOccurs="0" type="fee" />
 							<xs:element name="third" minOccurs="0" type="fee" />
-							<xs:element name="reNormal" minOccurs="0" type="fee" />
+							<xs:element name="reFirst" minOccurs="0" type="fee" />
 							<xs:element name="reSeconday" minOccurs="0" type="fee" />
 							<xs:element name="reThird" minOccurs="0" type="fee" />
 						</xs:sequence>

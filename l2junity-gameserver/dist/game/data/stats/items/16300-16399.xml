@@ -15,9 +15,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8432" level="1" /> <!-- Moirai Gloves -->
 		</skills>
@@ -40,9 +37,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8422" level="1" /> <!-- Moirai Boots -->
 		</skills>
@@ -87,9 +81,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8433" level="1" /> <!-- Moirai Shoes -->
 		</skills>
@@ -112,9 +103,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8423" level="1" /> <!-- Moirai Shield -->
 		</skills>
@@ -140,9 +128,6 @@
 		<set name="commissionItemType" val="SIGIL" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8434" level="1" /> <!-- Moirai Sigil -->
 		</skills>
@@ -165,9 +150,6 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8435" level="1" /> <!-- Vesper Helmet -->
 		</skills>
@@ -210,9 +192,6 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8446" level="1" /> <!-- Vesper Circlet -->
 		</skills>
@@ -236,9 +215,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8436" level="1" /> <!-- Vesper Breastplate -->
 		</skills>
@@ -285,9 +261,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8447" level="1" /> <!-- Vesper Tunic -->
 		</skills>
@@ -312,9 +285,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8437" level="1" /> <!-- Vesper Gaiters -->
 		</skills>
@@ -361,9 +331,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8448" level="1" /> <!-- Vesper Stockings -->
 		</skills>
@@ -387,9 +354,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8438" level="1" /> <!-- Vesper Gauntlets -->
 		</skills>
@@ -434,9 +398,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8449" level="1" /> <!-- Vesper Gloves -->
 		</skills>
@@ -459,9 +420,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8439" level="1" /> <!-- Vesper Boots -->
 		</skills>
@@ -506,9 +464,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8450" level="1" /> <!-- Vesper Shoes -->
 		</skills>
@@ -531,9 +486,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8440" level="1" /> <!-- Vesper Shield -->
 		</skills>
@@ -559,9 +511,6 @@
 		<set name="commissionItemType" val="SIGIL" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="8451" level="1" /> <!-- Vesper Sigil -->
 		</skills>
@@ -584,9 +533,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">96</stat>
 		</stats>
@@ -623,9 +569,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">96</stat>
 		</stats>
@@ -646,9 +589,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">225</stat>
 		</stats>
@@ -689,9 +629,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">112</stat>
 			<stat type="maxMp">614</stat>
@@ -713,9 +650,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">141</stat>
 		</stats>
@@ -756,9 +690,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">70</stat>
 			<stat type="maxMp">392</stat>
@@ -779,9 +710,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">64</stat>
 		</stats>
@@ -820,9 +748,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">64</stat>
 		</stats>
@@ -842,9 +767,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">64</stat>
 		</stats>
@@ -883,9 +805,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">64</stat>
 		</stats>
@@ -905,9 +824,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -930,9 +846,6 @@
 		<set name="commissionItemType" val="SIGIL" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="pDef">16</stat>
@@ -952,9 +865,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">101</stat>
 		</stats>
@@ -991,9 +901,6 @@
 		<set name="is_freightable" val="false" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">101</stat>
 		</stats>
@@ -1014,9 +921,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">250</stat>
 		</stats>
@@ -1057,9 +961,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">125</stat>
 			<stat type="maxMp">637</stat>
@@ -1081,9 +982,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">148</stat>
 		</stats>
@@ -1124,9 +1022,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">74</stat>
 			<stat type="maxMp">415</stat>
@@ -1147,9 +1042,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">68</stat>
 		</stats>
@@ -1188,9 +1080,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">68</stat>
 		</stats>
@@ -1210,9 +1099,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">68</stat>
 		</stats>
@@ -1251,9 +1137,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="pDef">68</stat>
 		</stats>
@@ -1273,9 +1156,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="rShld">20</stat>
@@ -1298,9 +1178,6 @@
 		<set name="commissionItemType" val="SIGIL" />
 		<set name="isAppearanceable" val="true" />
 		<set name="enchant_enabled" val="1" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<stats>
 			<stat type="rEvas">-8</stat>
 			<stat type="pDef">17</stat>

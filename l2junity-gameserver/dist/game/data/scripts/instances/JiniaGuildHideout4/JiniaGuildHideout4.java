@@ -39,6 +39,7 @@ public final class JiniaGuildHideout4 extends AbstractInstance
 	
 	public JiniaGuildHideout4()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(RAFFORTY);
 		addTalkId(RAFFORTY);
 	}

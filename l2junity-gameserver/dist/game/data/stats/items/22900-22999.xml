@@ -201,7 +201,6 @@
 		<set name="is_sellable" val="false" />
 		<set name="is_commissionable" val="false" />
 		<set name="is_private_storeable" val="false" />
-		<set name="bodypart" val="alldress" />
 		<set name="immediate_effect" val="true" />
 		<set name="time" val="43200" />
 	</item>

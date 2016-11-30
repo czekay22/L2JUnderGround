@@ -140,7 +140,7 @@ public class L2NpcInstance extends Npc
 		
 		if (skills.isEmpty())
 		{
-			final Map<Integer, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(classId);
+			final Map<Long, SkillLearn> skillTree = SkillTreesData.getInstance().getCompleteClassSkillTree(classId);
 			final int minLevel = SkillTreesData.getInstance().getMinLevelForNewSkill(player, skillTree);
 			if (minLevel > 0)
 			{

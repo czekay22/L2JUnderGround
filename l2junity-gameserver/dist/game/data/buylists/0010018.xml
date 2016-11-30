@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<item id="17981" price="0" /> <!-- Blessed Immortal Helmet (Heavy Armor)  -->
+	<item id="17982" price="0" /> <!-- Blessed Immortal Breastplate (Heavy Armor)  -->
+	<item id="17983" price="0" /> <!-- Blessed Immortal Gaiters (Heavy Armor)  -->
+	<item id="17984" price="0" /> <!-- Blessed Immortal Gauntlets (Heavy Armor)  -->
+	<item id="17985" price="0" /> <!-- Blessed Immortal Boots (Heavy Armor)  -->
+	<item id="17987" price="0" /> <!-- Blessed Immortal Leather Helmet (Light Armor)  -->
+	<item id="17988" price="0" /> <!-- Blessed Immortal Leather Armor (Light Armor)  -->
+	<item id="17989" price="0" /> <!-- Blessed Immortal Leather Leggings (Light Armor)  -->
+	<item id="17990" price="0" /> <!-- Blessed Immortal Leather Gloves (Light Armor)  -->
+	<item id="17991" price="0" /> <!-- Blessed Immortal Leather Boots (Light Armor)  -->
+	<item id="17992" price="0" /> <!-- Blessed Immortal Circlet (Robe)  -->
+	<item id="17993" price="0" /> <!-- Blessed Immortal Tunic (Robe)  -->
+	<item id="17994" price="0" /> <!-- Blessed Immortal Stockings (Robe)  -->
+	<item id="17995" price="0" /> <!-- Blessed Immortal Gloves (Robe)  -->
+	<item id="17996" price="0" /> <!-- Blessed Immortal Shoes (Robe)  -->
+	<item id="17997" price="0" /> <!-- Blessed Immortal Sigil (Robe)  -->
+	<item id="17986" price="0" /> <!-- Blessed Immortal Shield (Heavy Armor)  -->
+	<item id="18015" price="0" /> <!-- Blessed Twilight Helmet (Heavy Armor)  -->
+	<item id="18016" price="0" /> <!-- Blessed Twilight Breastplate (Heavy Armor)  -->
+	<item id="18017" price="0" /> <!-- Blessed Twilight Gaiters (Heavy Armor)  -->
+	<item id="18018" price="0" /> <!-- Blessed Twilight Gauntlets (Heavy Armor)  -->
+	<item id="18019" price="0" /> <!-- Blessed Twilight Boots (Heavy Armor)  -->
+	<item id="18021" price="0" /> <!-- Blessed Twilight Leather Helmet (Light Armor)  -->
+	<item id="18022" price="0" /> <!-- Blessed Twilight Leather Armor (Light Armor)  -->
+	<item id="18023" price="0" /> <!-- Blessed Twilight Leather Leggings (Light Armor)  -->
+	<item id="18024" price="0" /> <!-- Blessed Twilight Leather Gloves (Light Armor)  -->
+	<item id="18025" price="0" /> <!-- Blessed Twilight Leather Boots (Light Armor)  -->
+	<item id="18026" price="0" /> <!-- Blessed Twilight Circlet (Robe)  -->
+	<item id="18027" price="0" /> <!-- Blessed Twilight Tunic (Robe)  -->
+	<item id="18028" price="0" /> <!-- Blessed Twilight Stockings (Robe)  -->
+	<item id="18029" price="0" /> <!-- Blessed Twilight Shoes (Robe)  -->
+	<item id="18030" price="0" /> <!-- Blessed Twilight Shoes (Robe)  -->
+	<item id="18031" price="0" /> <!-- Blessed Twilight Sigil (Robe)  -->	
+	<item id="18020" price="0" /> <!-- Blessed Twilight Shield (Heavy Armor)  -->
+</list>

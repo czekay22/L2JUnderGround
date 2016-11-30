@@ -1818,9 +1818,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3672" level="1" /> <!-- Zubei's Gaiters -->
 		</skills>
@@ -1842,9 +1839,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3673" level="1" /> <!-- Zubei's Gauntlets -->
 		</skills>
@@ -1887,9 +1881,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3679" level="1" /> <!-- Zubei's Gauntlets -->
 		</skills>
@@ -1911,9 +1902,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3674" level="1" /> <!-- Zubei's Boots -->
 		</skills>
@@ -1956,9 +1944,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3680" level="1" /> <!-- Zubei's Boots -->
 		</skills>
@@ -1980,9 +1965,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3681" level="1" /> <!-- Zubei's Shield -->
 		</skills>
@@ -2005,9 +1987,6 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3675" level="1" /> <!-- Zubei's Helmet -->
 		</skills>
@@ -2030,9 +2009,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3676" level="1" /> <!-- Zubei's Breastplate -->
 		</skills>
@@ -2054,9 +2030,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3682" level="1" /> <!-- Avadon Gloves -->
 		</skills>
@@ -2099,9 +2072,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3693" level="1" /> <!-- Avadon Gloves -->
 		</skills>
@@ -2146,9 +2116,6 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3694" level="1" /> <!-- Avadon Robe -->
 		</skills>
@@ -2171,9 +2138,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3683" level="1" /> <!-- Avadon Boots -->
 		</skills>
@@ -2216,9 +2180,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3695" level="1" /> <!-- Avadon Boots -->
 		</skills>
@@ -2239,9 +2200,6 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3684" level="1" /> <!-- Avadon Circlet -->
 		</skills>
@@ -2263,9 +2221,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3687" level="1" /> <!-- Avadon Shield -->
 		</skills>
@@ -2290,9 +2245,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3685" level="1" /> <!-- Avadon Gaiters -->
 		</skills>
@@ -2315,9 +2267,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3686" level="1" /> <!-- Avadon Breastplate -->
 		</skills>
@@ -2340,9 +2289,6 @@
 		<set name="commissionItemType" val="ARMOR_TOP" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3677" level="1" /> <!-- Tunic of Zubei -->
 		</skills>
@@ -2366,9 +2312,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3678" level="1" /> <!-- Stockings of Zubei -->
 		</skills>
@@ -2391,9 +2334,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3696" level="1" /> <!-- Doom Gloves -->
 		</skills>
@@ -2436,9 +2376,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3705" level="1" /> <!-- Doom Gloves -->
 		</skills>
@@ -2460,9 +2397,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3697" level="1" /> <!-- Doom Boots -->
 		</skills>
@@ -2505,9 +2439,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3706" level="1" /> <!-- Doom Boots -->
 		</skills>
@@ -2529,9 +2460,6 @@
 		<set name="commissionItemType" val="SHIELD" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3700" level="1" /> <!-- Doom Shield -->
 		</skills>
@@ -2556,9 +2484,6 @@
 		<set name="commissionItemType" val="FULL_BODY" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3698" level="1" /> <!-- Doom Plate Armor -->
 		</skills>
@@ -2579,9 +2504,6 @@
 		<set name="enchant_enabled" val="1" />
 		<set name="commissionItemType" val="HELMET" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3699" level="1" /> <!-- Doom Helmet -->
 		</skills>
@@ -2698,9 +2620,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3707" level="1" /> <!-- Tunic of Doom -->
 		</skills>
@@ -2724,9 +2643,6 @@
 		<set name="commissionItemType" val="ARMOR_PANTS" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3711" level="1" /> <!-- Blue Wolf Gaiters -->
 		</skills>
@@ -2770,9 +2686,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3712" level="1" /> <!-- Blue Wolf Boots -->
 		</skills>
@@ -2815,9 +2728,6 @@
 		<set name="commissionItemType" val="FEET" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3719" level="1" /> <!-- Blue Wolf Boots -->
 		</skills>
@@ -2839,9 +2749,6 @@
 		<set name="commissionItemType" val="GLOVES" />
 		<set name="isAppearanceable" val="true" />
 		<set name="is_freightable" val="false" />
-		<cond msgId="1518">
-			<player races="HUMAN,ELF,DARK_ELF,ORC,DWARF" />
-		</cond>
 		<skills>
 			<skill id="3713" level="1" /> <!-- Blue Wolf Gloves -->
 		</skills>

@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J Unity
  * 
- * This file is part of L2J DataPack.
+ * This file is part of L2J Unity.
  * 
- * L2J DataPack is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J DataPack is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -29,6 +29,7 @@ import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.base.AcquireSkillType;
 import org.l2junity.gameserver.model.skills.Skill;
+import org.l2junity.gameserver.model.variables.PlayerVariables;
 import org.l2junity.gameserver.network.client.send.ExAcquirableSkillListByClass;
 import org.l2junity.gameserver.network.client.send.string.SystemMessageId;
 
@@ -53,8 +54,8 @@ public final class MonkOfChaos extends AbstractNpcAI
 	
 	private static final String[] DUALCLASS_REVELATION_VAR_NAMES =
 	{
-		"DualclassRevelationSkill1",
-		"DualclassRevelationSkill2"
+		PlayerVariables.REVELATION_SKILL_1_DUAL_CLASS,
+		PlayerVariables.REVELATION_SKILL_2_DUAL_CLASS
 	};
 	
 	private MonkOfChaos()
@@ -163,13 +164,10 @@ public final class MonkOfChaos extends AbstractNpcAI
 						giveItems(player, chaosPomander, count);
 					}
 				}
-				
 				htmltext = "canceled.html";
-				
 				break;
 			}
 		}
-		
 		return htmltext;
 	}
 	

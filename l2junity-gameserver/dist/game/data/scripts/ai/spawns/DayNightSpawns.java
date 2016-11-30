@@ -78,7 +78,7 @@ public final class DayNightSpawns extends AbstractNpcAI
 				}
 				else
 				{
-					group.spawnAll(null);
+					group.spawnAll();
 				}
 			}
 			else if (DAY_GROUP_NAME.equalsIgnoreCase(group.getName()))
@@ -89,7 +89,7 @@ public final class DayNightSpawns extends AbstractNpcAI
 				}
 				else
 				{
-					group.spawnAll(null);
+					group.spawnAll();
 				}
 			}
 		});

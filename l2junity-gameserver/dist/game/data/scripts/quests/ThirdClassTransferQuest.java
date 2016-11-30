@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2015 L2J Unity
+ * Copyright (C) 2004-2016 L2J Unity
  * 
  * This file is part of L2J Unity.
  * 
@@ -56,7 +56,7 @@ public abstract class ThirdClassTransferQuest extends Quest
 		33169,
 	};
 	// Items
-	private static final int SOLDIER_TAG = 17750; // Vanguard Soldier's Dog Tags
+	private static final int SOLDIER_TAG = 17748; // Vanguard Soldier's Dog Tags
 	private static final int STEEL_DOOR_COIN = 37045;
 	private static final int SOUL_SHOT_PACK = 22576;
 	private static final int SPIRIT_SHOT_PACK = 22607;

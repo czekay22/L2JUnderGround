@@ -541,7 +541,7 @@
 			<height normal="15" />
 		</collision>
 	</npc>
-	<npc id="19217" level="99" type="L2Npc" name="Earth Wyrm Trasken" title="Hell's Gate">
+	<npc id="19217" level="99" type="FriendlyNpc" name="Earth Wyrm Trasken" title="Hell's Gate">
 		<!-- AUTO GENERATED NPC TODO: FIX IT -->
 		<parameters>
 			<param name="Attack_BoostValue" value="155" />

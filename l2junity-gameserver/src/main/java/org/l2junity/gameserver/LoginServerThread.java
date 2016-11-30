@@ -81,7 +81,9 @@ public class LoginServerThread extends Thread
 	protected static final Logger LOGGER = LoggerFactory.getLogger(LoginServerThread.class);
 	protected static final Logger ACCOUNTING_LOGGER = LoggerFactory.getLogger("accounting");
 	
-	/** @see org.l2junity.loginserver.L2LoginServer#PROTOCOL_REV */
+	/**
+	 * @see org.l2junity.loginserver.L2LoginServer#PROTOCOL_REV
+	 */
 	private static final int REVISION = 0x0106;
 	private final String _hostname;
 	private final int _port;
@@ -312,7 +314,8 @@ public class LoginServerThread extends Thread
 									sendPacket(pig);
 									wcToRemove.gameClient.setConnectionState(ConnectionState.AUTHENTICATED);
 									wcToRemove.gameClient.setSessionId(wcToRemove.session);
-									CharSelectionInfo cl = new CharSelectionInfo(wcToRemove.account, wcToRemove.gameClient.getSessionId().playOkID1);
+									wcToRemove.gameClient.sendPacket(LoginFail.LOGIN_SUCCESS);
+									final CharSelectionInfo cl = new CharSelectionInfo(wcToRemove.account, wcToRemove.gameClient.getSessionId().playOkID1);
 									wcToRemove.gameClient.sendPacket(cl);
 									wcToRemove.gameClient.setCharSelection(cl.getCharInfo());
 								}

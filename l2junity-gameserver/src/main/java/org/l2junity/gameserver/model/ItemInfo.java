@@ -20,6 +20,7 @@ package org.l2junity.gameserver.model;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Objects;
 
 import org.l2junity.gameserver.enums.AttributeType;
 import org.l2junity.gameserver.model.buylist.Product;
@@ -91,10 +92,7 @@ public class ItemInfo
 	 */
 	public ItemInfo(ItemInstance item)
 	{
-		if (item == null)
-		{
-			return;
-		}
+		Objects.requireNonNull(item);
 		
 		// Get the Identifier of the L2ItemInstance
 		_objectId = item.getObjectId();

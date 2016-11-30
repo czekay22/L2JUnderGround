@@ -158,6 +158,11 @@ public class SpawnTemplate implements Cloneable, ITerritorized, IParameterized<S
 		_groups.stream().filter(groupFilter).forEach(group -> group.spawnAll(instance));
 	}
 	
+	public void spawnAll()
+	{
+		spawnAll(null);
+	}
+	
 	public void spawnAll(Instance instance)
 	{
 		spawn(SpawnGroup::isSpawningByDefault, instance);

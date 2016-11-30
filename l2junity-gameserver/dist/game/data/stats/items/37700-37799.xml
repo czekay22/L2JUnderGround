@@ -52,7 +52,7 @@
 			<stat type="pAtkRange">40</stat>
 		</stats>
 	</item>
-	<item id="37702" name="Valentine Shield" type="Weapon">
+	<item id="37702" name="Valentine Shield" type="Armor">
 		<!-- Modifies the appearance of a shield. -->
 		<set name="icon" val="icon.ev_hallowinday_candy_i00" />
 		<set name="default_action" val="EQUIP" />

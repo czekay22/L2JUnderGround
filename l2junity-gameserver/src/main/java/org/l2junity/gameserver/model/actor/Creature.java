@@ -214,11 +214,11 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	/** Map containing all skills of this character. */
 	private final Map<Integer, Skill> _skills = new ConcurrentSkipListMap<>();
 	/** Map containing the skill reuse time stamps. */
-	private volatile Map<Integer, TimeStamp> _reuseTimeStampsSkills = null;
+	private volatile Map<Long, TimeStamp> _reuseTimeStampsSkills = null;
 	/** Map containing the item reuse time stamps. */
 	private volatile Map<Integer, TimeStamp> _reuseTimeStampsItems = null;
 	/** Map containing all the disabled skills. */
-	private volatile Map<Integer, Long> _disabledSkills = null;
+	private volatile Map<Long, Long> _disabledSkills = null;
 	private boolean _allSkillsDisabled;
 	
 	private final byte[] _zones = new byte[ZoneId.getZoneCount()];
@@ -730,9 +730,19 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			su.addCaster(caster);
 		}
 		
-		computeStatusUpdate(su, StatusUpdateType.MAX_HP);
+		// HP
+		if (isDead())
+		{
+			su.addUpdate(StatusUpdateType.MAX_HP, getMaxHp());
+			su.addUpdate(StatusUpdateType.CUR_HP, 0);
+		}
+		else
+		{
+			computeStatusUpdate(su, StatusUpdateType.MAX_HP);
+			computeStatusUpdate(su, StatusUpdateType.CUR_HP);
+		}
+		
 		computeStatusUpdate(su, StatusUpdateType.MAX_MP);
-		computeStatusUpdate(su, StatusUpdateType.CUR_HP);
 		computeStatusUpdate(su, StatusUpdateType.CUR_MP);
 		
 		if (su.hasUpdates())
@@ -1655,7 +1665,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * Gets the skill reuse time stamps map.
 	 * @return the skill reuse time stamps map
 	 */
-	public final Map<Integer, TimeStamp> getSkillReuseTimeStamps()
+	public final Map<Long, TimeStamp> getSkillReuseTimeStamps()
 	{
 		return _reuseTimeStampsSkills;
 	}
@@ -1720,7 +1730,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param hashCode the skill hash code
 	 * @return if the skill has a reuse time stamp, the remaining time, otherwise -1
 	 */
-	public synchronized final long getSkillRemainingReuseTime(int hashCode)
+	public synchronized final long getSkillRemainingReuseTime(long hashCode)
 	{
 		final TimeStamp reuseStamp = (_reuseTimeStampsSkills != null) ? _reuseTimeStampsSkills.get(hashCode) : null;
 		return reuseStamp != null ? reuseStamp.getRemaining() : -1;
@@ -1731,7 +1741,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param hashCode the skill hash code
 	 * @return {@code true} if the skill is under reuse time, {@code false} otherwise
 	 */
-	public synchronized final boolean hasSkillReuse(int hashCode)
+	public synchronized final boolean hasSkillReuse(long hashCode)
 	{
 		final TimeStamp reuseStamp = (_reuseTimeStampsSkills != null) ? _reuseTimeStampsSkills.get(hashCode) : null;
 		return (reuseStamp != null) && reuseStamp.hasNotPassed();
@@ -1742,7 +1752,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param hashCode the skill hash code
 	 * @return if the skill has a reuse time stamp, the skill reuse time stamp, otherwise {@code null}
 	 */
-	public synchronized final TimeStamp getSkillReuseTimeStamp(int hashCode)
+	public synchronized final TimeStamp getSkillReuseTimeStamp(long hashCode)
 	{
 		return _reuseTimeStampsSkills != null ? _reuseTimeStampsSkills.get(hashCode) : null;
 	}
@@ -1751,7 +1761,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * Gets the disabled skills map.
 	 * @return the disabled skills map
 	 */
-	public Map<Integer, Long> getDisabledSkills()
+	public Map<Long, Long> getDisabledSkills()
 	{
 		return _disabledSkills;
 	}
@@ -1837,7 +1847,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 * @param hashCode the skill hash code
 	 * @return {@code true} if the skill is disabled, {@code false} otherwise
 	 */
-	public boolean isSkillDisabledByReuse(int hashCode)
+	public boolean isSkillDisabledByReuse(long hashCode)
 	{
 		if (_disabledSkills == null)
 		{
@@ -1890,12 +1900,6 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	 */
 	public boolean doDie(Creature killer)
 	{
-		final TerminateReturn returnBack = EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this, TerminateReturn.class);
-		if ((returnBack != null) && returnBack.terminate())
-		{
-			return false;
-		}
-		
 		// killing is only possible one time
 		synchronized (this)
 		{
@@ -1908,7 +1912,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 			setCurrentHp(0);
 			setIsDead(true);
 		}
-		
+		EventDispatcher.getInstance().notifyEvent(new OnCreatureDeath(killer, this), this);
 		EventDispatcher.getInstance().notifyEvent(new OnCreatureKilled(killer, this), killer);
 		
 		abortAttack();
@@ -2390,7 +2394,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 	
 	public boolean isUndying()
 	{
-		return _isUndying || isInvul() || isAffected(EffectFlag.IGNORE_DEATH);
+		return _isUndying || isInvul() || isAffected(EffectFlag.IGNORE_DEATH) || isInsideZone(ZoneId.UNDYING);
 	}
 	
 	public boolean isHpBlocked()
@@ -5382,7 +5386,7 @@ public abstract class Creature extends WorldObject implements ISkillsHolder, IDe
 		if (_ignoreSkillEffects != null)
 		{
 			final SkillHolder holder = getIgnoreSkillEffects().get(skillId);
-			return ((holder != null) && ((holder.getSkillLvl() < 1) || (holder.getSkillLvl() == skillLvl)));
+			return ((holder != null) && ((holder.getSkillLevel() < 1) || (holder.getSkillLevel() == skillLvl)));
 		}
 		return false;
 	}

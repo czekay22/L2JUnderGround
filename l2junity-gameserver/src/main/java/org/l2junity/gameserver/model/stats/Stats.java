@@ -47,6 +47,8 @@ import org.l2junity.gameserver.model.stats.finalizers.RandomDamageFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RegenCPFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RegenHPFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.RegenMPFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.ShieldDefenceFinalizer;
+import org.l2junity.gameserver.model.stats.finalizers.ShieldDefenceRateFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.ShotsBonusFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.SpeedFinalizer;
 import org.l2junity.gameserver.model.stats.finalizers.VampiricChanceFinalizer;
@@ -80,7 +82,7 @@ public enum Stats
 	PHYSICAL_ATTACK_SPEED("pAtkSpd", new PAttackSpeedFinalizer()),
 	MAGIC_ATTACK_SPEED("mAtkSpd", new MAttackSpeedFinalizer()), // Magic Skill Casting Time Rate
 	ATK_REUSE("atkReuse"), // Bows Hits Reuse Rate
-	SHIELD_DEFENCE("sDef"),
+	SHIELD_DEFENCE("sDef", new ShieldDefenceFinalizer()),
 	CRITICAL_DAMAGE("cAtk"),
 	CRITICAL_DAMAGE_ADD("cAtkAdd"), // this is another type for special critical damage mods - vicious stance, critical power and critical damage SA
 	HATE_ATTACK("attackHate"),
@@ -111,7 +113,7 @@ public enum Stats
 	CRITICAL_DAMAGE_SKILL("cAtkSkill"),
 	CRITICAL_DAMAGE_SKILL_ADD("cAtkSkillAdd"),
 	MAGIC_CRITICAL_DAMAGE_ADD("mCritPowerAdd"),
-	SHIELD_DEFENCE_RATE("rShld"),
+	SHIELD_DEFENCE_RATE("rShld", new ShieldDefenceRateFinalizer()),
 	CRITICAL_RATE("rCrit", new PCriticalRateFinalizer(), MathUtil::add, MathUtil::add, null, 1d),
 	CRITICAL_RATE_SKILL("rCritSkill", Stats::defaultValue, MathUtil::add, MathUtil::add, null, 1d),
 	MAGIC_CRITICAL_RATE("mCritRate", new MCritRateFinalizer()),

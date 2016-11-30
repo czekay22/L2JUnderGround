@@ -21,24 +21,17 @@ package org.l2junity.gameserver.network.client.send;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.l2junity.gameserver.enums.SkillEnchantType;
 import org.l2junity.gameserver.model.skills.Skill;
 import org.l2junity.gameserver.network.client.OutgoingPackets;
 import org.l2junity.network.PacketWriter;
 
 public class ExEnchantSkillList implements IClientOutgoingPacket
 {
-	public enum EnchantSkillType
-	{
-		NORMAL,
-		SAFE,
-		UNTRAIN,
-		CHANGE_ROUTE,
-	}
-	
-	private final EnchantSkillType _type;
+	private final SkillEnchantType _type;
 	private final List<Skill> _skills = new LinkedList<>();
 	
-	public ExEnchantSkillList(EnchantSkillType type)
+	public ExEnchantSkillList(SkillEnchantType type)
 	{
 		_type = type;
 	}
@@ -58,7 +51,8 @@ public class ExEnchantSkillList implements IClientOutgoingPacket
 		for (Skill skill : _skills)
 		{
 			packet.writeD(skill.getId());
-			packet.writeD(skill.getLevel());
+			packet.writeH(skill.getLevel());
+			packet.writeH(skill.getSubLevel());
 		}
 		return true;
 	}

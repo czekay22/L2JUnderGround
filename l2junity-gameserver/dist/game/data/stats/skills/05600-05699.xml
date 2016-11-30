@@ -3912,7 +3912,7 @@
 		<icon>icon.skill0005</icon>
 		<isTriggeredSkill>true</isTriggeredSkill>
 		<magicLvl>80</magicLvl>
-		<nextActionAttack>true</nextActionAttack>
+		<nextAction>ATTACK</nextAction>
 		<operateType>A1</operateType>
 		<reuseDelay>10000</reuseDelay>
 		<rideState>NONE</rideState>

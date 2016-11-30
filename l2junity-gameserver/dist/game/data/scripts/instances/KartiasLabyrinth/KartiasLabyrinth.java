@@ -125,8 +125,19 @@ public final class KartiasLabyrinth extends AbstractInstance
 	private static final int TEMPLATE_ID_GROUP_90 = 209;
 	private static final int TEMPLATE_ID_GROUP_95 = 210;
 	
+	private static final int[] TEMPLATE_IDS =
+	{
+		TEMPLATE_ID_SOLO_85,
+		TEMPLATE_ID_SOLO_90,
+		TEMPLATE_ID_SOLO_95,
+		TEMPLATE_ID_GROUP_85,
+		TEMPLATE_ID_GROUP_90,
+		TEMPLATE_ID_GROUP_95,
+	};
+	
 	public KartiasLabyrinth()
 	{
+		super(TEMPLATE_IDS);
 		addStartNpc(KARTIA_RESEARCHER);
 		addFirstTalkId(ADOLPH);
 		addTalkId(ADOLPH);
@@ -143,7 +154,7 @@ public final class KartiasLabyrinth extends AbstractInstance
 		addEnterZoneId(KARTIA_85_DETECT_1, KARTIA_85_DETECT_2, KARTIA_85_TELEPORT_1, KARTIA_85_TELEPORT_2, KARTIA_85_TELEPORT_3);
 		addEnterZoneId(KARTIA_90_DETECT_1, KARTIA_90_DETECT_2, KARTIA_90_TELEPORT_1, KARTIA_90_TELEPORT_2, KARTIA_90_TELEPORT_3);
 		addEnterZoneId(KARTIA_95_DETECT_1, KARTIA_95_DETECT_2, KARTIA_95_TELEPORT_1, KARTIA_95_TELEPORT_2, KARTIA_95_TELEPORT_3);
-		addInstanceCreatedId(TEMPLATE_ID_SOLO_85, TEMPLATE_ID_SOLO_90, TEMPLATE_ID_SOLO_95, TEMPLATE_ID_GROUP_85, TEMPLATE_ID_GROUP_90, TEMPLATE_ID_GROUP_95);
+		addInstanceCreatedId(TEMPLATE_IDS);
 	}
 	
 	@Override

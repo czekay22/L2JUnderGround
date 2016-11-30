@@ -92,6 +92,7 @@ public final class TaintedDimension extends AbstractInstance
 	
 	public TaintedDimension()
 	{
+		super(TEMPLATE_ID);
 		addSpawnId(CORPSES);
 		addSpawnId(MYSTERIOUS_PRIEST, HUMAN_1, HUMAN_2, HUMAN_3, HUMAN_4, MONSTER_1, MONSTER_2);
 		addEventReceivedId(WARD, MYSTERIOUS_PRIEST);
@@ -101,7 +102,7 @@ public final class TaintedDimension extends AbstractInstance
 	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isTainedDimensionInstance(instance))
+		if (isInInstance(instance))
 		{
 			switch (event)
 			{
@@ -210,7 +211,7 @@ public final class TaintedDimension extends AbstractInstance
 	public String onSpawn(Npc npc)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (isTainedDimensionInstance(instance))
+		if (isInInstance(instance))
 		{
 			switch (npc.getId())
 			{
@@ -269,7 +270,7 @@ public final class TaintedDimension extends AbstractInstance
 	public String onEventReceived(String event, Npc sender, Npc receiver, WorldObject reference)
 	{
 		final Instance instance = receiver.getInstanceWorld();
-		if (isTainedDimensionInstance(instance))
+		if (isInInstance(instance))
 		{
 			switch (receiver.getId())
 			{
@@ -309,11 +310,6 @@ public final class TaintedDimension extends AbstractInstance
 			}
 		}
 		return super.onEventReceived(event, sender, receiver, reference);
-	}
-	
-	private boolean isTainedDimensionInstance(Instance instance)
-	{
-		return ((instance != null) && (instance.getTemplateId() == TEMPLATE_ID));
 	}
 	
 	public static void main(String[] args)

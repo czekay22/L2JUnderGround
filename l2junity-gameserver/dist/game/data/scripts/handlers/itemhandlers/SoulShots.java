@@ -112,7 +112,7 @@ public class SoulShots implements IItemHandler
 		
 		// Send message to client
 		activeChar.sendPacket(SystemMessageId.YOUR_SOULSHOTS_ARE_ENABLED);
-		skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, holder.getSkillId(), holder.getSkillLvl(), 0, 0), 600));
+		skills.forEach(holder -> Broadcast.toSelfAndKnownPlayersInRadius(activeChar, new MagicSkillUse(activeChar, activeChar, holder.getSkillId(), holder.getSkillLevel(), 0, 0), 600));
 		return true;
 	}
 }

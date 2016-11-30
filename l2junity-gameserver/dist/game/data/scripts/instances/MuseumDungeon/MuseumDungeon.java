@@ -1,14 +1,14 @@
 /*
- * Copyright (C) 2004-2015 L2J DataPack
+ * Copyright (C) 2004-2016 L2J Unity
  * 
- * This file is part of L2J DataPack.
+ * This file is part of L2J Unity.
  * 
- * L2J DataPack is free software: you can redistribute it and/or modify
+ * L2J Unity is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * L2J DataPack is distributed in the hope that it will be useful,
+ * L2J Unity is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details.
@@ -20,8 +20,12 @@ package instances.MuseumDungeon;
 
 import java.util.List;
 
+import org.l2junity.commons.util.CommonUtil;
 import org.l2junity.gameserver.enums.ChatType;
+import org.l2junity.gameserver.model.StatsSet;
+import org.l2junity.gameserver.model.WorldObject;
 import org.l2junity.gameserver.model.actor.Attackable;
+import org.l2junity.gameserver.model.actor.Creature;
 import org.l2junity.gameserver.model.actor.Npc;
 import org.l2junity.gameserver.model.actor.instance.PlayerInstance;
 import org.l2junity.gameserver.model.events.EventType;
@@ -29,6 +33,7 @@ import org.l2junity.gameserver.model.events.ListenerRegisterType;
 import org.l2junity.gameserver.model.events.annotations.Id;
 import org.l2junity.gameserver.model.events.annotations.RegisterEvent;
 import org.l2junity.gameserver.model.events.annotations.RegisterType;
+import org.l2junity.gameserver.model.events.impl.character.OnCreatureAttacked;
 import org.l2junity.gameserver.model.events.impl.character.OnCreatureDeath;
 import org.l2junity.gameserver.model.instancezone.Instance;
 import org.l2junity.gameserver.model.quest.QuestState;
@@ -63,10 +68,11 @@ public final class MuseumDungeon extends AbstractInstance
 	
 	public MuseumDungeon()
 	{
+		super(TEMPLATE_ID);
 		addStartNpc(PANTHEON);
 		addFirstTalkId(DESK);
 		addTalkId(PANTHEON, TOYRON);
-		addAttackId(THIEF);
+		addSkillSeeId(THIEF);
 	}
 	
 	@Override
@@ -75,6 +81,7 @@ public final class MuseumDungeon extends AbstractInstance
 		super.onEnter(player, instance, firstEnter);
 		
 		final Attackable toyron = (Attackable) instance.getNpc(TOYRON);
+		
 		if (firstEnter)
 		{
 			// Set desk status
@@ -96,10 +103,11 @@ public final class MuseumDungeon extends AbstractInstance
 			}
 			else if (qs.isCond(2))
 			{
-				startQuestTimer("TOYRON_FOLLOW", 500, toyron, player);
+				getTimers().addTimer("TOYRON_FOLLOW", 1500, toyron, player);
+				
 				if (instance.getNpcs(THIEF).isEmpty())
 				{
-					startQuestTimer("SPAWN_THIEFS_STAGE_2", 500, null, player);
+					instance.spawnGroup("thiefs").forEach(npc -> npc.setIsRunning(true));
 				}
 			}
 		}
@@ -112,112 +120,114 @@ public final class MuseumDungeon extends AbstractInstance
 		{
 			enterInstance(player, npc, TEMPLATE_ID);
 		}
-		else
+		return super.onAdvEvent(event, npc, player);
+	}
+	
+	@Override
+	public void onTimerEvent(String event, StatsSet params, Npc npc, PlayerInstance player)
+	{
+		final Instance instance = npc.getInstanceWorld();
+		final Attackable toyron = (Attackable) instance.getNpc(TOYRON);
+		if (isInInstance(instance))
 		{
-			final Instance world = player.getInstanceWorld();
-			if (world != null)
+			switch (event)
 			{
-				switch (event)
+				case "TOYRON_FOLLOW":
+					toyron.getAI().startFollow(player);
+					break;
+				case "SPAWN_THIEFS_STAGE_1":
 				{
-					case "TOYRON_FOLLOW":
-						npc.getAI().startFollow(player);
-						break;
-					case "SPAWN_THIEFS_STAGE_1":
+					instance.spawnGroup("thiefs").forEach(thief ->
 					{
-						final List<Npc> thiefs = world.spawnGroup("thiefs");
-						for (Npc thief : thiefs)
-						{
-							thief.setIsRunning(true);
-							addAttackPlayerDesire(thief, player);
-							thief.broadcastSay(ChatType.NPC_GENERAL, THIEF_SHOUT[getRandom(2)]);
-						}
-						final Npc toyron = world.getNpc(TOYRON);
-						toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHEN_DID_THEY_GET_IN_HERE);
-						startQuestTimer("TOYRON_MSG_1", 2500, toyron, player);
-						startQuestTimer("SKILL_MSG", 4500, toyron, player);
-						break;
-					}
-					case "SPAWN_THIEFS_STAGE_2":
-					{
-						final List<Npc> thiefs = world.spawnGroup("thiefs");
-						for (Npc thief : thiefs)
-						{
-							thief.setIsRunning(true);
-						}
-						break;
-					}
-					case "SKILL_MSG":
-						showOnScreenMsg(player, NpcStringId.USE_YOUR_SKILL_ATTACKS_AGAINST_THEM, ExShowScreenMessage.TOP_CENTER, 4500);
-						break;
-					case "TOYRON_MSG_1":
-						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOUR_NORMAL_ATTACKS_AREN_T_WORKING);
-						startQuestTimer("TOYRON_MSG_2", 2500, npc, player);
-						break;
-					case "TOYRON_MSG_2":
-						npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.LOOKS_LIKE_ONLY_SKILL_BASED_ATTACKS_DAMAGE_THEM);
-						break;
-					case "KILL_THIEF":
-						npc.doDie(player);
-						break;
+						thief.setIsRunning(true);
+						addAttackPlayerDesire(thief, player);
+						thief.broadcastSay(ChatType.NPC_GENERAL, THIEF_SHOUT[getRandom(2)]);
+					});
+					toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.WHEN_DID_THEY_GET_IN_HERE);
+					getTimers().addRepeatingTimer("TOYRON_MSG_1", 10000, toyron, player);
+					getTimers().addRepeatingTimer("TOYRON_MSG_2", 12500, toyron, player);
+					getTimers().addTimer("SKILL_MSG", 3500, toyron, player);
+					break;
 				}
+				case "SKILL_MSG":
+					showOnScreenMsg(player, NpcStringId.USE_YOUR_SKILL_ATTACKS_AGAINST_THEM, ExShowScreenMessage.TOP_CENTER, 4500);
+					break;
+				case "TOYRON_MSG_1":
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.YOUR_NORMAL_ATTACKS_AREN_T_WORKING);
+					break;
+				case "TOYRON_MSG_2":
+					npc.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.LOOKS_LIKE_ONLY_SKILL_BASED_ATTACKS_DAMAGE_THEM);
+					break;
 			}
 		}
-		return super.onAdvEvent(event, npc, player);
 	}
 	
 	@Override
 	public String onFirstTalk(Npc npc, PlayerInstance player)
 	{
-		final Instance world = npc.getInstanceWorld();
-		if (world == null)
-		{
-			return null;
-		}
-		
+		final Instance instance = npc.getInstanceWorld();
 		String htmltext = null;
-		final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
-		if ((qs == null) || qs.isCond(2))
+		if (isInInstance(instance))
 		{
-			htmltext = "33126.html";
-		}
-		else if (qs.isCond(1))
-		{
-			if (npc.getVariables().getBoolean("book", false) && !hasQuestItems(player, THE_WAR_OF_GODS_AND_GIANTS))
+			final Npc toyron = instance.getNpc(TOYRON);
+			
+			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
+			if ((qs == null) || qs.isCond(2))
 			{
-				qs.setCond(2);
-				giveItems(player, THE_WAR_OF_GODS_AND_GIANTS, 1);
-				showOnScreenMsg(player, NpcStringId.WATCH_OUT_YOU_ARE_BEING_ATTACKED, ExShowScreenMessage.TOP_CENTER, 4500);
-				htmltext = "33126-01.html";
-				
-				final Npc toyron = world.getNpc(TOYRON);
-				startQuestTimer("SPAWN_THIEFS_STAGE_1", 500, null, player);
-				startQuestTimer("TOYRON_FOLLOW", 500, toyron, player);
+				htmltext = "33126.html";
 			}
-			else
+			else if (qs.isCond(1))
 			{
-				htmltext = "33126-02.html";
+				if (npc.getVariables().getBoolean("book", false) && !hasQuestItems(player, THE_WAR_OF_GODS_AND_GIANTS))
+				{
+					qs.setCond(2);
+					giveItems(player, THE_WAR_OF_GODS_AND_GIANTS, 1);
+					showOnScreenMsg(player, NpcStringId.WATCH_OUT_YOU_ARE_BEING_ATTACKED, ExShowScreenMessage.TOP_CENTER, 4500);
+					getTimers().addTimer("SPAWN_THIEFS_STAGE_1", 1000, npc, player);
+					getTimers().addTimer("TOYRON_FOLLOW", 1000, toyron, player);
+					htmltext = "33126-01.html";
+				}
+				else
+				{
+					htmltext = "33126-02.html";
+				}
 			}
 		}
 		return htmltext;
 	}
 	
 	@Override
-	public String onAttack(Npc npc, PlayerInstance attacker, int damage, boolean isSummon, Skill skill)
+	public String onSkillSee(Npc npc, PlayerInstance player, Skill skill, WorldObject[] targets, boolean isSummon)
 	{
 		final Instance instance = npc.getInstanceWorld();
-		if (instance != null)
+		
+		if (isInInstance(instance))
 		{
-			final Npc toyron = instance.getNpc(TOYRON);
-			if (skill != null)
+			if ((npc.getId() == THIEF) && skill.isBad() && (CommonUtil.contains(targets, npc)))
 			{
+				final Npc toyron = instance.getNpc(TOYRON);
 				toyron.broadcastSay(ChatType.NPC_GENERAL, NpcStringId.ENOUGH_OF_THIS_COME_AT_ME);
-				toyron.reduceCurrentHp(1, npc, null); // TODO: Find better way for attack
-				npc.reduceCurrentHp(1, toyron, null);
-				startQuestTimer("KILL_THIEF", 2500, npc, attacker);
-				startQuestTimer("TOYRON_FOLLOW", 3000, toyron, attacker);
+				addAttackDesire(toyron, npc);
+				npc.setScriptValue(1);
+				getTimers().addTimer("TOYRON_FOLLOW", 3000, toyron, player);
 			}
 		}
-		return super.onAttack(npc, attacker, damage, isSummon, skill);
+		return super.onSkillSee(npc, player, skill, targets, isSummon);
+	}
+	
+	@RegisterEvent(EventType.ON_CREATURE_ATTACKED)
+	@RegisterType(ListenerRegisterType.NPC)
+	@Id(THIEF)
+	public void onCreatureAttacked(OnCreatureAttacked event)
+	{
+		final Creature creature = event.getAttacker();
+		final Npc npc = (Npc) event.getTarget();
+		final Instance instance = npc.getInstanceWorld();
+		
+		if (isInInstance(instance) && !creature.isPlayer() && npc.isScriptValue(1))
+		{
+			getTimers().addTimer("THIEF_DIE", 1500, npc, null);
+		}
 	}
 	
 	@RegisterEvent(EventType.ON_CREATURE_DEATH)
@@ -226,15 +236,18 @@ public final class MuseumDungeon extends AbstractInstance
 	public void onCreatureKill(OnCreatureDeath event)
 	{
 		final Npc npc = (Npc) event.getTarget();
-		
-		final Instance world = npc.getInstanceWorld();
-		if (world != null)
+		final Instance instance = npc.getInstanceWorld();
+		if (isInInstance(instance))
 		{
-			final PlayerInstance player = world.getFirstPlayer();
+			final Attackable toyron = (Attackable) instance.getNpc(TOYRON);
+			
+			final PlayerInstance player = instance.getFirstPlayer();
 			final QuestState qs = player.getQuestState(Q10327_IntruderWhoWantsTheBookOfGiants.class.getSimpleName());
-			if ((qs != null) && qs.isCond(2) && world.getAliveNpcs(THIEF).isEmpty())
+			if ((qs != null) && qs.isCond(2) && instance.getAliveNpcs(THIEF).isEmpty())
 			{
 				qs.setCond(3, true);
+				getTimers().cancelTimer("TOYRON_MSG_1", toyron, player);
+				getTimers().cancelTimer("TOYRON_MSG_2", toyron, player);
 				showOnScreenMsg(player, NpcStringId.TALK_TO_TOYRON_TO_RETURN_TO_THE_MUSEUM_LOBBY, ExShowScreenMessage.TOP_CENTER, 4500);
 			}
 		}

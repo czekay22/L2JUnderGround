@@ -183,11 +183,12 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 	// Zone
 	private static final int VIDEO_ZONE = 60010;
 	// Misc
-	private static final int INSTANCEID = 110; // this is the client number
+	private static final int TEMPLATE_ID = 110; // this is the client number
 	private static final int MAX_DEVICESPAWNEDMOBCOUNT = 100; // prevent too much mob spawn
 	
 	public Stage1()
 	{
+		super(TEMPLATE_ID);
 		load();
 		addStartNpc(ALENOS, TELEPORT);
 		addTalkId(ALENOS, TELEPORT);
@@ -199,7 +200,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 			addTrapActionId(i);
 		}
 		addEnterZoneId(VIDEO_ZONE);
-		addInstanceCreatedId(INSTANCEID);
+		addInstanceCreatedId(TEMPLATE_ID);
 		addDespawnId(SPAWN_DEVICE);
 	}
 	
@@ -649,7 +650,7 @@ public final class Stage1 extends AbstractInstance implements IGameXmlReader
 			final int state = GraciaSeedsManager.getInstance().getSoDState();
 			if (state == 1)
 			{
-				enterInstance(player, npc, INSTANCEID);
+				enterInstance(player, npc, TEMPLATE_ID);
 			}
 			else if (state == 2)
 			{

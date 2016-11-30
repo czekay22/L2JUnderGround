@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/buylist.xsd">
+	<item id="17430" price="0" /> <!-- Eternal Helmet (Heavy Armor)  -->
+	<item id="17431" price="0" /> <!-- Eternal Breastplate (Heavy Armor)  -->
+	<item id="17432" price="0" /> <!-- Eternal Gaiters (Heavy Armor)  -->
+	<item id="17433" price="0" /> <!-- Eternal Gauntlets (Heavy Armor)  -->
+	<item id="17434" price="0" /> <!-- Eternal Boots (Heavy Armor)  -->
+	<item id="17435" price="0" /> <!-- Eternal Shield (Heavy Armor)  -->
+	<item id="17436" price="0" /> <!-- Eternal Leather Helmet (Light Armor)  -->
+	<item id="17437" price="0" /> <!-- Eternal Leather Armor (Light Armor)  -->
+	<item id="17438" price="0" /> <!-- Eternal Leather Leggings (Light Armor)  -->
+	<item id="17439" price="0" /> <!-- Eternal Leather Gloves (Light Armor)  -->
+	<item id="17440" price="0" /> <!-- Eternal Leather Boots (Light Armor)  -->
+	<item id="17441" price="0" /> <!-- Eternal Circlet (Robe)  -->
+	<item id="17442" price="0" /> <!-- Eternal Tunic (Robe)  -->
+	<item id="17443" price="0" /> <!-- Eternal Stocking (Robe)  -->
+	<item id="17444" price="0" /> <!-- Eternal Gloves (Robe)  -->
+	<item id="17445" price="0" /> <!-- Eternal Shoes (Robe)  -->
+	<item id="17446" price="0" /> <!-- Eternal Sigil (Robe)  -->	
+</list>
